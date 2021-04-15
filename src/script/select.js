@@ -12,6 +12,17 @@ import { Menu } from './menu.js'
 // eslint-disable-next-line
 import { checkLanguage, translation } from './translation.js';
 
+class Choice extends React.Component {
+    constructor(props) {
+        super(props);
+        this.title = this.props.title
+        this.desc = this.props.desc
+        this.lang = checkLanguage()
+    }
+
+
+}
+
 class Select extends React.Component {
     constructor(props) {
         super(props);
@@ -24,8 +35,13 @@ class Select extends React.Component {
                 <div className="slide-in-onload">
                     <Menu page="/select" />
                 </div>
-                <center className="fade-in-onload">
-                    Placeholder text
+                <center className="select-root fade-in-onload">
+                    <p className="select-title">
+                        Select a detection method
+                    </p>
+                    <p className="select-subtitle">
+                        Your doctor recommends: automatically uploading your tweets
+                    </p>
                 </center>
 
             </div>

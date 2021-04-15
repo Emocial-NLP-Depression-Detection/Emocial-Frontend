@@ -1,0 +1,12 @@
+.select-root {
+    background-color: #e5faff;
+    min-height: 100vh;
+}
+
+.select-title {
+    font-size: 7vh;
+}
+
+.select-subtitle {
+    font-size: 3vh;
+}
