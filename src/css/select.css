@@ -1,6 +1,9 @@
 .select-root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #e5faff;
-    min-height: 100vh;
+    min-height: 87vh;
 }
 
 .select-title {
@@ -9,4 +12,37 @@
 
 .select-subtitle {
     font-size: 3vh;
+}
+
+.choice-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.choice-background {
+    width: 40vh;
+    height: 45vh;
+    margin: 10px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.choice-background:hover {
+    transform: translateY(-25px);
+}
+
+.choice-header {
+    font-size: 3.5vh;
+    text-align: center;
+    border-radius: 15px 15px 0px 0px;
+    padding: 2vh;
+    color: #ffffff;
+    background-color: #5271ff;
+}
+
+.choice-desc {
+    margin: 3vh;
+    font-size: 2.5vh;
 }

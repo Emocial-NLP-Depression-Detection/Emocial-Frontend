@@ -9,18 +9,27 @@ import '../css/select.css';
 import { Menu } from './menu.js'
 
 // Translation keys import (temporarily disabled)
-// eslint-disable-next-line
 import { checkLanguage, translation } from './translation.js';
 
 class Choice extends React.Component {
     constructor(props) {
         super(props);
-        this.title = this.props.title
-        this.desc = this.props.desc
+        this.type = this.props.type
         this.lang = checkLanguage()
     }
 
-
+    render() {
+        return (
+            <div className="choice-background will-animate">
+                <div className="choice-header">
+                    {translation.select[this.type].title[this.lang]}
+                </div>
+                <div className="choice-desc">
+                    {translation.select[this.type].desc[this.lang]}
+                </div>
+            </div>
+        );
+    }
 }
 
 class Select extends React.Component {
@@ -35,16 +44,24 @@ class Select extends React.Component {
                 <div className="slide-in-onload">
                     <Menu page="/select" />
                 </div>
-                <center className="select-root fade-in-onload">
-                    <p className="select-title">
-                        Select a detection method
-                    </p>
-                    <p className="select-subtitle">
-                        Your doctor recommends: automatically uploading your tweets
-                    </p>
-                </center>
-
-            </div>
+                <div className="select-root fade-in-onload">
+                    <div>
+                        <center>
+                            <p className="select-title">
+                                Select a detection method
+                            </p>
+                            <p className="select-subtitle">
+                                Your doctor recommends: automatically uploading your tweets
+                            </p>
+                        </center>
+                        <div className="choice-section">
+                            <Choice type="upload" />
+                            <Choice type="compose" />
+                            <Choice type="questionare" />
+                        </div>
+                    </div>
+                </div>
+            </div >
         );
     }
 }
