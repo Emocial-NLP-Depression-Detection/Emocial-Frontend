@@ -8,7 +8,8 @@ import '../css/select.css';
 // Menu bar import
 import { Menu } from './menu.js'
 
-// Translation keys import
+// Translation keys import (temporarily disabled)
+// eslint-disable-next-line
 import { checkLanguage, translation } from './translation.js';
 
 class Select extends React.Component {
