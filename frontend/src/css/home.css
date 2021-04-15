@@ -1,0 +1,170 @@
+/* Welcome section */
+.welcome-section {
+    height: 87vh;
+    min-height: 600px;
+}
+
+.welcome-title {
+    font-size: 7vh;
+}
+
+.welcome-desc {
+    width: 62%;
+    font-size: 3.5vh;
+}
+
+.welcome-button {
+    margin: 50px 0px 50px 0px;
+    padding: 20px;
+    width: 20%;
+    border-radius: 20px;
+    min-width: fit-content;
+    font-size: 5vh;
+    border: none;
+    background-color: #00b64e;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.welcome-button:hover {
+    background-color: #24e075;
+    transform: translateY(-15px);
+}
+
+.welcome-button:active {
+    background-color: #00b64e;
+    box-shadow: inset 0px 5px 15px #000000;
+    transition: none;
+}
+
+/* About section */
+.about-title {
+    font-size: 7vh;
+}
+
+.about-desc {
+    margin-top: 40px;
+    font-size: 3.5vh;
+}
+
+.about-img {
+    height: 100vh;
+}
+
+.about-next {
+    margin-top: 10px;
+    float: right;
+}
+
+.about-next:hover {
+    transform: translateX(10px);
+}
+
+.about-back:hover {
+    transform: translateX(-10px);
+}
+
+/* About specific sections */
+.depression-section {
+    display: grid;
+    grid-template-columns: 9fr 10fr;
+    height: 100vh;
+}
+
+.depression-text {
+    padding: 10vh 0px 2vh 10vh;
+}
+
+.depression-img-container {
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.help-section {
+    display: grid;
+    grid-template-columns: 10fr 9fr;
+    height: 100vh;
+}
+
+.help-img-container {
+    overflow: hidden;
+}
+
+.help-text {
+    padding: 70px 70px 10px 0px;
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .depression-img-container {
+        display: block;
+    }
+
+    .help-img-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 4/3) {
+    .about-desc {
+        font-size: 3vh;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    .welcome-section {
+        height: 900px;
+    }
+
+    .welcome-title {
+        font-size: 4vh;
+    }
+
+    .welcome-desc {
+        font-size: 2vh;
+    }
+
+    .welcome-button {
+        font-size: 3vh;
+    }
+
+    .about-img {
+      display: none;
+    }
+
+    .depression-text, .help-text {
+        padding: 70px;
+    }
+
+    .about-title {
+        font-size: 3vh;
+    }
+
+    .about-desc {
+        font-size: 2vh;
+    }
+
+    .depression-section, .help-section {
+        display: block;
+        height: fit-content;
+    }
+
+    #triangles, .about-next {
+        display: none;
+    }
+}
+
+/* Triangles SVG animation control */
+#triangles {
+    margin-top: 5px;
+    height: 75px;
+}
+
+.welcome-section .link-float:hover #triangle-1 {
+    transform: translateY(10%);
+}
+
+.welcome-section .link-float:hover #triangle-2 {
+    transform: translateY(50%);
+}

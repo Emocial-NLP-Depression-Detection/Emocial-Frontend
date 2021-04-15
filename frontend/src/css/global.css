@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', 'Open Sans', 'Kanit', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes fade-in-onload {
+    0% { opacity: 0%; }
+    100% { opacity: 100%; }
+}
+
+@keyframes slide-in-onload {
+    0% { transform: translateY(-100%); }
+    25% { transform: translateY(-100%); }
+    100% { transform: translateY(0%); }
+}
+
+@keyframes left-slide-in-onload {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0%); }
+}
+
+.will-animate {
+    transition: all 0.75s ease;
+}
+
+.fade-in-onload {
+    animation: 1s ease-out 0s 1 fade-in-onload;
+}
+
+.slide-in-onload {
+    animation: 1s ease 0s 1 slide-in-onload;
+}
+
+.left-slide-in-onload {
+    animation: 1s ease 0s 1 left-slide-in-onload;
+}
+
+.slide-out {
+    transform: translateY(-100%);
+}
+
+.left-slide-out {
+    transform: translateX(-100%);
+}
+
+.slide-in {
+    transform: translateY(0%);
+}
+
+.disappear {
+    opacity: 0%;
+}
+
+.appear {
+    opacity: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.link-float:hover {
+    transform: translateY(5px);
+}
+
+.link-float-text {
+    font-size: 3.5vh;
+    color: #5271ff;
+    text-decoration: none;
+}
+
+.link-float-text:hover {
+    color: #7d95ff;
+}
+
+@media only screen and (orientation: portrait) {
+    .link-float-text {
+        font-size: 2vh;
+    }
+}
+
+.centre-in-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

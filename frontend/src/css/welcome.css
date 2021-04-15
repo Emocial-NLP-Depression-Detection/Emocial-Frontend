@@ -1,0 +1,60 @@
+/* Highest level: Welcome Page */
+.welcome-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #04002e;
+    cursor: pointer;
+}
+
+.welcome-cover img {
+    width: 30%;
+    margin: auto;
+}
+
+.welcome-text {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.welcome-text:hover {
+    color: #c4c4c4;
+    transform: translateY(-5px);
+}
+
+/* Second highest level: Language Select Page */
+.language-text {
+    color: #ffffff;
+}
+
+.language-button {
+    background-color: #04002e;
+    color: #ffffff;
+    border: none;
+    margin: 100px 30px 30px 30px;
+    padding: 30px;
+    border-radius: 20px;
+    width: 20%;
+    min-width: fit-content;
+    font-size: 400%;
+    cursor: pointer;
+}
+
+@media only screen and (orientation: landscape) {
+    .language-button:hover {
+        background-color: #1c156b;
+        box-shadow: offset 0px 5px 15px #000000;
+        transform: translateY(-30px);
+    }
+    
+    .language-button:active {
+        background-color: #04002e;
+        box-shadow: inset 0px 5px 15px #000000;
+        transition: none;
+    }
+}
+
+.language-button img {
+    width: 60px;
+    margin-right: 20px;
+}
