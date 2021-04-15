@@ -18,6 +18,11 @@ class Choice extends React.Component {
         this.lang = checkLanguage()
     }
 
+    renderBottom(type) {
+        if (type === "upload") { return (<input type="text" />); }
+        else { return (<button>Start</button>); }
+    }
+
     render() {
         return (
             <div className="choice-background will-animate">
@@ -26,7 +31,11 @@ class Choice extends React.Component {
                 </div>
                 <div className="choice-desc">
                     {translation.select[this.type].desc[this.lang]}
+                    <div className="choice-bottom">
+                        {this.renderBottom(this.type)}
+                    </div>
                 </div>
+
             </div>
         );
     }
