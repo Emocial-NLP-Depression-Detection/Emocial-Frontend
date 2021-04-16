@@ -18,7 +18,7 @@ class Choice extends React.Component {
     constructor(props) {
         super(props);
         this.type = this.props.type;
-        this.lang = checkLanguage()
+        this.lang = checkLanguage();
     }
 
     renderBottom(type) {
@@ -29,8 +29,7 @@ class Choice extends React.Component {
                     <button className="search-button will-animate" type="submit"><img src={search_icon} height="15vh" alt="" /></button>
                 </form>
             );
-        }
-        else {
+        } else {
             this.has_cursor = "choice-background-with-pointer";
             return (<button className="bottom-button will-animate">{translation.select.start[this.lang]}</button>);
         }
