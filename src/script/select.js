@@ -1,5 +1,6 @@
 // ReactJS import
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 // Style sheet import
 import '../css/global.css'
@@ -14,7 +15,7 @@ import { checkLanguage, translation } from './translation.js';
 class Choice extends React.Component {
     constructor(props) {
         super(props);
-        this.type = this.props.type
+        this.type = this.props.type;
         this.lang = checkLanguage()
     }
 
@@ -44,13 +45,28 @@ class Choice extends React.Component {
 class Select extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { redirect: null };
+        this.menu_ref = React.createRef();
         this.lang = checkLanguage()
     }
 
+    async handleClick(link_to) {
+        console.log("User requests redirect to", link_to)
+        this.menu_ref.current.classList.add('slide-out');
+        document.getElementById("root").classList.add("disappear");
+        console.log("Redirecting to", link_to);
+        await new Promise(r => setTimeout(r, 500));
+        document.getElementById("root").classList.remove("disappear");
+        this.setState({ redirect: link_to });
+    }
+
     render() {
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        }
         return (
             <div>
-                <div className="slide-in-onload">
+                <div ref={this.menu_ref} className="slide-in-onload">
                     <Menu page="/select" />
                 </div>
                 <div className="select-root fade-in-onload">
@@ -64,9 +80,9 @@ class Select extends React.Component {
                             </p>
                         </center>
                         <div className="choice-section">
-                            <Choice type="upload" />
-                            <Choice type="compose" />
-                            <Choice type="questionare" />
+                            <div onClick={() => this.handleClick("upload")}><Choice type="upload" /></div>
+                            <div onClick={() => this.handleClick("compose")}><Choice type="compose" /></div>
+                            <div onClick={() => this.handleClick("questionare")}><Choice type="questionare" /></div>
                         </div>
                     </div>
                 </div>
