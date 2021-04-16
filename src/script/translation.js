@@ -104,9 +104,13 @@ var translation = {
             'th': 'เลือกวิธีการวิเคราะห์',
             'en': 'Select a detection method',
         },
+        'recommend': {
+            'th': 'หมอของท่านแนะนำ: ',
+            'en': 'Your doctor recommends: ',
+        },
         'upload': {
             'title': {
-                'th': 'ลอเรมอิปซับดอลอร์ซิตอเมต',
+                'th': 'อัพโหลดจากบัญชี',
                 'en': 'Upload your tweets',
             },
             'desc': {
@@ -116,7 +120,7 @@ var translation = {
         },
         'compose': {
             'title': {
-                'th': 'ลอเรมอิปซับดอลอร์ซิตอเมต',
+                'th': 'เขียนความรู้สึก',
                 'en': 'Compose a tweet',
             },
             'desc': {
@@ -126,7 +130,7 @@ var translation = {
         },
         'questionare': {
             'title': {
-                'th': 'ลอเรมอิปซับดอลอร์ซิตอเมต',
+                'th': 'ทำแบบสอบถาม',
                 'en': 'Do a questionare',
             },
             'desc': {
@@ -134,6 +138,10 @@ var translation = {
                 'en': 'Answer our questionare of open-ended questions.',
             },
         },
+        'start': {
+            'th': 'ใช้วิธีนี้',
+            'en': 'Start',
+        }
     },
     'history': {
         'today': {

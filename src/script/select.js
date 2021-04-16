@@ -24,13 +24,16 @@ class Choice extends React.Component {
     renderBottom(type) {
         if (type === "upload") {
             return (
-                <div className="handle-search-container">
+                <form className="handle-search-container" action="/upload">
                     <input className="will-animate" type="text" placeholder="@handle" />
-                    <button className="search-button will-animate"><img src={search_icon} height="15vh" alt="" /></button>
-                </div>
+                    <button className="search-button will-animate" type="submit"><img src={search_icon} height="15vh" alt="" /></button>
+                </form>
             );
         }
-        else { this.has_cursor = "choice-background-with-pointer"; return (<button className="bottom-button will-animate">Start</button>); }
+        else {
+            this.has_cursor = "choice-background-with-pointer";
+            return (<button className="bottom-button will-animate">{translation.select.start[this.lang]}</button>);
+        }
     }
 
     render() {
@@ -81,10 +84,10 @@ class Select extends React.Component {
                     <div>
                         <center>
                             <p className="select-title">
-                                Select a detection method
+                                {translation.select.title[this.lang]}
                             </p>
                             <p className="select-subtitle">
-                                Your doctor recommends: automatically uploading your tweets
+                                {translation.select.recommend[this.lang]} {translation.select.upload.title[this.lang]}
                             </p>
                         </center>
                         <div className="choice-section">

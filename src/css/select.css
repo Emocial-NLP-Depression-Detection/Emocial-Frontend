@@ -87,7 +87,7 @@
 
 .handle-search-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 4fr 1fr;
 }
 
 .search-button {
