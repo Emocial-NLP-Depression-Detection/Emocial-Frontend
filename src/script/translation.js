@@ -118,7 +118,7 @@ var translation = {
                 'en': 'Upload your tweets',
             },
             'desc': {
-                'th': 'ลอเรมอิปซับดอลอร์ซิตอเมต',
+                'th': 'ระบบของเราจะอ่านทวีตในบัญชีทวิตเตอร์ที่พิมพ์เข้ามาด้านล่าง และวิเคราะห์โอกาสที่ท่านอาจจะมีโรคซึมเศร้า',
                 'en': 'After you enter your Twitter® handle, our algorithm will analyze your Tweets® for risk of depression.',
             },
         },
