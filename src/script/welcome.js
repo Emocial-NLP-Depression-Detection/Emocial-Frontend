@@ -141,13 +141,16 @@ class WelcomeCover extends React.Component {
         }
         return (
             <div>
+
                 <div ref={this.welcome_ref} className="welcome-cover will-animate centre-in-screen" style={{ zIndex: "1", backgroundColor: "#04002e" }} onClick={() => this.handleClick()}>
                     <center>
                         <img src={icon} style={{ marginTop: "100px" }} alt="A crying face with a mask onto its left" />
                         <WelcomeText />
+                        <input className="a11y-any-key" type="text" onKeyDown={() => this.handleClick()} autoFocus={true} />
                     </center>
                 </div>
                 <CoverHappilyAfter />
+
             </div>
         )
     }

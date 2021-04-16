@@ -22,6 +22,10 @@
     transform: translateY(-5px);
 }
 
+.a11y-any-key {
+    transform: translateY(-100vh)
+}
+
 /* Second highest level: Language Select Page */
 .language-text {
     color: #ffffff;

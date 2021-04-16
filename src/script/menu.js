@@ -57,7 +57,7 @@ class Menu extends React.Component {
                 <span className="menu-buttons-container">
                     {this.renderButton('home', '/home')}
                     {this.renderButton('test', '/select')}
-                    <Link to="/home#about">
+                    <Link to="/home#about" tabIndex="-1">
                         <button className="menu-button will-animate">
                             {translation.menu.about[this.lang]}
                         </button>

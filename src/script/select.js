@@ -62,10 +62,10 @@ class Select extends React.Component {
     }
 
     async handleClick(link_to) {
-        console.log("User requests redirect to", link_to)
+        console.log("User requests redirect to /", link_to)
         this.menu_ref.current.classList.add('slide-out');
         document.getElementById("root").classList.add("disappear");
-        console.log("Redirecting to", link_to);
+        console.log("Redirecting to /", link_to);
         await new Promise(r => setTimeout(r, 500));
         document.getElementById("root").classList.remove("disappear");
         this.setState({ redirect: link_to });
@@ -77,7 +77,7 @@ class Select extends React.Component {
         }
         return (
             <div>
-                <div ref={this.menu_ref} className="slide-in-onload">
+                <div ref={this.menu_ref} className="slide-in-onload will-animate">
                     <Menu page="/select" />
                 </div>
                 <div className="select-root fade-in-onload">
