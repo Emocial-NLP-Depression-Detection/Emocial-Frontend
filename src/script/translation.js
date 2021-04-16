@@ -128,7 +128,7 @@ var translation = {
                 'en': 'Compose a tweet',
             },
             'desc': {
-                'th': 'ลอเรมอิปซับดอลอร์ซิตอเมต',
+                'th': 'หากท่านเลือกใช้วิธีนี้ เราจะให้ที่ที่ท่านสามารถเขียนทุกสิ่งที่ท่านกำลังคิดอยู่ แล้วระบบจะวิเคราะห์โอกาสที่ท่านอาจจะมีโรคซึมเศร้าจากข้อความนั้น',
                 'en': 'Write down whatever is on your mind, then our algorithm will analyze your text for risk of depression.',
             },
         },
@@ -138,7 +138,7 @@ var translation = {
                 'en': 'Do a questionare',
             },
             'desc': {
-                'th': 'ลอเรมอิปซับดอลอร์ซิตอเมต',
+                'th': 'ตอบคำถามปลายเปิด 2 คำถาม เพื่อให้เราเข้าใจความรู้วึกท่านได้ดีมากขึ้น',
                 'en': 'Answer our questionare of open-ended questions.',
             },
         },
