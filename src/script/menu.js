@@ -48,12 +48,10 @@ class Menu extends React.Component {
         }
     }
 
-    render() {
-        if (this.state.redirect) {
-            return <Redirect to={this.state.redirect} />
-        }
-        return (
-            <div ref={this.menu_ref} className="menu will-animate">
+    renderMenuSpan() {
+        // Placeholder condition (issue#9)
+        if (true) {
+            return (
                 <span className="menu-buttons-container">
                     {this.renderButton('home', '/home')}
                     {this.renderButton('test', '/select')}
@@ -67,6 +65,17 @@ class Menu extends React.Component {
                         {translation.menu.change_lang[this.lang]}
                     </button>
                 </span>
+            );
+        }
+    }
+
+    render() {
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        }
+        return (
+            <div ref={this.menu_ref} className="menu will-animate">
+                {this.renderMenuSpan()}
             </div>
         );
     }
