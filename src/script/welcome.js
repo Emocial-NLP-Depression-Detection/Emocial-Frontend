@@ -36,8 +36,8 @@ class WelcomeText extends React.Component {
     render() {
         return (
             <div className='welcome-text will-animate'>
-                <div style={{ fontSize: "600%", marginTop: "20px" }}>{translation.index.welcome.en}</div>
-                <div style={{ fontSize: "400%" }}>{translation.index.welcome.th}</div>
+                <div style={{ fontSize: "12vh", marginTop: "20px" }}>{translation.index.welcome.en}</div>
+                <div style={{ fontSize: "8vh" }}>{translation.index.welcome.th}</div>
             </div>
         );
     }
@@ -85,8 +85,8 @@ class LanguageSelector extends React.Component {
             <div ref={this.language_select_ref} className='welcome-cover will-animate centre-in-screen' style={{ zIndex: "0", backgroundColor: "#0c0644" }}>
                 <center>
                     <div className='language-text'>
-                        <div style={{ fontSize: "600%" }}>{translation.index.language_select.title.en}</div>
-                        <div style={{ fontSize: "400%" }}>{translation.index.language_select.title.th}</div>
+                        <div style={{ fontSize: "12vh" }}>{translation.index.language_select.title.en}</div>
+                        <div style={{ fontSize: "8vh" }}>{translation.index.language_select.title.th}</div>
                     </div>
                     <div>
                         {this.renderButton(translation.index.language_select.choice.th, th_flag, "th")}

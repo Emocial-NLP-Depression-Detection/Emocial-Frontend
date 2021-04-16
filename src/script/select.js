@@ -25,7 +25,7 @@ class Choice extends React.Component {
         if (type === "upload") {
             return (
                 <form className="handle-search-container" action="/upload">
-                    <input className="will-animate" type="text" placeholder="@handle" />
+                    <input className="will-animate" type="text" placeholder={translation.select.handle[this.lang]} />
                     <button className="search-button will-animate" type="submit"><img src={search_icon} height="15vh" alt="" /></button>
                 </form>
             );

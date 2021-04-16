@@ -108,6 +108,10 @@ var translation = {
             'th': 'หมอของท่านแนะนำ: ',
             'en': 'Your doctor recommends: ',
         },
+        'handle': {
+            'th': '@แฮนเดิล',
+            'en': '@handle',
+        },
         'upload': {
             'title': {
                 'th': 'อัพโหลดจากบัญชี',
