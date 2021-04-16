@@ -12,6 +12,8 @@ import { Menu } from './menu.js'
 // Translation keys import (temporarily disabled)
 import { checkLanguage, translation } from './translation.js';
 
+import search_icon from '../photos/search_icon.png'
+
 class Choice extends React.Component {
     constructor(props) {
         super(props);
@@ -20,8 +22,15 @@ class Choice extends React.Component {
     }
 
     renderBottom(type) {
-        if (type === "upload") { return (<input type="text" />); }
-        else { return (<button>Start</button>); }
+        if (type === "upload") {
+            return (
+                <div className="handle-search-container">
+                    <input className="will-animate" type="text" placeholder="@handle" />
+                    <button className="search-button will-animate"><img src={search_icon} height="15vh" alt="" /></button>
+                </div>
+            );
+        }
+        else { this.has_cursor = "choice-background-with-pointer"; return (<button className="bottom-button will-animate">Start</button>); }
     }
 
     render() {
@@ -36,7 +45,6 @@ class Choice extends React.Component {
                         {this.renderBottom(this.type)}
                     </div>
                 </div>
-
             </div>
         );
     }
@@ -80,7 +88,7 @@ class Select extends React.Component {
                             </p>
                         </center>
                         <div className="choice-section">
-                            <div onClick={() => this.handleClick("upload")}><Choice type="upload" /></div>
+                            <div><Choice type="upload" /></div>
                             <div onClick={() => this.handleClick("compose")}><Choice type="compose" /></div>
                             <div onClick={() => this.handleClick("questionare")}><Choice type="questionare" /></div>
                         </div>

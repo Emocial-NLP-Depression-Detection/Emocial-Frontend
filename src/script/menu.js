@@ -1,6 +1,6 @@
 // ReactJS import
 import React from 'react';
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
 
 // Stylesheet import
@@ -18,8 +18,7 @@ class Menu extends React.Component {
 
     async handleClick(link_to) {
         console.log("User requests redirect to", link_to)
-        const menu = this.menu_ref.current;
-        menu.classList.add('slide-out');
+        this.menu_ref.current.classList.add('slide-out');
         document.getElementById("root").classList.add("disappear");
         console.log("Redirecting to", link_to);
         await new Promise(r => setTimeout(r, 500));
