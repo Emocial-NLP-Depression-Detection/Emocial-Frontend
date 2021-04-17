@@ -92,7 +92,7 @@ class Select extends React.Component {
                         <div className="choice-section">
                             <div><Choice type="upload" /></div>
                             <div onClick={() => this.handleClick("compose")}><Choice type="compose" /></div>
-                            <div onClick={() => this.handleClick("questionare")}><Choice type="questionare" /></div>
+                            <div onClick={() => this.handleClick("questionnaire")}><Choice type="questionnaire" /></div>
                         </div>
                     </div>
                 </div>

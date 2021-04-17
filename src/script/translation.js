@@ -132,7 +132,7 @@ var translation = {
                 'en': 'Write down whatever is on your mind, then our algorithm will analyze your text for risk of depression.',
             },
         },
-        'questionare': {
+        'questionnaire': {
             'title': {
                 'th': 'ทำแบบสอบถาม',
                 'en': 'Do a questionare',
