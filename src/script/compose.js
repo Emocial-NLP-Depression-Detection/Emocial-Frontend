@@ -26,9 +26,9 @@ class Compose extends React.Component {
                 </div>
                 <div className="fade-in-onload compose-container">
                     <form className="compose-form" action="analyze">
-                        <label for="composed-tweet">Tell us your story</label><br />
-                        <textarea id="composed-tweet" name="composed-tweet" rows="4" cols="50" /><br />
-                        <button type="submit">Submit</button>
+                        <label htmlFor="composed-tweet">Tell us your story</label><br />
+                        <textarea className="will-animate" id="composed-tweet" name="composed-tweet" autoFocus={true} /><br />
+                        <button className="will-animate" type="submit">Submit</button>
                     </form>
 
                 </div>
