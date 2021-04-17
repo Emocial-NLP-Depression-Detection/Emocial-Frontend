@@ -17,7 +17,7 @@
     font-size: 4vh;
 }
 
-.compose-form textarea {
+.compose-textarea {
     resize: none;
     margin: 2vh 0px 2vh;
     padding: 2vh;
@@ -29,12 +29,12 @@
     background-color: #ebebeb;
 }
 
-.compose-form textarea:focus {
+.compose-textarea:focus {
     border-radius: 0px;
     background-color: #ffffff;
 }
 
-.compose-form button {
+.compose-submit {
     padding: 2vh;
     width: 150px;
     font-size: 4vh;
@@ -46,12 +46,12 @@
     cursor: pointer;
 }
 
-.compose-form button:hover {
+.compose-submit:hover {
     background-color: #24e075;
     transform: translateX(10px);
 }
 
-.compose-form button:active {
+.compose-submit:active {
     background-color: #00b64e;
     box-shadow: inset 0px 5px 15px #000000;
     transition: none;
