@@ -1,0 +1,40 @@
+.questionnaire {
+    margin: 10vh;
+}
+
+.question {
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+    height: 83vh;
+    padding: 4vh;
+}
+
+.question-content {
+    width: calc(100%-4vh);
+}
+
+.question-label {
+    font-size: 4vh;
+}
+
+.question-number {
+    font-size: 12vh;
+    font-weight: bold;
+    transform: translateY(-10px);
+    color: #5271ff;
+}
+
+.question-next {
+    text-align: center;
+    text-decoration: none;
+    width: 130px;
+    background-color: #5271ff;
+}
+
+.question-next:hover {
+    background-color: #7d95ff;
+}
+
+.question-next:active {
+    background-color: #5271ff;
+}

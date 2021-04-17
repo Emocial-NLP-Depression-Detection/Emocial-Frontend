@@ -1,5 +1,6 @@
 // ReactJS import
 import React from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 
 // Style sheet import
 import '../css/global.css'
@@ -29,11 +30,19 @@ class Questionnaire extends React.Component {
                     <form action="analyze">
                         <div className="questionnaire">
                             <div className="question">
-                                <p>1.</p>
+                                <p className="question-number">1</p>
                                 <div className="question-content">
-                                    <label htmlFor="composed-tweet">{translation.compose.label[this.lang]}</label><br />
-                                    <textarea className="will-animate" id="composed-tweet" name="composed-tweet" autoFocus={true} /><br />
-                                    <button className="will-animate" type="submit">{translation.compose.submit[this.lang]}</button>
+                                    <label className="question-label" htmlFor="composed-tweet">Question</label><br />
+                                    <textarea className="compose-textarea will-animate" id="question-1" name="question-1" autoFocus={true} /><br />
+                                    <Link to="#2" className="question-next compose-submit will-animate">Next</Link>
+                                </div>
+                            </div>
+                            <div className="question" id="2">
+                                <p className="question-number">2</p>
+                                <div className="question-content">
+                                    <label className="question-label" htmlFor="composed-tweet">Question</label><br />
+                                    <textarea className="compose-textarea will-animate" id="question-1" name="question-1" /><br />
+                                    <button className="compose-submit will-animate" type="submit">Submit</button>
                                 </div>
                             </div>
                         </div>
