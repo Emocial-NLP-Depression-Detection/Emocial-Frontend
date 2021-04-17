@@ -1,6 +1,5 @@
 // ReactJS import
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 
 // Style sheet import
 import '../css/global.css'
@@ -16,6 +15,7 @@ import { checkLanguage, translation } from './translation.js';
 class Compose extends React.Component {
     constructor(props) {
         super(props);
+        this.lang = checkLanguage();
     }
 
     render() {
@@ -26,9 +26,9 @@ class Compose extends React.Component {
                 </div>
                 <div className="fade-in-onload compose-container">
                     <form className="compose-form" action="analyze">
-                        <label htmlFor="composed-tweet">Tell us your story</label><br />
+                        <label htmlFor="composed-tweet">{translation.compose.label[this.lang]}</label><br />
                         <textarea className="will-animate" id="composed-tweet" name="composed-tweet" autoFocus={true} /><br />
-                        <button className="will-animate" type="submit">Submit</button>
+                        <button className="will-animate" type="submit">{translation.compose.submit[this.lang]}</button>
                     </form>
 
                 </div>

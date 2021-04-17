@@ -30,6 +30,7 @@
 }
 
 .compose-form textarea:focus {
+    border-radius: 0px;
     background-color: #ffffff;
 }
 

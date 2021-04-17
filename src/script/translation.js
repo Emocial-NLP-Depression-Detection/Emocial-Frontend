@@ -147,6 +147,16 @@ var translation = {
             'en': 'Start',
         }
     },
+    'compose': {
+        'label': {
+            'th': 'เล่ามาได้เลยด้านล่าง',
+            'en': 'Tell us your story',
+        },
+        'submit': {
+            'th': 'ส่ง',
+            'en': 'Submit',
+        },
+    },
     'history': {
         'today': {
             'th': 'วันนี้',

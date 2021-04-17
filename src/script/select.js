@@ -67,7 +67,7 @@ class Select extends React.Component {
         console.log("Redirecting to /", link_to);
         await new Promise(r => setTimeout(r, 500));
         document.getElementById("root").classList.remove("disappear");
-        this.setState({ redirect: link_to });
+        this.setState({ redirect: "/test/" + link_to });
     }
 
     render() {
