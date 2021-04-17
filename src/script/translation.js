@@ -159,13 +159,21 @@ var translation = {
     },
     'questionnaire': {
         'one': {
-            'th': '',
+            'th': 'โปรดเล่า 2 สัปดาห์ที่ผ่านมา',
             'en': 'Tell us about the past 2 weeks of your life',
         },
         'two': {
-            'th': '',
+            'th': 'หากท่านหมดความสนใจในสิ่งที่เคยชอบ เบื่ออาหาร นอนไม่หลับ หรือมีความคิดที่จะทำร้ายตัวเอง โปรดเล่ามาด้านล่าง',
             'en': 'Do you have any of these problems: loss of excitement in hobbies you used to enjoy, loss of appetite, difficulties sleeping, exhaustion, self-harming thoughts or behaviour? Please tell us about it.',
-        }
+        },
+        'next': {
+            'th': 'ต่อไป',
+            'en': 'Next',
+        },
+        'submit': {
+            'th': 'ส่ง',
+            'en': 'Submit',
+        },
     },
     'history': {
         'today': {

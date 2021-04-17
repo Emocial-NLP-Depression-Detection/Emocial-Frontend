@@ -36,7 +36,9 @@ class Questionnaire extends React.Component {
                                         {translation.questionnaire.one[this.lang]}
                                     </label><br />
                                     <textarea className="compose-textarea will-animate" id="question-1" name="question-1" autoFocus={true} /><br />
-                                    <Link to="#2" className="question-next compose-submit will-animate">Next</Link>
+                                    <Link to="#2" className="question-next compose-submit will-animate">
+                                        {translation.questionnaire.next[this.lang]}
+                                    </Link>
                                 </div>
                             </div>
                             <div className="question" id="2">
@@ -46,7 +48,9 @@ class Questionnaire extends React.Component {
                                         {translation.questionnaire.two[this.lang]}
                                     </label><br />
                                     <textarea className="compose-textarea will-animate" id="question-2" name="question-2" /><br />
-                                    <button className="compose-submit will-animate" type="submit">Submit</button>
+                                    <button className="compose-submit will-animate" type="submit">
+                                        {translation.questionnaire.submit[this.lang]}
+                                    </button>
                                 </div>
                             </div>
                         </div>
