@@ -157,6 +157,16 @@ var translation = {
             'en': 'Submit',
         },
     },
+    'questionnaire': {
+        'one': {
+            'th': '',
+            'en': 'Tell us about the past 2 weeks of your life',
+        },
+        'two': {
+            'th': '',
+            'en': 'Do you have any of these problems: loss of excitement in hobbies you used to enjoy, loss of appetite, difficulties sleeping, exhaustion, self-harming thoughts or behaviour? Please tell us about it.',
+        }
+    },
     'history': {
         'today': {
             'th': 'วันนี้',

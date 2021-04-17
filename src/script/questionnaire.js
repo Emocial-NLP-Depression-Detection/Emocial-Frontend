@@ -32,7 +32,9 @@ class Questionnaire extends React.Component {
                             <div className="question">
                                 <p className="question-number">1</p>
                                 <div className="question-content">
-                                    <label className="question-label" htmlFor="composed-tweet">Question</label><br />
+                                    <label className="question-label" htmlFor="composed-tweet">
+                                        {translation.questionnaire.one[this.lang]}
+                                    </label><br />
                                     <textarea className="compose-textarea will-animate" id="question-1" name="question-1" autoFocus={true} /><br />
                                     <Link to="#2" className="question-next compose-submit will-animate">Next</Link>
                                 </div>
@@ -40,8 +42,10 @@ class Questionnaire extends React.Component {
                             <div className="question" id="2">
                                 <p className="question-number">2</p>
                                 <div className="question-content">
-                                    <label className="question-label" htmlFor="composed-tweet">Question</label><br />
-                                    <textarea className="compose-textarea will-animate" id="question-1" name="question-1" /><br />
+                                    <label className="question-label" htmlFor="composed-tweet">
+                                        {translation.questionnaire.two[this.lang]}
+                                    </label><br />
+                                    <textarea className="compose-textarea will-animate" id="question-2" name="question-2" /><br />
                                     <button className="compose-submit will-animate" type="submit">Submit</button>
                                 </div>
                             </div>
