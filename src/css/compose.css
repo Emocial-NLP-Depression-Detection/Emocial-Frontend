@@ -1,0 +1,32 @@
+.compose-root {
+    height: 100vh;
+    background-color: #e5faff;
+}
+
+.compose-container {
+    display: flex;
+    justify-content: center;
+}
+
+.compose-form {
+    margin: 10vh;
+    width: 80%;
+}
+
+.compose-form label {
+    font-size: 4vh;
+}
+
+.compose-form textarea {
+    margin: 2vh 0px 2vh;
+    padding: 2vh;
+    width: calc(100% - 4vh);
+    font-size: 4vh;
+}
+
+.compose-form button {
+    padding: 2vh;
+    width: 150px;
+    font-size: 4vh;
+    float: right;
+}
