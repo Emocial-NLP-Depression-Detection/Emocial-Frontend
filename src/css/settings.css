@@ -51,6 +51,7 @@
 }
 
 .account-name {
+    font-family: 'Segoe UI', 'Open Sans', 'Sarabun';
     font-size: 4vh;
     width: 60vh;
     padding: 2vh 2vh 2vh 5vh;
@@ -61,7 +62,6 @@
 }
 
 .account-name:focus {
-    font-family: 'Segoe UI', 'Open Sans', 'Sarabun';
     border-radius: 0px;
     background-color: #ffffff;
 }
