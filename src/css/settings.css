@@ -65,6 +65,29 @@
     background-color: #ffffff;
 }
 
+.account-save {
+    font-size: 4vh;
+    width: 150px;
+    padding: 2vh;
+    margin: 1vh;
+    border-radius: 1.5vh;
+    border: none;
+    color: #ffffff;
+    background-color: #00b64e;
+    cursor: pointer;
+}
+
+.account-save:hover {
+    background-color: #24e075;
+    transform: translateX(10px);
+}
+
+.account-save:active {
+    background-color: #00b64e;
+    box-shadow: inset 0px 5px 15px #000000;
+    transition: none;
+}
+
 .choose-type-button {
     display: inline-grid;
     grid-template-rows: 4fr 1fr;

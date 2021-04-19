@@ -58,16 +58,17 @@ class AccountManagement extends React.Component {
 
     render() {
         return (
-            <div className="account-container">
+            <form className="account-container">
                 <img className="account-avatar" src={avatar} alt="User avatar" />
                 <div className="account-details">
                     <p>Username</p>
-                    <input className="account-name will-animate" type="text"
+                    <input className="account-name will-animate" type="text" name="username" autocomplete="off"
                         value={this.state.name} onChange={e => this.onTodoChange(e.target.value)} />
                     <p>I'm a…</p>
                     <ChooseType />
+                    <button class="account-save will-animate" type="submit">Save</button>
                 </div>
-            </div>
+            </form>
         )
     }
 }
