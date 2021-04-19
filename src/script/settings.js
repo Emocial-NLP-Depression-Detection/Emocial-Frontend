@@ -14,6 +14,7 @@ import { checkLanguage, translation } from './translation.js';
 
 // Pictures import
 import avatar from '../photos/placeholder_avatar.png'
+import doctor from '../photos/type_doctor.png'
 
 class ChooseType extends React.Component {
     constructor(props) {
@@ -24,12 +25,18 @@ class ChooseType extends React.Component {
     render() {
         return (
             <div>
-                <button>
-                    Doctor
-            </button>
-                <button>
-                    Patient
-            </button>
+                <button className="choose-type-button will-animate">
+                    <div className="choose-type-img-container">
+                        <img className="choose-type-img" src={doctor} alt="Doctor" />
+                    </div>
+                    <span className="choose-type-text">Doctor</span>
+                </button>
+                <button className="choose-type-button will-animate">
+                    <div className="choose-type-img-container">
+                        <img className="choose-type-img" src={doctor} alt="Doctor" />
+                    </div>
+                    <span className="choose-type-text">Patient</span>
+                </button>
             </div>
 
         );
@@ -55,8 +62,8 @@ class AccountManagement extends React.Component {
                 <img className="account-avatar" src={avatar} alt="User avatar" />
                 <div className="account-details">
                     <p>Username</p>
-                    <input type="text" value={this.state.name}
-                        onChange={e => this.onTodoChange(e.target.value)} />
+                    <input className="account-name will-animate" type="text"
+                        value={this.state.name} onChange={e => this.onTodoChange(e.target.value)} />
                     <p>I'm a…</p>
                     <ChooseType />
                 </div>

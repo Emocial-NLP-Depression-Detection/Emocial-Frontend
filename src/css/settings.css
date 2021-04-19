@@ -31,6 +31,7 @@
 
 .settings-content {
     padding: 8vh;
+    font-size: 4vh;
 }
 
 /* Account management */
@@ -47,4 +48,66 @@
 
 .account-details {
     padding-left: 5vh;
+}
+
+.account-name {
+    font-size: 4vh;
+    width: 60vh;
+    padding: 2vh 2vh 2vh 5vh;
+    margin: 1vh;
+    border-radius: 1.5vh;
+    border: none;
+    background-color: #d9d9d9;
+}
+
+.account-name:focus {
+    border-radius: 0px;
+    background-color: #ffffff;
+}
+
+.choose-type-button {
+    display: inline-grid;
+    grid-template-rows: 4fr 1fr;
+    width: 30vh;
+    height: 30vh;
+    margin: 15px 1vh;
+    padding: 1vh;
+    border-radius: 1.5vh;
+    border: none;
+    background-color: #5ce1e6;
+    cursor: pointer;
+}
+
+.choose-type-button:hover {
+    background-color: #64f8fd;
+    transform: translateY(-10px)
+}
+
+.choose-type-button:active {
+    background-color: #5ce1e6;
+    box-shadow: inset 0px 5px 15px #000000;
+    transition: none;
+}
+
+.choose-type-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.choose-type-img {
+    height: calc(30vh * 0.7);
+}
+
+.choose-type-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vh;
+    width: 28vh;
+    height: 100%;
+    border-radius: 1.5vh;
+    background-color: #ffffff;
 }
