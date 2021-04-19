@@ -61,6 +61,7 @@
 }
 
 .account-name:focus {
+    font-family: 'Segoe UI', 'Open Sans', 'Sarabun';
     border-radius: 0px;
     background-color: #ffffff;
 }

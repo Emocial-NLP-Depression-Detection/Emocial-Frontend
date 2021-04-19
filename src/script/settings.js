@@ -15,6 +15,7 @@ import { checkLanguage, translation } from './translation.js';
 // Pictures import
 import avatar from '../photos/placeholder_avatar.png'
 import doctor from '../photos/type_doctor.png'
+import patient from '../photos/type_patient.png'
 
 class ChooseType extends React.Component {
     constructor(props) {
@@ -33,7 +34,7 @@ class ChooseType extends React.Component {
                 </button>
                 <button className="choose-type-button will-animate">
                     <div className="choose-type-img-container">
-                        <img className="choose-type-img" src={doctor} alt="Doctor" />
+                        <img className="choose-type-img" src={patient} alt="Nondescript male person" />
                     </div>
                     <span className="choose-type-text">Patient</span>
                 </button>
@@ -92,7 +93,7 @@ class Settings extends React.Component {
                         <button className="settings-menu-button will-animate">Watchlist</button>
                     </div>
                     <div class="settings-content">
-                        <AccountManagement name="Gotcha F. U." type="doctor" />
+                        <AccountManagement name="Hugh Jass" type="doctor" />
                     </div>
                 </div>
             </div>
