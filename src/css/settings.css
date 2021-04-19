@@ -9,6 +9,38 @@
 
 .settings-menu {
     height: 87vh;
-    color: #ffffff;
     background-color: #5271ff;
+}
+
+.settings-menu-button {
+    display: block;
+    font-size: 3.5vh;
+    text-align: center;
+    padding: 10%;
+    width: 100%;
+    border: none;
+    color: #ffffff;
+    background-color: #00000000;
+    cursor: pointer;
+}
+
+.settings-menu-button:hover {
+    color: #b3f0ff;
+    transform: translateX(10px);
+}
+
+.settings-content {
+    padding: 8vh;
+}
+
+/* Account management */
+.account-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.account-avatar {
+    width: 100%;
+    border-radius: 100%;
+    background-color: #ffffff;
 }
