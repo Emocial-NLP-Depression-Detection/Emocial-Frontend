@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 
 // Style sheet import
 import '../css/global.css'
-import '../css/history.css';
+import '../css/settings.css';
 
 // Menu bar import
 import { Menu } from './menu.js'
@@ -20,12 +20,17 @@ class Settings extends React.Component {
 
     render() {
         return (
-            <div>
+            <div class="settings-root">
                 <div class="slide-in-onload">
                     <Menu page="/settings" />
                 </div>
-                <div class="fade-in-onload">
-                    Lorem ipsum your mum will one day die
+                <div class="settings-grid fade-in-onload">
+                    <div class="settings-menu">
+                        waehh
+                    </div>
+                    <div class="settings-content">
+                        nhiaoooh
+                    </div>
                 </div>
             </div>
         );

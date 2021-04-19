@@ -1,0 +1,14 @@
+.settings-root {
+    background-color: #e5faff;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: 2fr 12fr;
+}
+
+.settings-menu {
+    height: 87vh;
+    color: #ffffff;
+    background-color: #5271ff;
+}
