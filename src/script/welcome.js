@@ -54,7 +54,7 @@ class LanguageSelector extends React.Component {
     renderButton(text, image, cookie_value) {
         return (
             <button className="language-button will-animate" onClick={() => this.setLanguageCookie(cookie_value)}>
-                <img src={image} alt="Flag emoji" />{text}
+                <img src={image} alt="" />{text}
             </button>
         )
     }

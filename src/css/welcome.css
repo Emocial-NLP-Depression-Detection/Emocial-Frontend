@@ -22,10 +22,6 @@
     transform: translateY(-5px);
 }
 
-.a11y-any-key {
-    transform: translateY(-100vh)
-}
-
 /* Second highest level: Language Select Page */
 .language-text {
     color: #ffffff;
@@ -44,7 +40,16 @@
     cursor: pointer;
 }
 
+.language-button img {
+    width: 7.5vh;
+    margin-right: 20px;
+}
+
 @media only screen and (orientation: landscape) {
+    .a11y-any-key {
+        transform: translateY(-100vh)
+    }
+    
     .language-button:hover {
         background-color: #1c156b;
         box-shadow: offset 0px 5px 15px #000000;
@@ -55,10 +60,11 @@
         background-color: #04002e;
         box-shadow: inset 0px 5px 15px #000000;
         transition: none;
-    }
+    }  
 }
 
-.language-button img {
-    width: 7.5vh;
-    margin-right: 20px;
+@media only screen and (orientation: portrait) {
+    .a11y-any-key {
+        display: none;
+    }
 }
