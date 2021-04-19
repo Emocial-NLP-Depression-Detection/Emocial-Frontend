@@ -248,8 +248,18 @@ var translation = {
                 'en': 'Username',
             },
             'type': {
-                'th': 'ประเภทผู้ใช้',
-                'en': 'I\'m a…',
+                'title': {
+                    'th': 'ประเภทผู้ใช้',
+                    'en': 'I\'m a…',
+                },
+                'doctor': {
+                    'th': 'แพทย์',
+                    'en': 'Doctor',
+                },
+                'patient': {
+                    'th': 'ผู้รับการรักษา',
+                    'en': 'Patient',
+                },
             },
             'save': {
                 'th': 'บันทึก',

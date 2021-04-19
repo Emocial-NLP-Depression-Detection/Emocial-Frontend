@@ -29,13 +29,13 @@ class ChooseType extends React.Component {
                     <div className="choose-type-img-container">
                         <img className="choose-type-img" src={doctor} alt="Doctor" />
                     </div>
-                    <span className="choose-type-text">Doctor</span>
+                    <span className="choose-type-text">{translation.settings.account.type.doctor[this.lang]}</span>
                 </button>
                 <button className="choose-type-button will-animate">
                     <div className="choose-type-img-container">
                         <img className="choose-type-img" src={patient} alt="Nondescript male person" />
                     </div>
-                    <span className="choose-type-text">Patient</span>
+                    <span className="choose-type-text">{translation.settings.account.type.patient[this.lang]}</span>
                 </button>
             </div>
 
@@ -64,7 +64,7 @@ class AccountManagement extends React.Component {
                     <p>{translation.settings.account.name[this.lang]}</p>
                     <input className="account-name will-animate" type="text" name="username" autocomplete="off"
                         value={this.state.name} onChange={e => this.onTodoChange(e.target.value)} />
-                    <p>{translation.settings.account.type[this.lang]}</p>
+                    <p>{translation.settings.account.type.title[this.lang]}</p>
                     <ChooseType />
                     <button class="account-save will-animate" type="submit">{translation.settings.account.save[this.lang]}</button>
                 </div>
