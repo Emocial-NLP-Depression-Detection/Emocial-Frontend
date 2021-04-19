@@ -15,6 +15,27 @@ import { checkLanguage, translation } from './translation.js';
 // Pictures import
 import avatar from '../photos/placeholder_avatar.png'
 
+class ChooseType extends React.Component {
+    constructor(props) {
+        super(props);
+        this.lang = checkLanguage()
+    }
+
+    render() {
+        return (
+            <div>
+                <button>
+                    Doctor
+            </button>
+                <button>
+                    Patient
+            </button>
+            </div>
+
+        );
+    }
+}
+
 class AccountManagement extends React.Component {
     constructor(props) {
         super(props);
@@ -32,10 +53,12 @@ class AccountManagement extends React.Component {
         return (
             <div className="account-container">
                 <img className="account-avatar" src={avatar} alt="User avatar" />
-                <div>
+                <div className="account-details">
                     <p>Username</p>
                     <input type="text" value={this.state.name}
                         onChange={e => this.onTodoChange(e.target.value)} />
+                    <p>I'm a…</p>
+                    <ChooseType />
                 </div>
             </div>
         )
@@ -61,7 +84,7 @@ class Settings extends React.Component {
                         <button className="settings-menu-button will-animate">Watchlist</button>
                     </div>
                     <div class="settings-content">
-                        <AccountManagement name="Gotcha F. U." />
+                        <AccountManagement name="Gotcha F. U." type="doctor" />
                     </div>
                 </div>
             </div>
