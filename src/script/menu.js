@@ -1,6 +1,6 @@
 // ReactJS import
 import React from 'react';
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
 
 // Stylesheet import
@@ -18,8 +18,7 @@ class Menu extends React.Component {
 
     async handleClick(link_to) {
         console.log("User requests redirect to", link_to)
-        const menu = this.menu_ref.current;
-        menu.classList.add('slide-out');
+        this.menu_ref.current.classList.add('slide-out');
         document.getElementById("root").classList.add("disappear");
         console.log("Redirecting to", link_to);
         await new Promise(r => setTimeout(r, 500));
@@ -49,25 +48,35 @@ class Menu extends React.Component {
         }
     }
 
+    renderMenuSpan() {
+        // Placeholder condition (issue #9 )
+        if (true) {
+            return (
+                <span className="menu-buttons-container">
+                    {this.renderButton('home', '/home')}
+                    {this.renderButton('test', '/select')}
+                    <Link to="/home#about" tabIndex="-1">
+                        <button className="menu-button will-animate">
+                            {translation.menu.about[this.lang]}
+                        </button>
+                    </Link>
+                    {this.renderButton('history', '/history')}
+                    {this.renderButton('settings', '/settings')}
+                    <button className={"menu-button will-animate"} onClick={() => this.changeLanguageOpposite()}>
+                        {translation.menu.change_lang[this.lang]}
+                    </button>
+                </span>
+            );
+        }
+    }
+
     render() {
         if (this.state.redirect) {
             return <Redirect to={this.state.redirect} />
         }
         return (
             <div ref={this.menu_ref} className="menu will-animate">
-                <span className="menu-buttons-container">
-                    {this.renderButton('home', '/home')}
-                    {this.renderButton('test', '/select')}
-                    <Link to="/home#about">
-                        <button className="menu-button will-animate">
-                            {translation.menu.about[this.lang]}
-                        </button>
-                    </Link>
-                    {this.renderButton('history', '/history')}
-                    <button className={"menu-button will-animate"} onClick={() => this.changeLanguageOpposite()}>
-                        {translation.menu.change_lang[this.lang]}
-                    </button>
-                </span>
+                {this.renderMenuSpan()}
             </div>
         );
     }

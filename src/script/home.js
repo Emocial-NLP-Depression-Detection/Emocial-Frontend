@@ -57,12 +57,12 @@ class Home extends React.Component {
                                 {translation.home.welcome.desc[this.lang]}
                             </div>
                             <div>
-                                <button className="welcome-button will-animate" onClick={() => this.handleClick()}>
+                                <button className="welcome-button will-animate" onClick={() => this.handleClick()} tabIndex="1">
                                     {translation.home.welcome.button[this.lang]}
                                 </button>
                             </div>
                             <div className="link-float will-animate">
-                                <a className="link-float-text will-animate" href="/home#about">
+                                <a className="link-float-text will-animate" href="/home#about" tabIndex="2">
                                     <div>
                                         {translation.home.welcome.link[this.lang]}
                                         <div width="37.5px" height="75px">

@@ -35,9 +35,11 @@ class History extends React.Component {
     renderRow(time, handle, result) {
         return (
             <div className="history-row will-animate" onClick={() => this.handleClick(handle)}>
-                <p>{time}</p>
-                <p className="text-blue">@{handle}</p>
-                <p className={"text-" + result}>{translation.history.overall[this.lang]}{translation.history[result][this.lang]}</p>
+                <div className="history-row-content">
+                    <p>{time}</p>
+                    <p className="text-blue">@{handle}</p>
+                    <p className={"text-" + result}>{translation.history.overall[this.lang]}{translation.history[result][this.lang]}</p>
+                </div>
             </div>
         );
     }

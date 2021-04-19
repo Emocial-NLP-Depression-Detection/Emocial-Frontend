@@ -1,14 +1,17 @@
 // ReactJS import
-import React from "react";
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // All pages import
-import { WelcomeCover } from './script/welcome.js'
-import { Home } from './script/home.js'
-import { Select } from './script/select.js'
+import { WelcomeCover } from './script/welcome.js';
+import { Home } from './script/home.js';
+import { Select } from './script/select.js';
+import { Compose } from './script/compose.js';
+import { Questionnaire } from './script/questionnaire.js';
 import { History } from './script/history.js';
 import { HandleDetails } from './script/history_details.js';
+import { Settings } from './script/settings.js';
 import { NotFound } from './script/not_found.js';
 
 // Switchboard
@@ -18,8 +21,11 @@ function App() {
             <Route exact path="/" component={WelcomeCover} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/select" component={Select} />
+            <Route exact path="/test/compose" component={Compose} />
+            <Route exact path="/test/questionnaire" component={Questionnaire} />
             <Route exact path="/history" component={History} />
             <Route path="/history/" component={HandleDetails} />
+            <Route exact path="/settings" component={Settings} />
             <Route path="/" component={NotFound} />
         </Switch>
     );

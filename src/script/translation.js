@@ -45,6 +45,10 @@ var translation = {
             'th': 'ประวัติ',
             'en': 'History',
         },
+        'settings': {
+            'th': 'การตั้งค่า',
+            'en': 'Settings',
+        },
         'change_lang': {
             'th': 'เปลี่ยนภาษา',
             'en': 'Language',
@@ -104,35 +108,75 @@ var translation = {
             'th': 'เลือกวิธีการวิเคราะห์',
             'en': 'Select a detection method',
         },
+        'recommend': {
+            'th': 'หมอของท่านแนะนำ: ',
+            'en': 'Your doctor recommends: ',
+        },
+        'handle': {
+            'th': '@แฮนเดิล',
+            'en': '@handle',
+        },
         'upload': {
             'title': {
-                'th': 'ลอเรมอิปซับดอลอร์ซิตอเมต',
+                'th': 'อัพโหลดจากบัญชี',
                 'en': 'Upload your tweets',
             },
             'desc': {
-                'th': 'ลอเรมอิปซับดอลอร์ซิตอเมต',
+                'th': 'ระบบของเราจะอ่านทวีตในบัญชีทวิตเตอร์ที่พิมพ์เข้ามาด้านล่าง และวิเคราะห์โอกาสที่ท่านอาจจะมีโรคซึมเศร้า',
                 'en': 'After you enter your Twitter® handle, our algorithm will analyze your Tweets® for risk of depression.',
             },
         },
         'compose': {
             'title': {
-                'th': 'ลอเรมอิปซับดอลอร์ซิตอเมต',
+                'th': 'เขียนความรู้สึก',
                 'en': 'Compose a tweet',
             },
             'desc': {
-                'th': 'ลอเรมอิปซับดอลอร์ซิตอเมต',
+                'th': 'หากท่านเลือกใช้วิธีนี้ เราจะให้ที่ที่ท่านสามารถเขียนทุกสิ่งที่ท่านกำลังคิดอยู่ แล้วระบบจะวิเคราะห์โอกาสที่ท่านอาจจะมีโรคซึมเศร้าจากข้อความนั้น',
                 'en': 'Write down whatever is on your mind, then our algorithm will analyze your text for risk of depression.',
             },
         },
-        'questionare': {
+        'questionnaire': {
             'title': {
-                'th': 'ลอเรมอิปซับดอลอร์ซิตอเมต',
+                'th': 'ทำแบบสอบถาม',
                 'en': 'Do a questionare',
             },
             'desc': {
-                'th': 'ลอเรมอิปซับดอลอร์ซิตอเมต',
+                'th': 'ตอบคำถามปลายเปิด 2 คำถาม เพื่อให้เราเข้าใจความรู้สึกท่านได้ดีมากขึ้น',
                 'en': 'Answer our questionare of open-ended questions.',
             },
+        },
+        'start': {
+            'th': 'ใช้วิธีนี้',
+            'en': 'Start',
+        }
+    },
+    'compose': {
+        'label': {
+            'th': 'เล่ามาได้เลยด้านล่าง',
+            'en': 'Tell us your story',
+        },
+        'submit': {
+            'th': 'ส่ง',
+            'en': 'Submit',
+        },
+    },
+    'questionnaire': {
+        'one': {
+            'th': 'โปรดเล่า 2 สัปดาห์ที่ผ่านมา',
+            'en': 'Tell us about the past 2 weeks of your life',
+        },
+        'two': {
+            'th': 'หากท่านหมดความสนใจในสิ่งที่เคยชอบ เบื่ออาหาร นอนไม่หลับ หรือมีความคิดที่จะทำร้ายตัวเอง โปรดเล่ามาด้านล่าง',
+            'en': 'Do you have any of these problems: loss of excitement in hobbies you used to enjoy, loss of appetite, difficulties sleeping, exhaustion, self-harming thoughts or behaviour? Please tell us about it.',
+        },
+        'next': {
+            'th': 'ต่อไป',
+            'en': 'Next',
+        },
+        'submit': {
+            'th': 'ส่ง',
+            'en': 'Submit',
         },
     },
     'history': {

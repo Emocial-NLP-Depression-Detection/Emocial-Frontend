@@ -1,0 +1,58 @@
+.compose-root {
+    height: 100vh;
+    background-color: #e5faff;
+}
+
+.compose-container {
+    display: flex;
+    justify-content: center;
+}
+
+.compose-form {
+    margin: 10vh;
+    width: 80%;
+}
+
+.compose-form label {
+    font-size: 4vh;
+}
+
+.compose-textarea {
+    resize: none;
+    margin: 2vh 0px 2vh;
+    padding: 2vh;
+    width: calc(100% - 4vh);
+    height: 35vh;
+    font-size: 4vh;
+    border-radius: 2.5vh;
+    border: none;
+    background-color: #ebebeb;
+}
+
+.compose-textarea:focus {
+    border-radius: 0px;
+    background-color: #ffffff;
+}
+
+.compose-submit {
+    padding: 2vh;
+    width: 150px;
+    font-size: 4vh;
+    border-radius: 2.5vh;
+    float: right;
+    border: none;
+    color: #ffffff;
+    background-color: #00b64e;
+    cursor: pointer;
+}
+
+.compose-submit:hover {
+    background-color: #24e075;
+    transform: translateX(10px);
+}
+
+.compose-submit:active {
+    background-color: #00b64e;
+    box-shadow: inset 0px 5px 15px #000000;
+    transition: none;
+}

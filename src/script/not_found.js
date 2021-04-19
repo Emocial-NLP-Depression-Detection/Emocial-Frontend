@@ -26,10 +26,10 @@ class NotFound extends React.Component {
                 </div>
                 <div className="content fade-in-onload centre-in-screen">
                     <center>
-                        <div class="not-found-title">
+                        <div className="not-found-title">
                             404 {translation.not_found.title[this.lang]}
                         </div>
-                        <div class="not-found-desc">
+                        <div className="not-found-desc">
                             {translation.not_found.desc[this.lang]}
                             <div className="back-link will-animate">
                                 <Link to="/" className="back-link will-animate">
