@@ -45,6 +45,10 @@ var translation = {
             'th': 'ประวัติ',
             'en': 'History',
         },
+        'settings': {
+            'th': 'การตั้งค่า',
+            'en': 'Settings',
+        },
         'change_lang': {
             'th': 'เปลี่ยนภาษา',
             'en': 'Language',

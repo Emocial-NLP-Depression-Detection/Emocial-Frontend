@@ -49,7 +49,7 @@ class Menu extends React.Component {
     }
 
     renderMenuSpan() {
-        // Placeholder condition (issue#9)
+        // Placeholder condition (issue #9 )
         if (true) {
             return (
                 <span className="menu-buttons-container">
@@ -61,6 +61,7 @@ class Menu extends React.Component {
                         </button>
                     </Link>
                     {this.renderButton('history', '/history')}
+                    {this.renderButton('settings', '/settings')}
                     <button className={"menu-button will-animate"} onClick={() => this.changeLanguageOpposite()}>
                         {translation.menu.change_lang[this.lang]}
                     </button>
