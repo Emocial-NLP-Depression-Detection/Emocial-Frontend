@@ -227,6 +227,36 @@ var translation = {
             'en': ' from previous',
         }
     },
+    'settings': {
+        'menu': {
+            'account': {
+                'th': 'บัญชี',
+                'en': 'Account',
+            },
+            'language': {
+                'th': 'ภาษา',
+                'en': 'Language',
+            },
+            'watchlist': {
+                'th': 'รายผู้ป่วย',
+                'en': 'Watchlist',
+            }
+        },
+        'account': {
+            'name': {
+                'th': 'ชื่อบัญชี',
+                'en': 'Username',
+            },
+            'type': {
+                'th': 'ประเภทผู้ใช้',
+                'en': 'I\'m a…',
+            },
+            'save': {
+                'th': 'บันทึก',
+                'en': 'Save',
+            }
+        }
+    },
     'not_found': {
         'title': {
             'th': 'ไม่มีหน้าที่เรียกหา',

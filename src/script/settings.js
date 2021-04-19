@@ -1,6 +1,5 @@
 // ReactJS import
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 
 // Style sheet import
 import '../css/global.css'
@@ -62,12 +61,12 @@ class AccountManagement extends React.Component {
             <form className="account-container">
                 <img className="account-avatar" src={avatar} alt="User avatar" />
                 <div className="account-details">
-                    <p>Username</p>
+                    <p>{translation.settings.account.name[this.lang]}</p>
                     <input className="account-name will-animate" type="text" name="username" autocomplete="off"
                         value={this.state.name} onChange={e => this.onTodoChange(e.target.value)} />
-                    <p>I'm a…</p>
+                    <p>{translation.settings.account.type[this.lang]}</p>
                     <ChooseType />
-                    <button class="account-save will-animate" type="submit">Save</button>
+                    <button class="account-save will-animate" type="submit">{translation.settings.account.save[this.lang]}</button>
                 </div>
             </form>
         )
@@ -88,9 +87,9 @@ class Settings extends React.Component {
                 </div>
                 <div class="settings-grid fade-in-onload">
                     <div class="settings-menu left-slide-in-onload">
-                        <button className="settings-menu-button will-animate">Account</button>
-                        <button className="settings-menu-button will-animate">Language</button>
-                        <button className="settings-menu-button will-animate">Watchlist</button>
+                        <button className="settings-menu-button will-animate">{translation.settings.menu.account[this.lang]}</button>
+                        <button className="settings-menu-button will-animate">{translation.settings.menu.language[this.lang]}</button>
+                        <button className="settings-menu-button will-animate">{translation.settings.menu.watchlist[this.lang]}</button>
                     </div>
                     <div class="settings-content">
                         <AccountManagement name="Hugh Jass" type="doctor" />
