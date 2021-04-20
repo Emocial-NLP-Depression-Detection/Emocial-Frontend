@@ -109,9 +109,8 @@ class SelectLanguage extends React.Component {
                                 <path d="M56.9282 97C53.849 102.333 46.151 102.333 43.0718 97L7.56476 35.5C4.48556 30.1667 8.33456 23.5 14.493 23.5L85.507 23.5C91.6654 23.5 95.5144 30.1667 92.4352 35.5L56.9282 97Z" fill="#000000" fillOpacity="0.5" />
                             </svg>
                         </span>
-
                     </button>
-                    <div ref={this.dropdown_ref} className="dropdown-content dropdown-content-hidden will-animate">English</div>
+                    <button ref={this.dropdown_ref} className="dropdown-content dropdown-content-hidden will-animate">English</button>
                 </div>
             </div>
         );

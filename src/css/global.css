@@ -68,10 +68,6 @@ html {
     display: none;
 }
 
-.show_flex {
-    display: flex;
-}
-
 .link-float:hover {
     transform: translateY(5px);
 }
