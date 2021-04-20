@@ -34,6 +34,10 @@
     margin: 25px;
 }
 
+.history-row-content a {
+    text-decoration: none;
+}
+
 .text-positive {
     color: #00b64e;
 }
