@@ -110,7 +110,7 @@ class SelectLanguage extends React.Component {
             document.cookie = "lang=th; expires=Fri, 31 Dec 9999 23:59:59 UTC";
             console.log("User changes language to Thai");
         }
-        await new Promise(r => setTimeout(r, 1000));
+        await new Promise(r => setTimeout(r, 500));
         document.getElementById("root").classList.add("disappear");
         console.log("Redirecting to /home");
         await new Promise(r => setTimeout(r, 500));
