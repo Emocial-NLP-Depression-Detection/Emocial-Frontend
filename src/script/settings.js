@@ -16,6 +16,8 @@ import { checkLanguage, translation } from './translation.js';
 import avatar from '../photos/placeholder_avatar.png'
 import doctor from '../photos/type_doctor.png'
 import patient from '../photos/type_patient.png'
+import minus from '../photos/wl_minus.png'
+import plus from '../photos/wl_plus.png'
 
 class ChooseType extends React.Component {
     constructor(props) {
@@ -124,7 +126,7 @@ class SelectLanguage extends React.Component {
         }
         return (
             <div>
-                <p className="language-header">{translation.index.language_select.title[this.lang]}:</p>
+                <p className="language-header">{translation.index.language_select.title[this.lang]}</p>
                 <div className="dropdown">
                     <button ref={this.drop_button_ref} className="drop-button will-animate" onClick={() => this.showDropdown()}>
                         <span className="drop-button-text">
@@ -147,10 +149,34 @@ class SelectLanguage extends React.Component {
 }
 
 class Watchlist extends React.Component {
+
+    renderRow(handle) {
+        return (
+            <div className="watchlist-row">
+                <div className="watchlist-row-content">
+                    <p>@{handle}</p>
+                    <img className="watchlist-icon will-animate" src={minus} alt="Remove" />
+                </div>
+            </div >
+        );
+    }
+
+    renderTable(array) {
+        const table = [];
+        for (let person of array) {
+            table.push(this.renderRow(person));
+        }
+        return table;
+    }
+
     render() {
         return (
             <div>
-                Watchlist wow
+                <p className="watchlist-header">Watchlist</p>
+                {this.renderTable(['ABC', 'BBC', 'CPR'])}
+                <div className="watchlist-add will-animate">
+                    <img className="add-icon" src={plus} alt="" />Add patients
+                </div>
             </div>
         );
     }

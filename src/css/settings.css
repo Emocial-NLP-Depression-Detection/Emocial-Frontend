@@ -139,6 +139,7 @@
     background-color: #ffffff;
 }
 
+/* Language */
 .language-header {
     font-size: 6vh;
     margin-bottom: 3vh;
@@ -215,4 +216,53 @@
     height: 10vh;
     align-items: center;
     justify-content: right;
+}
+
+/* Watchlist */
+.watchlist-header {
+    font-size: 6vh;
+    margin-bottom: 3vh;
+}
+
+.watchlist-row {
+    display: flex;
+    align-items: center;
+    height: 12vh;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+
+.watchlist-row-content {
+    display: grid;
+    grid-template-columns: 30fr 1fr;
+    width: 100%;
+    margin: 25px;
+    font-size: 4vh;
+    color: #5271ff;
+}
+
+.watchlist-icon {
+    height: 6vh;
+    cursor: pointer;
+}
+
+.watchlist-icon:hover {
+    transform: translateY(-1vh);
+    opacity: 50%;
+}
+
+.watchlist-add {
+    display: flex;
+    align-items: center;
+    margin-top: 5vh;
+    cursor: pointer;
+}
+
+.watchlist-add:hover {
+    transform: translateY(-1vh);
+}
+
+.add-icon {
+    height: 6vh;
+    margin-right: 1vw;
 }
