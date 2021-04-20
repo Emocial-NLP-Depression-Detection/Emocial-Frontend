@@ -112,10 +112,10 @@ class SelectLanguage extends React.Component {
         }
         await new Promise(r => setTimeout(r, 1000));
         document.getElementById("root").classList.add("disappear");
-        console.log("Redirecting to /");
+        console.log("Redirecting to /home");
         await new Promise(r => setTimeout(r, 500));
         document.getElementById("root").classList.remove("disappear");
-        this.setState({ redirect: "/" });
+        this.setState({ redirect: "/home" });
     }
 
     render() {
