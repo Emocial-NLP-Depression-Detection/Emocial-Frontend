@@ -26,12 +26,6 @@ class Menu extends React.Component {
         this.setState({ redirect: link_to });
     }
 
-    async changeLanguageOpposite() {
-        console.log("User requests language change");
-        document.cookie = "lang=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-        this.handleClick("/");
-    }
-
     renderButton(text, link_to) {
         if (link_to === this.page) {
             return (
@@ -62,9 +56,6 @@ class Menu extends React.Component {
                     </Link>
                     {this.renderButton('history', '/history')}
                     {this.renderButton('settings', '/settings')}
-                    <button className={"menu-button will-animate"} onClick={() => this.changeLanguageOpposite()}>
-                        {translation.menu.change_lang[this.lang]}
-                    </button>
                 </span>
             );
         }
