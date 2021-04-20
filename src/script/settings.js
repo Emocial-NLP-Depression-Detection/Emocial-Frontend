@@ -62,37 +62,70 @@ class AccountManagement extends React.Component {
                 <img className="account-avatar" src={avatar} alt="User avatar" />
                 <div className="account-details">
                     <p>{translation.settings.account.name[this.lang]}</p>
-                    <input className="account-name will-animate" type="text" name="username" autocomplete="off"
+                    <input className="account-name will-animate" type="text" name="username" autoComplete="off"
                         value={this.state.name} onChange={e => this.onTodoChange(e.target.value)} />
                     <p>{translation.settings.account.type.title[this.lang]}</p>
                     <ChooseType />
-                    <button class="account-save will-animate" type="submit">{translation.settings.account.save[this.lang]}</button>
+                    <button className="account-save will-animate" type="submit">{translation.settings.account.save[this.lang]}</button>
                 </div>
             </form>
         )
     }
 }
 
+class SelectLanguage extends React.Component {
+    render() {
+        return (
+            <div>
+                Language wow
+            </div>
+        );
+    }
+}
+
+class Watchlist extends React.Component {
+    render() {
+        return (
+            <div>
+                Watchlist wow
+            </div>
+        );
+    }
+}
+
 class Settings extends React.Component {
     constructor(props) {
         super(props);
-        this.lang = checkLanguage()
+        this.lang = checkLanguage();
+        this.state = { "page": "account" };
+    }
+
+    renderPage(type) {
+        if (type === "account") { return <AccountManagement name="Doe John" /> }
+        else if (type === "language") { return <SelectLanguage /> }
+        else if (type === "watchlist") { return <Watchlist /> }
     }
 
     render() {
         return (
-            <div class="settings-root">
-                <div class="slide-in-onload">
+            <div className="settings-root">
+                <div className="slide-in-onload">
                     <Menu page="/settings" />
                 </div>
-                <div class="settings-grid fade-in-onload">
-                    <div class="settings-menu left-slide-in-onload">
-                        <button className="settings-menu-button will-animate">{translation.settings.menu.account[this.lang]}</button>
-                        <button className="settings-menu-button will-animate">{translation.settings.menu.language[this.lang]}</button>
-                        <button className="settings-menu-button will-animate">{translation.settings.menu.watchlist[this.lang]}</button>
+                <div className="settings-grid fade-in-onload">
+                    <div className="settings-menu left-slide-in-onload">
+                        <button className="settings-menu-button will-animate" onClick={() => this.setState({ page: "account" })}>
+                            {translation.settings.menu.account[this.lang]}
+                        </button>
+                        <button className="settings-menu-button will-animate" onClick={() => this.setState({ page: "language" })}>
+                            {translation.settings.menu.language[this.lang]}
+                        </button>
+                        <button className="settings-menu-button will-animate" onClick={() => this.setState({ page: "watchlist" })}>
+                            {translation.settings.menu.watchlist[this.lang]}
+                        </button>
                     </div>
-                    <div class="settings-content">
-                        <AccountManagement name="Hugh Jass" type="doctor" />
+                    <div className="settings-content">
+                        {this.renderPage(this.state.page)}
                     </div>
                 </div>
             </div>

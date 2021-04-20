@@ -17,7 +17,9 @@
     font-size: 3.5vh;
     text-align: center;
     padding: 10%;
-    width: 100%;
+    margin: 10%;
+    width: 80%;
+    border-radius: 1.5vh;
     border: none;
     color: #ffffff;
     background-color: #00000000;
@@ -26,6 +28,7 @@
 
 .settings-menu-button:hover {
     color: #b3f0ff;
+    background-color: #7d95ff;
     transform: translateX(10px);
 }
 
