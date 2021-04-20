@@ -1,6 +1,6 @@
 // ReactJS import
 import React from 'react';
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 // Style sheet import
 import '../css/global.css'

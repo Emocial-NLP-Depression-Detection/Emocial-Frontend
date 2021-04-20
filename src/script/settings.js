@@ -1,5 +1,6 @@
 // ReactJS import
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 // Style sheet import
 import '../css/global.css'
@@ -51,9 +52,7 @@ class AccountManagement extends React.Component {
     }
 
     onTodoChange(value) {
-        this.setState({
-            name: value
-        });
+        this.setState({ name: value });
     }
 
     render() {
@@ -79,7 +78,7 @@ class SelectLanguage extends React.Component {
         this.lang = checkLanguage();
         this.drop_button_ref = React.createRef();
         this.dropdown_ref = React.createRef();
-        this.state = { "show": false };
+        this.state = { "show": false, "redirect": null };
     }
 
     showDropdown() {
@@ -95,14 +94,41 @@ class SelectLanguage extends React.Component {
         }
     }
 
+    renderLanguageOpposite() {
+        if (this.lang === "th") {
+            return (translation.index.language_select.choice.en);
+        } else if (this.lang === "en") {
+            return (translation.index.language_select.choice.th);
+        }
+    }
+
+    async changeLanguageOpposite() {
+        if (this.lang === "th") {
+            document.cookie = "lang=en; expires=Fri, 31 Dec 9999 23:59:59 UTC";
+            console.log("User changes language to English");
+        } else if (this.lang === "en") {
+            document.cookie = "lang=th; expires=Fri, 31 Dec 9999 23:59:59 UTC";
+            console.log("User changes language to Thai");
+        }
+        await new Promise(r => setTimeout(r, 1000));
+        document.getElementById("root").classList.add("disappear");
+        console.log("Redirecting to /");
+        await new Promise(r => setTimeout(r, 500));
+        document.getElementById("root").classList.remove("disappear");
+        this.setState({ redirect: "/" });
+    }
+
     render() {
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        }
         return (
             <div>
-                <p className="language-header">Language:</p>
+                <p className="language-header">{translation.index.language_select.title[this.lang]}:</p>
                 <div className="dropdown">
                     <button ref={this.drop_button_ref} className="drop-button will-animate" onClick={() => this.showDropdown()}>
                         <span className="drop-button-text">
-                            ภาษาไทย
+                            {translation.index.language_select.choice[this.lang]}
                         </span>
                         <span className="dropdown-triangle">
                             <svg viewBox="0 0 100 100" height="3.5vh" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,7 +136,10 @@ class SelectLanguage extends React.Component {
                             </svg>
                         </span>
                     </button>
-                    <button ref={this.dropdown_ref} className="dropdown-content dropdown-content-hidden will-animate">English</button>
+                    <button ref={this.dropdown_ref} className="dropdown-content dropdown-content-hidden will-animate"
+                        onClick={() => this.changeLanguageOpposite()}>
+                        {this.renderLanguageOpposite()}
+                    </button>
                 </div>
             </div>
         );
