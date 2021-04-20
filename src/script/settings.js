@@ -74,10 +74,45 @@ class AccountManagement extends React.Component {
 }
 
 class SelectLanguage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.lang = checkLanguage();
+        this.drop_button_ref = React.createRef();
+        this.dropdown_ref = React.createRef();
+        this.state = { "show": false };
+    }
+
+    showDropdown() {
+        if (this.state.show === true) {
+            this.setState({ "show": false });
+            this.drop_button_ref.current.classList.remove("drop-button-focused");
+            this.dropdown_ref.current.classList.add("dropdown-content-hidden");
+        }
+        else if (this.state.show === false) {
+            this.setState({ "show": true });
+            this.drop_button_ref.current.classList.add("drop-button-focused");
+            this.dropdown_ref.current.classList.remove("dropdown-content-hidden");
+        }
+    }
+
     render() {
         return (
             <div>
-                Language wow
+                <p className="language-header">Language:</p>
+                <div className="dropdown">
+                    <button ref={this.drop_button_ref} className="drop-button will-animate" onClick={() => this.showDropdown()}>
+                        <span className="drop-button-text">
+                            ภาษาไทย
+                        </span>
+                        <span className="dropdown-triangle">
+                            <svg viewBox="0 0 100 100" height="3.5vh" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M56.9282 97C53.849 102.333 46.151 102.333 43.0718 97L7.56476 35.5C4.48556 30.1667 8.33456 23.5 14.493 23.5L85.507 23.5C91.6654 23.5 95.5144 30.1667 92.4352 35.5L56.9282 97Z" fill="#000000" fillOpacity="0.5" />
+                            </svg>
+                        </span>
+
+                    </button>
+                    <div ref={this.dropdown_ref} className="dropdown-content dropdown-content-hidden will-animate">English</div>
+                </div>
             </div>
         );
     }
