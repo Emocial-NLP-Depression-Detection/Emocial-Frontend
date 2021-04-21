@@ -68,6 +68,7 @@ class AccountManagement extends React.Component {
                     <p>{translation.settings.account.type.title[this.lang]}</p>
                     <ChooseType />
                     <button className="account-save will-animate" type="submit">{translation.settings.account.save[this.lang]}</button>
+                    ออกจากระบบ
                 </div>
             </form>
         )
@@ -106,10 +107,10 @@ class SelectLanguage extends React.Component {
 
     async changeLanguageOpposite() {
         if (this.lang === "th") {
-            document.cookie = "lang=en; expires=Fri, 31 Dec 9999 23:59:59 UTC";
+            document.cookie = "lang=en; path=/; expires=Fri, 31 Dec 9999 23:59:59 UTC";
             console.log("User changes language to English");
         } else if (this.lang === "en") {
-            document.cookie = "lang=th; expires=Fri, 31 Dec 9999 23:59:59 UTC";
+            document.cookie = "lang=th; path=/; expires=Fri, 31 Dec 9999 23:59:59 UTC";
             console.log("User changes language to Thai");
         }
         await new Promise(r => setTimeout(r, 500));
@@ -149,7 +150,6 @@ class SelectLanguage extends React.Component {
 }
 
 class Watchlist extends React.Component {
-
     renderRow(handle) {
         return (
             <div className="watchlist-row">
