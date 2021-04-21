@@ -1,8 +1,12 @@
 .select-root {
+    background-color: #e5faff;
+    min-height: 100vh;
+}
+
+.select-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e5faff;
     min-height: 87vh;
 }
 

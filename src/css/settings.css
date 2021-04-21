@@ -140,6 +140,7 @@
 }
 
 .log-out {
+    text-align: start;
     font-size: 4vh;
     width: 150px;
     padding: 2vh;
@@ -152,6 +153,7 @@
 }
 
 .log-out:hover {
+    color: #ff6a6a;
     transform: translateX(10px);
 }
 

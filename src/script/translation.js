@@ -264,7 +264,11 @@ var translation = {
             'save': {
                 'th': 'บันทึก',
                 'en': 'Save',
-            }
+            },
+            'log_out': {
+                'th': 'ออกจากระบบ',
+                'en': 'Log out',
+            },
         }
     },
     'not_found': {

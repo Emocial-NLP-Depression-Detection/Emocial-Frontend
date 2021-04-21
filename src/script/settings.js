@@ -69,7 +69,7 @@ class AccountManagement extends React.Component {
                         <p>{translation.settings.account.type.title[this.lang]}</p>
                         <ChooseType />
                         <button className="account-save will-animate" type="submit">{translation.settings.account.save[this.lang]}</button>
-                        <button className="log-out will-animate">ออกจากระบบ</button>
+                        <button className="log-out will-animate">{translation.settings.account.log_out[this.lang]}</button>
                     </form>
                 </div>
             </div>
@@ -164,7 +164,7 @@ class Watchlist extends React.Component {
     }
 
     renderTable(array) {
-        const table = [];
+        let table = [];
         for (let person of array) {
             table.push(this.renderRow(person));
         }

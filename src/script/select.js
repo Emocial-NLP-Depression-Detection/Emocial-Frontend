@@ -75,11 +75,11 @@ class Select extends React.Component {
             return <Redirect to={this.state.redirect} />
         }
         return (
-            <div>
+            <div className="select-root">
                 <div ref={this.menu_ref} className="slide-in-onload will-animate">
                     <Menu page="/select" />
                 </div>
-                <div className="select-root fade-in-onload">
+                <div className="select-content fade-in-onload">
                     <div>
                         <center>
                             <p className="select-title">
