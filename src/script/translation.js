@@ -269,7 +269,21 @@ var translation = {
                 'th': 'ออกจากระบบ',
                 'en': 'Log out',
             },
-        }
+        },
+        'watchlist': {
+            'title': {
+                'th': 'รายชื่อผู้ป่วย',
+                'en': 'Watchlist',
+            },
+            'remove_patients': {
+                'th': 'นำผู้ป่วยออกจากรายชื่อ',
+                'en': 'Remove patients',
+            },
+            'add_patients': {
+                'th': 'เพิ่มผู้ป่วย',
+                'en': 'Add patients',
+            },
+        },
     },
     'not_found': {
         'title': {

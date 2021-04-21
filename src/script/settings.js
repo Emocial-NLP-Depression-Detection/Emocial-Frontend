@@ -152,12 +152,18 @@ class SelectLanguage extends React.Component {
 }
 
 class Watchlist extends React.Component {
+    constructor(props) {
+        super(props);
+        this.lang = checkLanguage();
+    }
+
     renderRow(handle) {
         return (
             <div className="watchlist-row">
                 <div className="watchlist-row-content">
                     <p>@{handle}</p>
-                    <img className="watchlist-icon will-animate" src={minus} alt="Remove" />
+                    <img className="watchlist-icon will-animate" src={minus} alt={translation.settings.watchlist.remove_patients[this.lang]}
+                        title={translation.settings.watchlist.remove_patients[this.lang]} />
                 </div>
             </div >
         );
@@ -174,10 +180,10 @@ class Watchlist extends React.Component {
     render() {
         return (
             <div>
-                <p className="watchlist-header">Watchlist</p>
+                <p className="watchlist-header">{translation.settings.watchlist.title[this.lang]}</p>
                 {this.renderTable(['ABC', 'BBC', 'CPR'])}
                 <div className="watchlist-add will-animate">
-                    <img className="add-icon" src={plus} alt="" />Add patients
+                    <img className="add-icon" src={plus} alt="" />{translation.settings.watchlist.add_patients[this.lang]}
                 </div>
             </div>
         );

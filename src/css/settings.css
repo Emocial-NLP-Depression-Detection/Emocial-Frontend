@@ -32,6 +32,10 @@
     transform: translateX(10px);
 }
 
+.settings-menu-button:focus {
+    background-color: #7d95ff;
+}
+
 .settings-content {
     padding: 8vh;
     font-size: 4vh;
