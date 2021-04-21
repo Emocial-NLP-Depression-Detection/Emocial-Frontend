@@ -139,6 +139,22 @@
     background-color: #ffffff;
 }
 
+.log-out {
+    font-size: 4vh;
+    width: 150px;
+    padding: 2vh;
+    margin: 1vh;
+    border: none;
+    outline: #000000;
+    color: #ff0000;
+    background-color: #00000000;
+    cursor: pointer;
+}
+
+.log-out:hover {
+    transform: translateX(10px);
+}
+
 /* Language */
 .language-header {
     font-size: 6vh;

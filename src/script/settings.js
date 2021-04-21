@@ -59,18 +59,20 @@ class AccountManagement extends React.Component {
 
     render() {
         return (
-            <form className="account-container">
+            <div className="account-container">
                 <img className="account-avatar" src={avatar} alt="User avatar" />
                 <div className="account-details">
                     <p>{translation.settings.account.name[this.lang]}</p>
-                    <input className="account-name will-animate" type="text" name="username" autoComplete="off"
-                        value={this.state.name} onChange={e => this.onTodoChange(e.target.value)} />
-                    <p>{translation.settings.account.type.title[this.lang]}</p>
-                    <ChooseType />
-                    <button className="account-save will-animate" type="submit">{translation.settings.account.save[this.lang]}</button>
-                    ออกจากระบบ
+                    <form action="/settings/account">
+                        <input className="account-name will-animate" type="text" name="username" autoComplete="off"
+                            value={this.state.name} onChange={e => this.onTodoChange(e.target.value)} />
+                        <p>{translation.settings.account.type.title[this.lang]}</p>
+                        <ChooseType />
+                        <button className="account-save will-animate" type="submit">{translation.settings.account.save[this.lang]}</button>
+                        <button className="log-out will-animate">ออกจากระบบ</button>
+                    </form>
                 </div>
-            </form>
+            </div>
         )
     }
 }
