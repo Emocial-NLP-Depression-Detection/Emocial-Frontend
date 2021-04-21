@@ -155,17 +155,34 @@ class Watchlist extends React.Component {
     constructor(props) {
         super(props);
         this.lang = checkLanguage();
+        this.state = { "people": ['ABC', 'BBC', 'CPR'] };
+    }
+
+    addRow(handle) {
+        this.state.people.push(handle)
+        this.setState({
+            "people": this.state.people
+        })
+    }
+
+
+    removeRow(handle) {
+        this.setState({
+            "people": this.state.people.filter(function (item) {
+                return item !== handle;
+            })
+        })
     }
 
     renderRow(handle) {
         return (
-            <div className="watchlist-row">
+            <div className="watchlist-row" style={this.state.row_display} >
                 <div className="watchlist-row-content">
                     <p>@{handle}</p>
                     <img className="watchlist-icon will-animate" src={minus} alt={translation.settings.watchlist.remove_patients[this.lang]}
-                        title={translation.settings.watchlist.remove_patients[this.lang]} />
+                        title={translation.settings.watchlist.remove_patients[this.lang]} onClick={() => this.removeRow(handle)} />
                 </div>
-            </div >
+            </div>
         );
     }
 
@@ -181,8 +198,8 @@ class Watchlist extends React.Component {
         return (
             <div>
                 <p className="watchlist-header">{translation.settings.watchlist.title[this.lang]}</p>
-                {this.renderTable(['ABC', 'BBC', 'CPR'])}
-                <div className="watchlist-add will-animate">
+                {this.renderTable(this.state.people)}
+                <div className="watchlist-add will-animate" onClick={() => this.addRow("BBC")}>
                     <img className="add-icon" src={plus} alt="" />{translation.settings.watchlist.add_patients[this.lang]}
                 </div>
             </div>

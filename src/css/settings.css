@@ -147,6 +147,7 @@
     text-align: start;
     font-size: 4vh;
     width: 150px;
+    min-width: fit-content;
     padding: 2vh;
     margin: 1vh;
     border: none;
