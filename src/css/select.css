@@ -121,6 +121,22 @@
         width: 100vw;
         height: 900px;
     }
+
+    .choice-header {
+        font-size: 60px;
+    }
+
+    .choice-desc {
+        font-size: 50px;
+    }
+
+    .bottom-button {
+        min-width: 40vw;
+        width: fit-content;
+        padding: 1vh;
+        font-size: 60px;
+        border-radius: 50px;
+    }
 }
 
 @media only screen and (orientation: landscape) {
