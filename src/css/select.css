@@ -9,12 +9,7 @@
 }
 
 .select-title {
-    font-size: 7vh;
     font-weight: bold;
-}
-
-.select-subtitle {
-    font-size: 3vh;
 }
 
 .choice-section {
@@ -28,7 +23,6 @@
 }
 
 .choice-header {
-    font-size: 3.5vh;
     text-align: center;
     font-weight: bold;
     padding: 2vh;
@@ -59,16 +53,6 @@
     color: #ffffff;
     background-color: #00cd58;
     cursor: pointer;
-}
-
-.bottom-button:hover {
-    background-color: #24e075;
-}
-
-.bottom-button:active {
-    background-color: #00b64e;
-    box-shadow: inset 0px 5px 15px #000000;
-    transition: none;
 }
 
 .choice-bottom input {
@@ -147,7 +131,6 @@
 
     .bottom-button {
         min-width: 40vw;
-        width: fit-content;
         padding: 20px;
         font-size: 60px;
         border-radius: 50px;
@@ -158,6 +141,14 @@
     .select-content {
         align-items: center;
         min-height: 87vh;
+    }
+
+    .select-title {
+        font-size: 7vh;
+    }
+
+    .select-subtitle {
+        font-size: 3vh;
     }
 
     .choice-section {
@@ -176,7 +167,18 @@
     }
 
     .choice-header {
+        font-size: 3.5vh;
         border-radius: 2.5vh 2.5vh 0px 0px;
+    }
+
+    .bottom-button:hover {
+        background-color: #24e075;
+    }
+
+    .bottom-button:active {
+        background-color: #00b64e;
+        box-shadow: inset 0px 5px 15px #000000;
+        transition: none;
     }
 }
 
