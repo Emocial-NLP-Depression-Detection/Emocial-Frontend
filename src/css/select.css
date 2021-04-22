@@ -6,8 +6,6 @@
 .select-content {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 87vh;
 }
 
 .select-title {
@@ -21,15 +19,10 @@
 
 .choice-section {
     display: flex;
-    justify-content: center;
     margin-top: 40px;
 }
 
 .choice-background {
-    width: 40vh;
-    height: 45vh;
-    margin: 10px;
-    border-radius: 2.5vh;
     background-color: #ffffff;
     cursor: pointer;
 }
@@ -38,7 +31,6 @@
     font-size: 3.5vh;
     text-align: center;
     font-weight: bold;
-    border-radius: 2.5vh 2.5vh 0px 0px;
     padding: 2vh;
     color: #ffffff;
     background-color: #5271ff;
@@ -106,18 +98,54 @@
     cursor: pointer;
 }
 
-.search-button:hover {
-    background-color: #7d95ff;
-}
 
-.search-button:active {
-    background-color: #5271ff;
-    box-shadow: inset 0px 5px 15px #000000;
-    transition: none;
+@media only screen and (orientation: portrait) {
+    .select-title {
+        font-size: 100px;
+        margin-top: 50px;
+    }
+
+    .select-subtitle {
+        font-size: 60px;
+        margin-bottom: 100px;
+    }
+
+    .choice-section {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        width: 100vw;
+        height: 1920px;
+    }
+
+    .choice-background {
+        width: 100vw;
+        height: 900px;
+    }
 }
 
 @media only screen and (orientation: landscape) {
+    .select-content {
+        align-items: center;
+        min-height: 87vh;
+    }
+
+    .choice-section {
+        justify-content: center;
+    }
+
+    .choice-background {
+        width: 40vh;
+        height: 45vh;
+        margin: 10px;
+        border-radius: 2.5vh;
+    }
+
     .choice-background:hover {
         transform: translateY(-15px);
     }
+
+    .choice-header {
+        border-radius: 2.5vh 2.5vh 0px 0px;
+    }
 }
+
