@@ -130,10 +130,25 @@
         font-size: 50px;
     }
 
+    .choice-bottom input {
+        border-radius: 50px;
+        font-size: 60px;
+        padding: 20px;
+    }
+
+    .search-button {
+        padding: 20px;
+        border-radius: 0px 50px 50px 0px;
+    }
+
+    .search-button img {
+        height: 70px;
+    }
+
     .bottom-button {
         min-width: 40vw;
         width: fit-content;
-        padding: 1vh;
+        padding: 20px;
         font-size: 60px;
         border-radius: 50px;
     }
