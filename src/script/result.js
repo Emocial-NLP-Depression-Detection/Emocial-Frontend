@@ -36,10 +36,27 @@ class LoadingScreen extends React.Component {
     }
 }
 
+class ResultPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.lang = this.props.lang;
+        this.result = this.props.result;
+    }
+
+    render() {
+        return (
+            <div>
+                {this.result}
+            </div>
+        );
+    }
+}
+
 class Result extends React.Component {
     constructor(props) {
         super(props);
         this.lang = checkLanguage();
+        this.result = 'positive';
     }
 
     render() {
@@ -50,6 +67,7 @@ class Result extends React.Component {
                 </div>
                 <div className="fade-in-onload">
                     <LoadingScreen lang={this.lang} />
+                    {/* <ResultPage lang={this.lang} result={this.result} /> */}
                 </div>
             </div>
         );
