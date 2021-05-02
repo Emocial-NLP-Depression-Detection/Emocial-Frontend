@@ -9,6 +9,7 @@ import { Home } from './script/home.js';
 import { Select } from './script/select.js';
 import { Compose } from './script/compose.js';
 import { Questionnaire } from './script/questionnaire.js';
+import { Result } from './script/result.js';
 import { History } from './script/history.js';
 import { HandleDetails } from './script/history_details.js';
 import { Settings } from './script/settings.js';
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/test/select" component={Select} />
             <Route exact path="/test/compose" component={Compose} />
             <Route exact path="/test/questionnaire" component={Questionnaire} />
+            <Route exact path="/test/result" component={Result} />
             <Route path="/test/" component={Select} />
             <Route exact path="/history" component={History} />
             <Route path="/history/" component={HandleDetails} />
