@@ -183,6 +183,18 @@ var translation = {
         'loading': {
             'th': 'ระบบของเรากำลังวิเคราะห์ข้อความของท่าน กรุณารอสักครู่',
             'en': 'Our server is analyzing you answer. Hold tight!'
+        },
+        'positive': {
+            'th': 'การวิเคราะห์เสร็จสิ้น หมอของท่านจะติดต่อท่านภายหลัง',
+            'en': 'Your answer has been processed. Your doctor will get back to you shortly.'
+        },
+        'negative': {
+            'th': 'ผลลัพธ์การวิเคราะห์ข้อความของท่านโดยรวมปกติ',
+            'en': 'We have not detected any serious issues.'
+        },
+        'back': {
+            'th': 'กลับสู่หน้าหลัก',
+            'en': 'Back to Home',
         }
     },
     'history': {
