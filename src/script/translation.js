@@ -179,6 +179,12 @@ var translation = {
             'en': 'Submit',
         },
     },
+    'result': {
+        'loading': {
+            'th': 'ระบบของเรากำลังวิเคราะห์ข้อความของท่าน กรุณารอสักครู่',
+            'en': 'Our server is analyzing you answer. Hold tight!'
+        }
+    },
     'history': {
         'today': {
             'th': 'วันนี้',

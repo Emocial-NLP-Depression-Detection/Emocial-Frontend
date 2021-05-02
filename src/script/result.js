@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 
 // Style sheet import
 import '../css/global.css'
-import '../css/home.css';
+import '../css/result.css';
 
 // Menu bar import
 import { Menu } from './menu.js'
@@ -20,8 +20,8 @@ class LoadingScreen extends React.Component {
 
     render() {
         return (
-            <div>
-                loading in {this.lang}
+            <div className="loading-container">
+                {translation.result.loading[this.lang]}
             </div>
         );
     }
