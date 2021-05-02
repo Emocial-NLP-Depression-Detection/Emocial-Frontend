@@ -28,14 +28,14 @@ class Home extends React.Component {
     }
 
     async handleClick() {
-        console.log("User requests redirect to /select")
+        console.log("User requests redirect to /test/select")
         const menu = this.menu_ref.current;
         content = this.content_ref.current;
         menu.classList.add('slide-out')
         content.classList.add('disappear')
-        console.log("Redirecting to /select")
+        console.log("Redirecting to /test/select")
         await new Promise(r => setTimeout(r, 600));
-        this.setState({ redirect: "/select" });
+        this.setState({ redirect: "/test/select" });
     }
 
     render() {
