@@ -21,7 +21,16 @@ class LoadingScreen extends React.Component {
     render() {
         return (
             <div className="loading-container">
-                {translation.result.loading[this.lang]}
+                <div className="loading-grid">
+                    <div className="spinner-container">
+                        <div className="spinner">
+                            <svg className="circular" viewBox="25 25 50 50">
+                                <circle className="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+                            </svg>
+                        </div>
+                    </div>
+                    <p className="loading-text">{translation.result.loading[this.lang]}</p>
+                </div>
             </div>
         );
     }

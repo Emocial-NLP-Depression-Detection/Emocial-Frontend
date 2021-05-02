@@ -182,7 +182,7 @@ var translation = {
     'result': {
         'loading': {
             'th': 'ระบบของเรากำลังวิเคราะห์ข้อความของท่าน กรุณารอสักครู่',
-            'en': 'Our server is analyzing you answer. Hold tight!'
+            'en': 'Our server is analyzing you answer. Sit tight!'
         },
         'positive': {
             'th': 'การวิเคราะห์เสร็จสิ้น หมอของท่านจะติดต่อท่านภายหลัง',
