@@ -64,7 +64,7 @@ class ResultPage extends React.Component {
         return (
             <div className="result-container">
                 <div>
-                    <h1 className="result-header">Result</h1>
+                    <h1 className="result-header">{translation.result.title[this.lang]}</h1>
                     <div className="result-grid">
                         <img className="result-avatar" src={avatar} />
                         <div>
