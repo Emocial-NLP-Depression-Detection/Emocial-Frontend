@@ -66,7 +66,7 @@ class ResultPage extends React.Component {
                 <div>
                     <h1 className="result-header">{translation.result.title[this.lang]}</h1>
                     <div className="result-grid">
-                        <img className="result-avatar" src={avatar} />
+                        <img className="result-avatar" src={avatar} alt={translation.img_alt.avatar[this.lang]} />
                         <div>
                             <p className="result-handle">@{this.handle},</p>
                             <p className="result-text">{translation.result[this.result][this.lang]}</p>
@@ -93,7 +93,7 @@ class Result extends React.Component {
             await new Promise(r => setTimeout(r, 9000));
             this.content_ref.current.classList.add("disappear");
             await new Promise(r => setTimeout(r, 600));
-            this.setState({ result: 'positive' })
+            this.setState({ result: 'negative' })
             await new Promise(r => setTimeout(r, 600));
             this.content_ref.current.classList.remove("disappear");
         }

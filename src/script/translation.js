@@ -319,7 +319,7 @@ var translation = {
         'link': {
             'th': 'กลับสู่หน้าหลัก',
             'en': 'Back to Home',
-        }
+        },
     },
     'img_alt': {
         'depression': {
@@ -329,6 +329,10 @@ var translation = {
         'help': {
             'th': 'ผู้หญิงสองคนกำลังคุยกับขณะที่กำลังนั่งอยู่บนโซฟา',
             'en': 'Two women sat on couches talking to each other',
+        },
+        'avatar': {
+            'th': 'รูปผู้ใช้',
+            'en': 'User avatar',
         },
     },
 };
