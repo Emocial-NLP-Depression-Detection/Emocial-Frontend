@@ -61,10 +61,10 @@ class Select extends React.Component {
     }
 
     async handleClick(link_to) {
-        console.log("User requests redirect to /", link_to)
+        console.log("User requests redirect to /test/" + link_to)
         this.menu_ref.current.classList.add('slide-out');
         document.getElementById("root").classList.add("disappear");
-        console.log("Redirecting to /", link_to);
+        console.log("Redirecting to /test/" + link_to);
         await new Promise(r => setTimeout(r, 500));
         document.getElementById("root").classList.remove("disappear");
         this.setState({ redirect: "/test/" + link_to });
