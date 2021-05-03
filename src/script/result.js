@@ -45,9 +45,22 @@ class ResultPage extends React.Component {
         this.lang = this.props.lang;
         this.handle = this.props.handle;
         this.result = this.props.result;
+        this.state = { redirect: null }
+    }
+
+    async handleClick() {
+        console.log("User requests redirect to /")
+        document.getElementById("root").classList.add("disappear");
+        console.log("Redirecting to /");
+        await new Promise(r => setTimeout(r, 500));
+        document.getElementById("root").classList.remove("disappear");
+        this.setState({ redirect: "/" });
     }
 
     render() {
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        }
         return (
             <div className="result-container">
                 <div>
@@ -59,7 +72,7 @@ class ResultPage extends React.Component {
                             <p className="result-text">{translation.result[this.result][this.lang]}</p>
                         </div>
                     </div>
-                    <button className="result-button will-animate">{translation.result.back[this.lang]}</button>
+                    <button className="result-button will-animate" onClick={() => this.handleClick()}>{translation.result.back[this.lang]}</button>
                 </div>
             </div>
         );
@@ -84,7 +97,6 @@ class Result extends React.Component {
             await new Promise(r => setTimeout(r, 600));
             this.content_ref.current.classList.remove("disappear");
         }
-
     }
 
     getContent() {

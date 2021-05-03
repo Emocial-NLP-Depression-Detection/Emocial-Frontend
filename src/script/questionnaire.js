@@ -27,7 +27,7 @@ class Questionnaire extends React.Component {
                     <Menu />
                 </div>
                 <div className="fade-in-onload">
-                    <form action="analyze">
+                    <form action="result">
                         <div className="questionnaire">
                             <div className="question">
                                 <p className="question-number">1</p>

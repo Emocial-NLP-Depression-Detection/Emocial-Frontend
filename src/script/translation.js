@@ -184,6 +184,10 @@ var translation = {
             'th': 'ระบบของเรากำลังวิเคราะห์ข้อความของท่าน กรุณารอสักครู่',
             'en': 'Our server is analyzing you answer. Sit tight!'
         },
+        'title': {
+            'th': 'ผลลัพธ์',
+            'en': 'Result',
+        },
         'positive': {
             'th': 'ผลลัพธ์การวิเคราะห์ข้อความของท่านโดยรวมปกติ',
             'en': 'We have not detected any serious issues.'
