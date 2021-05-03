@@ -60,7 +60,7 @@ class AccountManagement extends React.Component {
     render() {
         return (
             <div className="account-container">
-                <img className="account-avatar" src={avatar} alt="User avatar" />
+                <img className="account-avatar" src={avatar} alt={translation.img_alt.avatar[this.lang]} />
                 <div className="account-details">
                     <p>{translation.settings.account.name[this.lang]}</p>
                     <form action="/settings/account">
