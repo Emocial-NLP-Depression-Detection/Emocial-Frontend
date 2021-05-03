@@ -62,7 +62,7 @@ class Home extends React.Component {
                                 </button>
                             </div>
                             <div className="link-float will-animate">
-                                <a className="link-float-text will-animate" href="/home#about" tabIndex="2">
+                                <a className="link-float-text will-animate" href="/home#about" tabIndex="2" style={{ outline: "none" }}>
                                     <div>
                                         {translation.home.welcome.link[this.lang]}
                                         <div width="37.5px" height="75px">

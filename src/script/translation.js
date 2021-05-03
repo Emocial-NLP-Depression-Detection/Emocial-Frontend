@@ -80,7 +80,7 @@ var translation = {
                 'en': 'What is depression?',
             },
             'desc': {
-                'th': ' โรคซึมเศร้าเป็นความเจ็บป่วยทางจิตที่พบบ่อยชนิดหนึ่ง ซึ่งส่งผลต่อความคิดและความรู้สึกของคุณ และอาจส่งผลกระทบต่อผทั้งทางร่างกายและจิตใจ อาการของโรคซึมเศร้าอาจแตกต่างกันขึ้นอยู่กับหลายปัจจัย โดยอาการที่พบบ่อย คือ ความเศร้าอย่างต่อเนื่องและการสูญเสียความสนใจในกิจกรรมที่ผู้ป่วยเคยเพลิดเพลิน อาการที่พบบ่อยอื่น ๆ ได้แก่ ความผิดปกติของการกิน การนอนหลับ ความโกรธ ความเหนื่อย ความรู้สึกไร้ค่า และการทำร้ายตัวเอง',
+                'th': ' โรคซึมเศร้าเป็นความเจ็บป่วยทางจิตที่พบบ่อยชนิดหนึ่ง ซึ่งส่งผลต่อความคิดและความรู้สึกของคุณ และอาจส่งผลกระทบต่อทั้งทางร่างกายและจิตใจ อาการของโรคซึมเศร้าอาจแตกต่างกันขึ้นอยู่กับหลายปัจจัย โดยอาการที่พบบ่อย คือ ความเศร้าอย่างต่อเนื่องและการสูญเสียความสนใจในกิจกรรมที่ผู้ป่วยเคยเพลิดเพลิน อาการที่พบบ่อยอื่นๆ ได้แก่ ความผิดปกติของการกิน การนอนหลับ ความโกรธ ความเหนื่อย ความรู้สึกไร้ค่า และการทำร้ายตัวเอง',
                 'en': 'Depression is a common mental illness that affects how you think and feel. Its primary symptoms include constant sadness, and can affect you both physically and mentally. Depression can be different depending on many factors. The common symptoms are constant sadness and loss of interest in activities that patients used to enjoy. Other common symptoms are eating disorders, irregular sleep, anger, and exhaustion; feeling worthless, and self-harm.',
             },
             'link': {
@@ -226,6 +226,64 @@ var translation = {
             'th': '',
             'en': ' from previous',
         }
+    },
+    'settings': {
+        'menu': {
+            'account': {
+                'th': 'บัญชี',
+                'en': 'Account',
+            },
+            'language': {
+                'th': 'ภาษา',
+                'en': 'Language',
+            },
+            'watchlist': {
+                'th': 'รายผู้ป่วย',
+                'en': 'Watchlist',
+            }
+        },
+        'account': {
+            'name': {
+                'th': 'ชื่อบัญชี',
+                'en': 'Username',
+            },
+            'type': {
+                'title': {
+                    'th': 'ประเภทผู้ใช้',
+                    'en': 'I\'m a…',
+                },
+                'doctor': {
+                    'th': 'แพทย์',
+                    'en': 'Doctor',
+                },
+                'patient': {
+                    'th': 'ผู้รับการรักษา',
+                    'en': 'Patient',
+                },
+            },
+            'save': {
+                'th': 'บันทึก',
+                'en': 'Save',
+            },
+            'log_out': {
+                'th': 'ออกจากระบบ',
+                'en': 'Log out',
+            },
+        },
+        'watchlist': {
+            'title': {
+                'th': 'รายชื่อผู้ป่วย',
+                'en': 'Watchlist',
+            },
+            'remove_patients': {
+                'th': 'นำผู้ป่วยออกจากรายชื่อ',
+                'en': 'Remove patients',
+            },
+            'add_patients': {
+                'th': 'เพิ่มผู้ป่วย',
+                'en': 'Add patients',
+            },
+        },
     },
     'not_found': {
         'title': {

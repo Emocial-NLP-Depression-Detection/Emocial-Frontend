@@ -20,9 +20,10 @@ function App() {
         <Switch>
             <Route exact path="/" component={WelcomeCover} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/select" component={Select} />
+            <Route exact path="/test/select" component={Select} />
             <Route exact path="/test/compose" component={Compose} />
             <Route exact path="/test/questionnaire" component={Questionnaire} />
+            <Route path="/test" component={Select} />
             <Route exact path="/history" component={History} />
             <Route path="/history/" component={HandleDetails} />
             <Route exact path="/settings" component={Settings} />

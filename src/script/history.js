@@ -1,6 +1,6 @@
 // ReactJS import
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 // Style sheet import
 import '../css/global.css'
@@ -37,7 +37,7 @@ class History extends React.Component {
             <div className="history-row will-animate" onClick={() => this.handleClick(handle)}>
                 <div className="history-row-content">
                     <p>{time}</p>
-                    <p className="text-blue">@{handle}</p>
+                    <Link to={"/history/" + handle} className="text-blue">@{handle}</Link>
                     <p className={"text-" + result}>{translation.history.overall[this.lang]}{translation.history[result][this.lang]}</p>
                 </div>
             </div>
