@@ -112,4 +112,10 @@
     border: none;
     border-radius: 1.5vh;
     background-color: #ffcc4d;
+    cursor: pointer;
+}
+
+.result-button:hover {
+    transform: translateY(-10px);
+    background-color: #ffe291;
 }

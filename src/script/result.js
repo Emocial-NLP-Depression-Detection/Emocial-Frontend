@@ -59,7 +59,7 @@ class ResultPage extends React.Component {
                             <p className="result-text">{translation.result[this.result][this.lang]}</p>
                         </div>
                     </div>
-                    <button className="result-button">{translation.result.back[this.lang]}</button>
+                    <button className="result-button will-animate">{translation.result.back[this.lang]}</button>
                 </div>
             </div>
         );
@@ -71,19 +71,21 @@ class Result extends React.Component {
         super(props);
         this.lang = checkLanguage();
         this.content_ref = React.createRef();
-        this.state = { result: 'negative' };
+        this.state = { result: null };
     }
 
     // placeholder function
-    // async changePage() {
-    //     console.log("bananas!");
-    //     await new Promise(r => setTimeout(r, 9000));
-    //     this.content_ref.current.classList.add("disappear");
-    //     await new Promise(r => setTimeout(r, 600));
-    //     this.setState({ result: 'positive' })
-    //     await new Promise(r => setTimeout(r, 600));
-    //     this.content_ref.current.classList.remove("disappear");
-    // }
+    async tempChangePage() {
+        if (this.state.result == null) {
+            await new Promise(r => setTimeout(r, 9000));
+            this.content_ref.current.classList.add("disappear");
+            await new Promise(r => setTimeout(r, 600));
+            this.setState({ result: 'positive' })
+            await new Promise(r => setTimeout(r, 600));
+            this.content_ref.current.classList.remove("disappear");
+        }
+
+    }
 
     getContent() {
         if (this.state.result == null) {
@@ -94,10 +96,10 @@ class Result extends React.Component {
     }
 
     render() {
-        // this.changePage();
+        this.tempChangePage();
         return (
             <div className="result-root">
-                <div className="slide-in-onload">
+                <div>
                     <Menu />
                 </div>
                 <div ref={this.content_ref} className="fade-in-onload will-animate">
