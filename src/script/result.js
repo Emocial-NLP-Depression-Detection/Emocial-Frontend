@@ -12,6 +12,9 @@ import { Menu } from './menu.js'
 // Translation keys import
 import { checkLanguage, translation } from './translation.js';
 
+// Pictures import
+import avatar from '../photos/placeholder_avatar.png'
+
 class LoadingScreen extends React.Component {
     constructor(props) {
         super(props);
@@ -40,13 +43,24 @@ class ResultPage extends React.Component {
     constructor(props) {
         super(props);
         this.lang = this.props.lang;
+        this.handle = this.props.handle;
         this.result = this.props.result;
     }
 
     render() {
         return (
-            <div>
-                {this.result}
+            <div className="result-container">
+                <div>
+                    <h1 className="result-header">Result</h1>
+                    <div className="result-grid">
+                        <img className="result-avatar" src={avatar} />
+                        <div>
+                            <p className="result-handle">@{this.handle},</p>
+                            <p className="result-text">{translation.result[this.result][this.lang]}</p>
+                        </div>
+                    </div>
+                    <button className="result-button">{translation.result.back[this.lang]}</button>
+                </div>
             </div>
         );
     }
@@ -57,32 +71,32 @@ class Result extends React.Component {
         super(props);
         this.lang = checkLanguage();
         this.content_ref = React.createRef();
-        this.state = { result: null };
+        this.state = { result: 'negative' };
     }
 
-    // plasceholder function
-    async changePage() {
-        console.log("bananas!");
-        await new Promise(r => setTimeout(r, 3000));
-        this.content_ref.current.classList.add("disappear");
-        await new Promise(r => setTimeout(r, 600));
-        this.setState({ result: 'positive' })
-        await new Promise(r => setTimeout(r, 600));
-        this.content_ref.current.classList.remove("disappear");
-    }
+    // placeholder function
+    // async changePage() {
+    //     console.log("bananas!");
+    //     await new Promise(r => setTimeout(r, 9000));
+    //     this.content_ref.current.classList.add("disappear");
+    //     await new Promise(r => setTimeout(r, 600));
+    //     this.setState({ result: 'positive' })
+    //     await new Promise(r => setTimeout(r, 600));
+    //     this.content_ref.current.classList.remove("disappear");
+    // }
 
     getContent() {
         if (this.state.result == null) {
             return (<LoadingScreen lang={this.lang} />);
         } else if (this.state.result === 'positive' || this.state.result === 'negative') {
-            return (<ResultPage lang={this.lang} result={this.state.result} />);
+            return (<ResultPage lang={this.lang} handle="ABC" result={this.state.result} />);
         }
     }
 
     render() {
-        this.changePage();
+        // this.changePage();
         return (
-            <div>
+            <div className="result-root">
                 <div className="slide-in-onload">
                     <Menu />
                 </div>

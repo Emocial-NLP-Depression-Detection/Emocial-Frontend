@@ -25,7 +25,6 @@
     justify-content: center;
     width: 100vw;
     height: 87vh;
-    background-color: #e5faff;
 }
 
 .loading-grid {
@@ -63,4 +62,54 @@
     align-items: center;
     height: 100%;
     font-size: 4vh;
+}
+
+.result-root {
+    background-color: #e5faff;
+}
+
+.result-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+    height: 77vh;
+}
+
+.result-header {
+    text-align: center;
+    font-size: 6vh;
+    margin-bottom: 10vh;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    width: 50vw;
+    min-width: 500px;
+}
+
+.result-avatar {
+    width: 80%;
+    border-radius: 100%;
+    background-color: #ffffff;
+}
+
+.result-handle {
+    font-size: 3vh;
+}
+
+.result-text {
+    font-size: 4vh;
+}
+
+.result-button {
+    font-size: 3vh;
+    width: 25vh;
+    min-width: 150px;
+    margin: 1.5vh;
+    padding: 1.5vh;
+    float: right;
+    border: none;
+    border-radius: 1.5vh;
+    background-color: #ffcc4d;
 }
