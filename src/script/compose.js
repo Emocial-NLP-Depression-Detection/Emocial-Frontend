@@ -25,12 +25,11 @@ class Compose extends React.Component {
                     <Menu />
                 </div>
                 <div className="fade-in-onload compose-container">
-                    <form className="compose-form" action="analyze">
+                    <form className="compose-form" action="result">
                         <label className="compose-label" htmlFor="composed-tweet">{translation.compose.label[this.lang]}</label><br />
                         <textarea className="compose-textarea will-animate" id="composed-tweet" name="composed-tweet" autoFocus={true} /><br />
                         <button className="compose-submit will-animate" type="submit">{translation.compose.submit[this.lang]}</button>
                     </form>
-
                 </div>
             </div>
 

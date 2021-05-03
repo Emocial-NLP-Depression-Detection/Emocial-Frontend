@@ -185,12 +185,12 @@ var translation = {
             'en': 'Our server is analyzing you answer. Sit tight!'
         },
         'positive': {
-            'th': 'การวิเคราะห์เสร็จสิ้น หมอของท่านจะติดต่อท่านภายหลัง',
-            'en': 'Your answer has been processed. Your doctor will get back to you shortly.'
-        },
-        'negative': {
             'th': 'ผลลัพธ์การวิเคราะห์ข้อความของท่านโดยรวมปกติ',
             'en': 'We have not detected any serious issues.'
+        },
+        'negative': {
+            'th': 'การวิเคราะห์เสร็จสิ้น หมอของท่านจะติดต่อท่านภายหลัง',
+            'en': 'Your answer has been processed. Your doctor will get back to you shortly.'
         },
         'back': {
             'th': 'กลับสู่หน้าหลัก',
