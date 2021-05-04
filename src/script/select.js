@@ -77,7 +77,7 @@ class Select extends React.Component {
         return (
             <div className="select-root">
                 <div ref={this.menu_ref} className="slide-in-onload will-animate">
-                    <Menu page="/select" />
+                    <Menu page="/test/select" />
                 </div>
                 <div className="select-content fade-in-onload">
                     <div>
