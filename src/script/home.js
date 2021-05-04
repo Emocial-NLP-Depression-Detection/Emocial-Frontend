@@ -14,7 +14,9 @@ import { checkLanguage, translation } from './translation.js';
 
 // Pictures
 import depression_pic from '../photos/depression.png'
+import depression_mobile_pic from '../photos/depression_mobile.png'
 import help_pic from '../photos/help.png'
+import help_mobile_pic from '../photos/help_mobile.png'
 
 var content;
 
@@ -89,6 +91,7 @@ class Home extends React.Component {
                         <div className="depression-img-container">
                             <img className="about-img" src={depression_pic} alt={translation.img_alt.depression[this.lang]} />
                         </div>
+                        <img className="mobile-img" src={depression_mobile_pic} alt={translation.img_alt.depression[this.lang]} />
                     </div>
                     <div id="next" className="help-section">
                         <div className="help-img-container">
@@ -101,7 +104,7 @@ class Home extends React.Component {
                                 ◀ {translation.home.help.link[this.lang]}
                             </a>
                         </div>
-
+                        <img className="mobile-img" src={help_mobile_pic} alt={translation.img_alt.depression[this.lang]} />
                     </div>
                 </div>
             </div >

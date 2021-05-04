@@ -135,6 +135,10 @@
       display: none;
     }
 
+    .mobile-img {
+        width: 100%;
+    }
+
     .depression-text, .help-text {
         padding: 70px;
     }
@@ -153,6 +157,12 @@
     }
 
     #triangles, .about-next {
+        display: none;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    .mobile-img {
         display: none;
     }
 }
