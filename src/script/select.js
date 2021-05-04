@@ -9,7 +9,7 @@ import '../css/select.css';
 // Menu bar import
 import { Menu } from './menu.js'
 
-// Translation keys import (temporarily disabled)
+// Translation keys import
 import { checkLanguage, translation } from './translation.js';
 
 import search_icon from '../photos/search_icon.png'
