@@ -32,7 +32,7 @@ class LoadingScreen extends React.Component {
                             </svg>
                         </div>
                     </div>
-                    <p className="loading-text">{translation.result.loading[this.lang]}</p>
+                    <div className="loading-text">{translation.result.loading[this.lang]}</div>
                 </div>
             </div>
         );
