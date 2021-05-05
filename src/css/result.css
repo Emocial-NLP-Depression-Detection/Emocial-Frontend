@@ -86,8 +86,6 @@
 }
 
 .result-grid {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
     width: 50vw;
     min-width: 500px;
 }
@@ -125,12 +123,32 @@
     }
 
     .loading-text {
-        font-size: 60px;
+        font-size: 50px;
         padding: 50px;
     }
 
     .result-container {
         height: calc(90vh - 130px);
+    }
+
+    .result-handle {
+        font-size: 40px;
+    }
+
+    .result-header {
+        font-size: 60px;
+    }
+    
+    .result-text {
+        font-size: 50px;
+    }
+    
+    .result-button {
+        font-size: 50px;
+    }
+
+    .result-avatar {
+        display: none;
     }
 }
 
@@ -141,6 +159,11 @@
 }
 
 @media only screen and (orientation: landscape) {
+    .result-grid {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+
     .result-button:hover {
         transform: translateY(-10px);
         background-color: #ffe291;
