@@ -7,15 +7,15 @@
 @keyframes dash {
     0% {
         stroke-dasharray: 1, 200;
-      stroke-dashoffset: 0;
+        stroke-dashoffset: 0;
     }
     50% {
-      stroke-dasharray: 89, 200;
-      stroke-dashoffset: -35px;
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
     }
     100% {
-      stroke-dasharray: 89, 200;
-      stroke-dashoffset: -124px;
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
     }
 }
 
@@ -109,9 +109,9 @@
 .result-button {
     font-size: 4vh;
     width: 15vw;
-    min-width: 180px;
+    min-width: fit-content;
     margin: 1.5vh;
-    padding: 1.5vh;
+    padding: 1.5vh 3vh 1.5vh 3vh;
     float: right;
     border: none;
     border-radius: 1.5vh;
@@ -119,20 +119,36 @@
     cursor: pointer;
 }
 
-.result-button:hover {
-    transform: translateY(-10px);
-    background-color: #ffe291;
-}
-
-.result-button:active {
-    background-color: #ffcc4d;
-    box-shadow: inset 0px 5px 15px #000000;
-    transition: none;
-}
-
 @media only screen and (orientation: portrait) {
+    .loading-container {
+        height: calc(100vh - 130px);
+    }
+
     .loading-text {
         font-size: 60px;
         padding: 50px;
+    }
+
+    .result-container {
+        height: calc(90vh - 130px);
+    }
+}
+
+@media only screen and (max-aspect-ratio: 4 / 3) {
+    .result-grid {
+        width: 70vw;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    .result-button:hover {
+        transform: translateY(-10px);
+        background-color: #ffe291;
+    }
+    
+    .result-button:active {
+        background-color: #ffcc4d;
+        box-shadow: inset 0px 5px 15px #000000;
+        transition: none;
     }
 }
