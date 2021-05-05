@@ -85,8 +85,8 @@ class LanguageSelector extends React.Component {
             <div ref={this.language_select_ref} className='welcome-cover will-animate centre-in-screen' style={{ zIndex: "0", backgroundColor: "#0c0644" }}>
                 <center>
                     <div className='language-text'>
-                        <div style={{ fontSize: "12vh" }}>{translation.index.language_select.title.en}</div>
-                        <div style={{ fontSize: "8vh" }}>{translation.index.language_select.title.th}</div>
+                        <div className="welcome-en">{translation.index.language_select.title.en}</div>
+                        <div className="welcome-th">{translation.index.language_select.title.th}</div>
                     </div>
                     <div>
                         {this.renderButton(translation.index.language_select.choice.th, th_flag, "th")}
