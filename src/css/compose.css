@@ -28,11 +28,6 @@
     cursor: pointer;
 }
 
-.compose-submit:hover {
-    background-color: #24e075;
-    transform: translateX(10px);
-}
-
 .compose-submit:active {
     background-color: #00b64e;
     box-shadow: inset 0px 5px 15px #000000;
@@ -81,6 +76,11 @@
         padding: 2vh;
         font-size: 4vh;
         border-radius: 2.5vh;
+    }
+
+    .compose-submit:hover {
+        background-color: #24e075;
+        transform: translateX(10px);
     }
 
     .compose-textarea {

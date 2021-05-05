@@ -26,11 +26,6 @@
     cursor: pointer;
 }
 
-.welcome-button:hover {
-    background-color: #24e075;
-    transform: translateY(-15px);
-}
-
 .welcome-button:active {
     background-color: #00b64e;
     box-shadow: inset 0px 5px 15px #000000;
@@ -162,6 +157,11 @@
 }
 
 @media only screen and (orientation: landscape) {
+    .welcome-button:hover {
+        background-color: #24e075;
+        transform: translateY(-15px);
+    }
+
     .mobile-img {
         display: none;
     }
