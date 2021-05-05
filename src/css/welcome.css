@@ -40,12 +40,10 @@
     border-radius: 20px;
     width: 20%;
     min-width: fit-content;
-    font-size: 8vh;
     cursor: pointer;
 }
 
 .language-button img {
-    width: 7.5vh;
     margin-right: 20px;
 }
 
@@ -60,6 +58,14 @@
 
     .welcome-th {
         font-size: 8vh;
+    }
+
+    .language-button {
+        font-size: 8vh;
+    }
+
+    .language-button img {
+        width: 7.5vh;
     }
     
     .language-button:hover {
@@ -90,5 +96,13 @@
 
     .welcome-th {
         font-size: 70px;
+    }
+
+    .language-button {
+        font-size: 70px;
+    }
+
+    .language-button img {
+        width: 70px;
     }
 }
