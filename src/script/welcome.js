@@ -36,8 +36,8 @@ class WelcomeText extends React.Component {
     render() {
         return (
             <div className='welcome-text will-animate'>
-                <div style={{ fontSize: "12vh", marginTop: "20px" }}>{translation.index.welcome.en}</div>
-                <div style={{ fontSize: "8vh" }}>{translation.index.welcome.th}</div>
+                <div className="welcome-en">{translation.index.welcome.en}</div>
+                <div className="welcome-th">{translation.index.welcome.th}</div>
             </div>
         );
     }

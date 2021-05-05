@@ -17,6 +17,10 @@
     text-decoration: none;
 }
 
+.welcome-en {
+    margin-top: 20px;
+}
+
 .welcome-text:hover {
     color: #c4c4c4;
     transform: translateY(-5px);
@@ -49,6 +53,14 @@
     .a11y-any-key {
         transform: translateY(-100vh)
     }
+
+    .welcome-en {
+        font-size: 12vh;
+    }
+
+    .welcome-th {
+        font-size: 8vh;
+    }
     
     .language-button:hover {
         background-color: #1c156b;
@@ -66,5 +78,17 @@
 @media only screen and (orientation: portrait) {
     .a11y-any-key {
         display: none;
+    }
+
+    .welcome-text {
+        padding: 20px;
+    }
+
+    .welcome-en {
+        font-size: 70px;
+    }
+
+    .welcome-th {
+        font-size: 50px;
     }
 }
