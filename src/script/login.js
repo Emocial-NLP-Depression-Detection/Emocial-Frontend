@@ -50,3 +50,5 @@ class Login extends React.Component {
         );
     }
 }
+
+export { Login }
