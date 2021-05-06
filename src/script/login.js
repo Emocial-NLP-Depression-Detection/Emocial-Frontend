@@ -21,7 +21,10 @@ class Form extends React.Component {
     render() {
         return (
             <div>
-                oh hi
+                Email addres:<br />
+                <input type="text" /><br />
+                Password:<br />
+                <input type="text" />
             </div>
         );
     }
