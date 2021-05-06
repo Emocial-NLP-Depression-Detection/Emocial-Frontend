@@ -1,6 +1,7 @@
 // ReactJS import
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 // Style sheet import
 import '../css/global.css'
@@ -43,9 +44,8 @@ class ResultPage extends React.Component {
     constructor(props) {
         super(props);
         this.lang = this.props.lang;
-        this.handle = this.props.handle;
         this.result = this.props.result;
-        this.state = { redirect: null }
+        this.state = { redirect: null, 'account': null }
     }
 
     async handleClick() {
@@ -57,6 +57,24 @@ class ResultPage extends React.Component {
         this.setState({ redirect: "/" });
     }
 
+    getAvatar() {
+        if (this.state.account === null) {
+            axios.get("http://localhost:8000/gettwitter/@17Ginono")
+                .then((res) => this.setState({ 'account': res.data }));
+            return (avatar);
+        } else {
+            return (this.state.account.profile);
+        }
+    }
+
+    getHandle() {
+        if (this.state.account === null) {
+            return (null);
+        } else {
+            return (this.state.account.twitter_username);
+        }
+    }
+
     render() {
         if (this.state.redirect) {
             return <Redirect to={this.state.redirect} />
@@ -66,9 +84,9 @@ class ResultPage extends React.Component {
                 <div>
                     <h1 className="result-header">{translation.result.title[this.lang]}</h1>
                     <div className="result-grid">
-                        <img className="result-avatar" src={avatar} alt={translation.img_alt.avatar[this.lang]} />
+                        <img className="result-avatar" src={this.getAvatar()} alt={translation.img_alt.avatar[this.lang]} />
                         <div>
-                            <p className="result-handle">@{this.handle},</p>
+                            <p className="result-handle">{this.getHandle()},</p>
                             <p className="result-text">{translation.result[this.result][this.lang]}</p>
                         </div>
                     </div>
@@ -103,7 +121,7 @@ class Result extends React.Component {
         if (this.state.result == null) {
             return (<LoadingScreen lang={this.lang} />);
         } else if (this.state.result === 'positive' || this.state.result === 'negative') {
-            return (<ResultPage lang={this.lang} handle="ABC" result={this.state.result} />);
+            return (<ResultPage lang={this.lang} result={this.state.result} />);
         }
     }
 

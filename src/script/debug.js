@@ -5,7 +5,7 @@ import axios from 'axios';
 class Debug extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { "account": null }
+        this.state = { 'account': null }
     }
 
     getAccount() {
