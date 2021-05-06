@@ -9,7 +9,6 @@ import '../css/compose.css';
 import { Menu } from './menu.js'
 
 // Translation keys import
-
 import { checkLanguage, translation } from './translation.js';
 
 class Compose extends React.Component {
