@@ -124,6 +124,16 @@ class WelcomeCover extends React.Component {
 
     }
 
+    renderA11yInput() {
+        if ('ontouchstart' in document.documentElement) {
+            ;
+        } else {
+            return (
+                <input className="a11y-any-key" type="text" onKeyDown={() => this.handleClick()} autoFocus={true} />
+            );
+        }
+    }
+
     async handleClick() {
         const welcome = this.welcome_ref.current;
         welcome.classList.add('slide-out')
@@ -141,12 +151,11 @@ class WelcomeCover extends React.Component {
         }
         return (
             <div>
-
                 <div ref={this.welcome_ref} className="welcome-cover will-animate centre-in-screen" style={{ zIndex: "1", backgroundColor: "#04002e" }} onClick={() => this.handleClick()}>
                     <center>
                         <img src={icon} style={{ marginTop: "100px" }} alt="A crying face with a mask onto its left" />
                         <WelcomeText />
-                        <input className="a11y-any-key" type="text" onKeyDown={() => this.handleClick()} autoFocus={true} />
+                        {this.renderA11yInput()}
                     </center>
                 </div>
                 <CoverHappilyAfter />
