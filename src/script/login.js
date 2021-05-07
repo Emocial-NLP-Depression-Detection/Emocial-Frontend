@@ -21,10 +21,16 @@ class Form extends React.Component {
     render() {
         return (
             <div className="form-section">
-                <label htmlFor="email">Email address:</label>
-                <input name="email" type="email" /><br />
-                <label htmlFor="password">Password:</label>
-                <input name="password" type="password" />
+                <div>
+                    <label htmlFor="email">Email address:</label>
+                    <input className="will-animate" name="email" type="email" /><br />
+                    <label htmlFor="password">Password:</label>
+                    <input className="will-animate" name="password" type="password" />
+                </div>
+                <div className="account-submit-container">
+                    <button className="account-submit will-animate">Log in</button>
+                </div>
+
             </div>
         );
     }
@@ -38,14 +44,15 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div class="account-root">
-                <div class="slide-in-onload">
+            <div className="account-root">
+                <div className="slide-in-onload">
                     <Menu path="/settings" />
                 </div>
-                <div class="fade-in-onload login-flex">
+                <div className="fade-in-onload login-flex">
                     <div>
+                        <h1 className="account-header">Log in to Emocial</h1>
                         <Form />
-                        Don't have an account? Sign up
+                        <p className="bottom-text">Don't have an account? Sign up</p>
                     </div>
                 </div>
             </div>
