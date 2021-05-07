@@ -15,22 +15,21 @@ import { checkLanguage, translation } from './translation.js';
 class Form extends React.Component {
     constructor(props) {
         super(props);
-        this.language = this.props.language
+        this.lang = this.props.lang
     }
 
     render() {
         return (
             <div className="form-section">
                 <div>
-                    <label htmlFor="email">Email address:</label>
-                    <input className="will-animate" name="email" type="email" /><br />
-                    <label htmlFor="password">Password:</label>
+                    <label htmlFor="email">{translation.account.email[this.lang]}:</label>
+                    <input className="will-animate" name="email" type="email" autoFocus={true} /><br />
+                    <label htmlFor="password">{translation.account.password[this.lang]}:</label>
                     <input className="will-animate" name="password" type="password" />
                 </div>
                 <div className="account-submit-container">
-                    <button className="account-submit will-animate">Log in</button>
+                    <button className="account-submit will-animate">{translation.account.login_submit[this.lang]}</button>
                 </div>
-
             </div>
         );
     }
@@ -39,7 +38,7 @@ class Form extends React.Component {
 class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.language = checkLanguage();
+        this.lang = checkLanguage();
     }
 
     render() {
@@ -50,9 +49,14 @@ class Login extends React.Component {
                 </div>
                 <div className="fade-in-onload login-flex">
                     <div>
-                        <h1 className="account-header">Log in to Emocial</h1>
-                        <Form />
-                        <p className="bottom-text">Don't have an account? Sign up</p>
+                        <h1 className="account-header">{translation.account.login_title[this.lang]}</h1>
+                        <Form lang={this.lang} />
+                        <div className="bottom-text">
+                            {translation.account.login_bottom[this.lang]}
+                            <span className="account-link will-animate">
+                                {translation.account.signup_submit[this.lang]}
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>

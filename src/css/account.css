@@ -70,3 +70,14 @@
     font-size: 3vh;
     text-align: center;
 }
+
+.account-link {
+    display: inline-block;
+    color: #5271ff;
+    cursor: pointer;
+}
+
+.account-link:hover {
+    color: #7d95ff;
+    transform: translateY(-3px);
+}

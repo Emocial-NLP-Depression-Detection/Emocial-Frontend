@@ -315,6 +315,40 @@ var translation = {
             },
         },
     },
+    'account': {
+        'login_title': {
+            'th': 'เข้าสู่ระบบอีโมเชียล',
+            'en': 'Log in to Emocial',
+        },
+        'signup_title': {
+            'th': 'สร้างบัญชี',
+            'en': 'Sign up to Emocial',
+        },
+        'email': {
+            'th': 'ที่อยู่อีเมล',
+            'en': 'Email address',
+        },
+        'password': {
+            'th': 'รหัสผ่าน',
+            'en': 'Password',
+        },
+        'login_submit': {
+            'th': 'เข้าสู่ระบบ',
+            'en': 'Log in',
+        },
+        'signup_submit': {
+            'th': 'สร้างบัญชี',
+            'en': 'Sign up',
+        },
+        'login_bottom': {
+            'th': 'หากท่านไม่มีบัญชี โปรด',
+            'en': 'Don\'t have an account? ',
+        },
+        'signup_bottom': {
+            'th': 'มีบัญชีแล้วหรือไม่ ',
+            'en': 'Already have an account? ',
+        },
+    },
     'not_found': {
         'title': {
             'th': 'ไม่มีหน้าที่เรียกหา',
