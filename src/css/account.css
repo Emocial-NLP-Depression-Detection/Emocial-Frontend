@@ -1,0 +1,12 @@
+.account-root {
+    background-color: #e5faff;
+    min-height: 100vh;
+}
+
+.form-section {
+    width: 30vw;
+    min-width: 500px;
+    padding: 2vh;
+    border-radius: 2.5vh;
+    background-color: #ffffff;
+}

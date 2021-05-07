@@ -20,7 +20,7 @@ class Form extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="form-section">
                 Email addres:<br />
                 <input type="text" /><br />
                 Password:<br />
@@ -38,13 +38,15 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
+            <div class="account-root">
                 <div class="slide-in-onload">
                     <Menu path="/settings" />
                 </div>
-                <div class="fade-in-onload">
-                    <Form />
-                    Don't have an account? Sign up
+                <div class="fade-in-onload login-flex">
+                    <div>
+                        <Form />
+                        Don't have an account? Sign up
+                    </div>
                 </div>
             </div>
         );
