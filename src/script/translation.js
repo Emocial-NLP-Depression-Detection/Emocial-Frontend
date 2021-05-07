@@ -265,6 +265,14 @@ var translation = {
             }
         },
         'account': {
+            'login': {
+                'th': 'เข้าสู่ระบบ',
+                'en': 'Log in',
+            },
+            'signup': {
+                'th': 'สร้างบัญชี',
+                'en': 'Sign up',
+            },
             'name': {
                 'th': 'ชื่อบัญชี',
                 'en': 'Username',

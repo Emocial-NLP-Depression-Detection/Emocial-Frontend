@@ -98,13 +98,13 @@ class LoginSignup extends React.Component {
         this.setState({ redirect: link_to });
     }
 
-    renderButton(link_to, image, text) {
+    renderButton(type, image) {
         return (
-            <button className="choose-type-button will-animate" onClick={() => this.handleClick(link_to)}>
+            <button className="choose-type-button will-animate" onClick={() => this.handleClick("account/" + type)}>
                 <div className="choose-type-img-container">
-                    <img className="choose-type-img" src={image} alt={text} />
+                    <img className="choose-type-img" src={image} alt={translation.settings.account[type][this.lang]} />
                 </div>
-                <span className="choose-type-text">{text}</span>
+                <span className="choose-type-text">{translation.settings.account[type][this.lang]}</span>
             </button>
         )
     }
@@ -115,8 +115,9 @@ class LoginSignup extends React.Component {
         }
         return (
             <div>
-                {this.renderButton("/account/login", login, "Log in")}
-                {this.renderButton("/account/signup", signup, "Sign up")}
+                <h1>{translation.settings.menu.account[this.lang]}</h1>
+                {this.renderButton("login", login)}
+                {this.renderButton("signup", signup)}
             </div>
         );
     }
