@@ -6,7 +6,6 @@
 .account-header {
     margin: 5vh;
     font-size: 6vh;
-    font-weight: normal;
     text-align: center;
 }
 
@@ -58,7 +57,7 @@
 
 .account-submit:hover {
     background-color: #24e075;
-    transform: translateY(-15px);
+    transform: translateY(-5px);
 }
 
 .account-submit:active {
