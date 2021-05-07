@@ -21,10 +21,10 @@ class Form extends React.Component {
     render() {
         return (
             <div className="form-section">
-                Email addres:<br />
-                <input type="text" /><br />
-                Password:<br />
-                <input type="text" />
+                <label htmlFor="email">Email address:</label>
+                <input name="email" type="email" /><br />
+                <label htmlFor="password">Password:</label>
+                <input name="password" type="password" />
             </div>
         );
     }

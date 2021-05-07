@@ -4,9 +4,23 @@
 }
 
 .form-section {
-    width: 30vw;
-    min-width: 500px;
-    padding: 2vh;
+    width: 500px;
+    margin: 2.5vh;
+    padding: 2.5vh;
     border-radius: 2.5vh;
     background-color: #ffffff;
+}
+
+.form-section label {
+    font-size: 3vh;
+}
+
+.form-section input {
+    width: calc(100% - 2.5vh);
+    border-radius: 1vh;
+    font-size: 3vh;
+    margin: 1vh 0px 2vh;
+    padding: 1vh;
+    border: none;
+    background-color: #dddddd;
 }
