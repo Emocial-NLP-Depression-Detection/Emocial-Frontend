@@ -26,7 +26,7 @@ class Form extends React.Component {
         return (
             <div className="form-section">
                 <div>
-                    <label htmlFor="email">Name:</label>
+                    <label htmlFor="name">{translation.account.name[this.lang]}:</label>
                     <input className="will-animate" name="name" type="text" autoFocus={true} /><br />
                     <label htmlFor="email">{translation.account.email[this.lang]}:</label>
                     <input className="will-animate" name="email" type="email" /><br />

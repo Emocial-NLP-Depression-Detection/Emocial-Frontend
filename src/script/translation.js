@@ -324,6 +324,10 @@ var translation = {
             'th': 'สร้างบัญชี',
             'en': 'Sign up to Emocial',
         },
+        'name': {
+            'th': 'ชื่อจริง-นามสกุล',
+            'en': 'Name',
+        },
         'email': {
             'th': 'ที่อยู่อีเมล',
             'en': 'Email address',
@@ -345,7 +349,7 @@ var translation = {
             'en': 'Don\'t have an account? ',
         },
         'signup_bottom': {
-            'th': 'มีบัญชีแล้วหรือไม่ ',
+            'th': 'มีบัญชีอยู่แล้วใช่หรือไม่ ',
             'en': 'Already have an account? ',
         },
     },
