@@ -14,6 +14,7 @@ import { History } from './script/history.js';
 import { HandleDetails } from './script/history_details.js';
 import { Settings } from './script/settings.js';
 import { Login } from './script/login.js';
+import { SignUp } from './script/signup.js';
 import { NotFound } from './script/not_found.js';
 
 // Switchboard
@@ -31,6 +32,7 @@ function App() {
             <Route path="/history/" component={HandleDetails} />
             <Route exact path="/settings" component={Settings} />
             <Route exact path="/account/login" component={Login} />
+            <Route exact path="/account/signup" component={SignUp} />
             <Route path="/" component={NotFound} />
         </Switch>
     );
