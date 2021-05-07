@@ -4,7 +4,7 @@
 
 .settings-grid {
     display: grid;
-    grid-template-columns: 2fr 12fr;
+    grid-template-columns: 30vh auto;
 }
 
 .settings-menu {
@@ -43,6 +43,12 @@
 }
 
 /* Account management */
+.account-mng-header {
+    font-size: 6vh;
+    font-weight: normal;
+    margin-bottom: 3vh;
+}
+
 .account-container {
     display: grid;
     grid-template-columns: 1fr 5fr;

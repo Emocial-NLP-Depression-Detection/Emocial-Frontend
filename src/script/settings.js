@@ -115,7 +115,7 @@ class LoginSignup extends React.Component {
         }
         return (
             <div>
-                <h1>{translation.settings.menu.account[this.lang]}</h1>
+                <h1 className="account-mng-header">{translation.settings.menu.account[this.lang]}</h1>
                 {this.renderButton("login", login)}
                 {this.renderButton("signup", signup)}
             </div>
