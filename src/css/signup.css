@@ -1,0 +1,23 @@
+.signup-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.signup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.choose-type-grid {
+    display: grid;
+    grid-template-rows: auto min-content;
+}
+
+.choose-type-title {
+    margin-top: 2vh;
+    font-size: 4vh;
+}
+
+.signup-bottom-text {
+    transform: translateY(-1vh);
+}
