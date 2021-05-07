@@ -85,12 +85,12 @@ class SignUp extends React.Component {
                 </div>
                 <div className="fade-in-onload signup-flex">
                     <div>
-                        <h1 className="account-header">{translation.account.signup_title[this.lang]}</h1>
+                        <h1 className="signup-header">{translation.account.signup_title[this.lang]}</h1>
                         <div className="signup-grid">
                             <Form lang={this.lang} />
                             <ChooseType lang={this.lang} />
                         </div>
-                        <div className="bottom-text signup-bottom-text">
+                        <div className="bottom-text">
                             {translation.account.signup_bottom[this.lang]}
                             <span className="account-link will-animate">
                                 {translation.account.login_submit[this.lang]}

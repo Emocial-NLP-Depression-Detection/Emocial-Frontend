@@ -3,6 +3,12 @@
     justify-content: center;
 }
 
+.signup-header {
+    margin: 5vh 0px 3vh;
+    font-size: 6vh;
+    text-align: center;
+}
+
 .signup-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -16,8 +22,4 @@
 .choose-type-title {
     margin-top: 2vh;
     font-size: 4vh;
-}
-
-.signup-bottom-text {
-    transform: translateY(-1vh);
 }
