@@ -3,6 +3,7 @@ import React from 'react';
 
 // Style sheet import
 import '../css/global.css'
+import '../css/theme.css'
 import '../css/account.css';
 import '../css/signup.css';
 
@@ -42,6 +43,18 @@ class ChooseType extends React.Component {
     constructor(props) {
         super(props);
         this.lang = this.props.lang;
+        this.doctor_ref = React.createRef();
+        this.patient_ref = React.createRef();
+    }
+
+    chooseType(type) {
+        if (type === "doctor") {
+            this.doctor_ref.current.classList.add("secondary-light-active");
+            this.patient_ref.current.classList.remove("secondary-light-active");
+        } else if (type === "patient") {
+            this.patient_ref.current.classList.add("secondary-light-active");
+            this.doctor_ref.current.classList.remove("secondary-light-active");
+        }
     }
 
     render() {
@@ -49,13 +62,13 @@ class ChooseType extends React.Component {
             <div className="choose-type-grid">
                 <div>
                     <p className="choose-type-title">{translation.settings.account.type.title[this.lang]}</p>
-                    <button className="choose-type-button will-animate">
+                    <button ref={this.doctor_ref} className="choose-type-button will-animate" onClick={() => this.chooseType("doctor")}>
                         <div className="choose-type-img-container">
                             <img className="choose-type-img" src={doctor} alt="Doctor" />
                         </div>
                         <span className="choose-type-text">{translation.settings.account.type.doctor[this.lang]}</span>
                     </button>
-                    <button className="choose-type-button will-animate">
+                    <button ref={this.patient_ref} className="choose-type-button will-animate" onClick={() => this.chooseType("patient")}>
                         <div className="choose-type-img-container">
                             <img className="choose-type-img" src={patient} alt="Nondescript male person" />
                         </div>
