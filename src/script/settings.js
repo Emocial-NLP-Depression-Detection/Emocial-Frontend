@@ -13,11 +13,15 @@ import { Menu } from './menu.js'
 import { checkLanguage, translation } from './translation.js';
 
 // Pictures import
+import login from '../photos/st_login.png'
+import signup from '../photos/st_signup.png'
 import avatar from '../photos/placeholder_avatar.png'
 import doctor from '../photos/type_doctor.png'
 import patient from '../photos/type_patient.png'
 import minus from '../photos/wl_minus.png'
 import plus from '../photos/wl_plus.png'
+
+const menu_ref = React.createRef();
 
 class ChooseType extends React.Component {
     constructor(props) {
@@ -46,10 +50,10 @@ class ChooseType extends React.Component {
     }
 }
 
-class AccountManagement extends React.Component {
+class Profile extends React.Component {
     constructor(props) {
         super(props);
-        this.lang = checkLanguage()
+        this.lang = this.props.lang;
         this.state = { name: props.name };
     }
 
@@ -74,6 +78,67 @@ class AccountManagement extends React.Component {
                 </div>
             </div>
         )
+    }
+}
+
+class LoginSignup extends React.Component {
+    constructor(props) {
+        super(props);
+        this.lang = this.props.lang;
+        this.state = { redirect: null };
+    }
+
+    async handleClick(link_to) {
+        console.log("User requests redirect to", link_to)
+        menu_ref.current.classList.add('slide-out');
+        document.getElementById("root").classList.add("disappear");
+        console.log("Redirecting to", link_to);
+        await new Promise(r => setTimeout(r, 500));
+        document.getElementById("root").classList.remove("disappear");
+        this.setState({ redirect: link_to });
+    }
+
+    renderButton(link_to, image, text) {
+        return (
+            <button className="choose-type-button will-animate" onClick={() => this.handleClick(link_to)}>
+                <div className="choose-type-img-container">
+                    <img className="choose-type-img" src={image} alt={text} />
+                </div>
+                <span className="choose-type-text">{text}</span>
+            </button>
+        )
+    }
+
+    render() {
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        }
+        return (
+            <div>
+                {this.renderButton("/account/login", login, "Log in")}
+                {this.renderButton("/account/signup", signup, "Sign up")}
+            </div>
+        );
+    }
+}
+
+class AccountManagement extends React.Component {
+    constructor(props) {
+        super(props);
+        this.lang = checkLanguage();
+        this.logged_in = false;
+    }
+
+    render() {
+        if (this.logged_in === true) {
+            return (
+                <Profile name="John Doe" lang={this.lang} />
+            );
+        } else if (this.logged_in === false) {
+            return (
+                <LoginSignup lang={this.lang} />
+            );
+        }
     }
 }
 
@@ -215,7 +280,7 @@ class Settings extends React.Component {
     }
 
     renderPage(type) {
-        if (type === "account") { return <AccountManagement name="Doe John" /> }
+        if (type === "account") { return <AccountManagement /> }
         else if (type === "language") { return <SelectLanguage /> }
         else if (type === "watchlist") { return <Watchlist /> }
     }
@@ -223,7 +288,7 @@ class Settings extends React.Component {
     render() {
         return (
             <div className="settings-root">
-                <div className="slide-in-onload">
+                <div ref={menu_ref} className="slide-in-onload will-animate">
                     <Menu page="/settings" />
                 </div>
                 <div className="settings-grid fade-in-onload">
