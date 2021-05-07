@@ -62,13 +62,13 @@ class ChooseType extends React.Component {
             <div className="choose-type-grid">
                 <div>
                     <p className="choose-type-title">{translation.settings.account.type.title[this.lang]}</p>
-                    <button ref={this.doctor_ref} className="choose-type-button will-animate" onClick={() => this.chooseType("doctor")}>
+                    <button ref={this.doctor_ref} className="choose-type-button secondary-light will-animate" onClick={() => this.chooseType("doctor")}>
                         <div className="choose-type-img-container">
                             <img className="choose-type-img" src={doctor} alt="Doctor" />
                         </div>
                         <span className="choose-type-text">{translation.settings.account.type.doctor[this.lang]}</span>
                     </button>
-                    <button ref={this.patient_ref} className="choose-type-button will-animate" onClick={() => this.chooseType("patient")}>
+                    <button ref={this.patient_ref} className="choose-type-button secondary-light will-animate" onClick={() => this.chooseType("patient")}>
                         <div className="choose-type-img-container">
                             <img className="choose-type-img" src={patient} alt="Nondescript male person" />
                         </div>

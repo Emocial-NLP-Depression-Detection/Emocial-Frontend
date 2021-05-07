@@ -32,13 +32,13 @@ class ChooseType extends React.Component {
     render() {
         return (
             <div>
-                <button className="choose-type-button will-animate">
+                <button className="choose-type-button secondary-light will-animate">
                     <div className="choose-type-img-container">
                         <img className="choose-type-img" src={doctor} alt="Doctor" />
                     </div>
                     <span className="choose-type-text">{translation.settings.account.type.doctor[this.lang]}</span>
                 </button>
-                <button className="choose-type-button will-animate">
+                <button className="choose-type-button secondary-light will-animate">
                     <div className="choose-type-img-container">
                         <img className="choose-type-img" src={patient} alt="Nondescript male person" />
                     </div>
@@ -98,9 +98,9 @@ class LoginSignup extends React.Component {
         this.setState({ redirect: link_to });
     }
 
-    renderButton(type, image) {
+    renderButton(type, image, colour) {
         return (
-            <button className="choose-type-button will-animate" onClick={() => this.handleClick("account/" + type)}>
+            <button className={"choose-type-button " + colour + "-light will-animate"} onClick={() => this.handleClick("account/" + type)}>
                 <div className="choose-type-img-container">
                     <img className="choose-type-img" src={image} alt={translation.settings.account[type][this.lang]} />
                 </div>
@@ -116,8 +116,8 @@ class LoginSignup extends React.Component {
         return (
             <div>
                 <h1 className="account-mng-header">{translation.settings.menu.account[this.lang]}</h1>
-                {this.renderButton("login", login)}
-                {this.renderButton("signup", signup)}
+                {this.renderButton("login", login, "secondary")}
+                {this.renderButton("signup", signup, "submit")}
             </div>
         );
     }

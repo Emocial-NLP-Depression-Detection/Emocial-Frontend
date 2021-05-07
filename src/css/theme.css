@@ -1,6 +1,5 @@
 /* Light theme (it's the default, deal with it) */
 .primary-light {
-    color: #ffffff;
     background-color: #5271ff;
 }
 
@@ -13,6 +12,5 @@
 }
 
 .submit-light {
-    color: #ffffff;
     background-color: #00b64e;
 }
