@@ -11,13 +11,17 @@ import '../css/questionnaire.css';
 import { Menu } from './menu.js'
 
 // Translation keys import
-// eslint-disable-next-line
 import { checkLanguage, translation } from './translation.js';
 
 class Questionnaire extends React.Component {
     constructor(props) {
         super(props);
         this.lang = checkLanguage();
+        this.state = { message1: null, message2: null };
+    }
+
+    handleClick() {
+        console.log(this.state);
     }
 
     render() {
@@ -27,34 +31,32 @@ class Questionnaire extends React.Component {
                     <Menu />
                 </div>
                 <div className="fade-in-onload">
-                    <form action="result">
-                        <div className="questionnaire">
-                            <div className="question">
-                                <p className="question-number">1</p>
-                                <div className="question-content">
-                                    <label className="question-label" htmlFor="composed-tweet">
-                                        {translation.questionnaire.one[this.lang]}
-                                    </label><br />
-                                    <textarea className="compose-textarea will-animate" id="question-1" name="question-1" autoFocus={true} /><br />
-                                    <Link to="#2" className="question-next compose-submit will-animate">
-                                        {translation.questionnaire.next[this.lang]}
-                                    </Link>
-                                </div>
-                            </div>
-                            <div className="question" id="2">
-                                <p className="question-number">2</p>
-                                <div className="question-content">
-                                    <label className="question-label" htmlFor="composed-tweet">
-                                        {translation.questionnaire.two[this.lang]}
-                                    </label><br />
-                                    <textarea className="compose-textarea will-animate" id="question-2" name="question-2" /><br />
-                                    <button className="compose-submit will-animate" type="submit">
-                                        {translation.questionnaire.submit[this.lang]}
-                                    </button>
-                                </div>
+                    <div className="questionnaire">
+                        <div className="question">
+                            <p className="question-number">1</p>
+                            <div className="question-content">
+                                <label className="question-label" htmlFor="composed-tweet">
+                                    {translation.questionnaire.one[this.lang]}
+                                </label><br />
+                                <textarea className="compose-textarea will-animate" id="question-1" name="question-1" onChange={e => this.setState({ message1: e.target.value })} autoFocus={true} /><br />
+                                <Link to="#2" className="question-next compose-submit will-animate">
+                                    {translation.questionnaire.next[this.lang]}
+                                </Link>
                             </div>
                         </div>
-                    </form>
+                        <div className="question" id="2">
+                            <p className="question-number">2</p>
+                            <div className="question-content">
+                                <label className="question-label" htmlFor="composed-tweet">
+                                    {translation.questionnaire.two[this.lang]}
+                                </label><br />
+                                <textarea className="compose-textarea will-animate" id="question-2" name="question-2" onChange={e => this.setState({ message2: e.target.value })} /><br />
+                                <button className="compose-submit will-animate" onClick={() => this.handleClick()}>
+                                    {translation.questionnaire.submit[this.lang]}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
