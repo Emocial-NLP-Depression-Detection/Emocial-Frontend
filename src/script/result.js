@@ -100,33 +100,38 @@ class ResultPage extends React.Component {
 class Result extends React.Component {
     constructor(props) {
         super(props);
+        this.to_post = this.props.to_post;
         this.lang = checkLanguage();
         this.content_ref = React.createRef();
         this.state = { result: null };
     }
 
     // placeholder function
-    async tempChangePage() {
-        if (this.state.result == null) {
-            await new Promise(r => setTimeout(r, 9000));
-            this.content_ref.current.classList.add("disappear");
-            await new Promise(r => setTimeout(r, 600));
-            this.setState({ result: 'negative' })
-            await new Promise(r => setTimeout(r, 600));
-            this.content_ref.current.classList.remove("disappear");
-        }
-    }
+    // async tempChangePage() {
+    //     if (this.state.result == null) {
+    //         await new Promise(r => setTimeout(r, 9000));
+    //         this.content_ref.current.classList.add("disappear");
+    //         await new Promise(r => setTimeout(r, 600));
+    //         this.setState({ result: 'negative' })
+    //         await new Promise(r => setTimeout(r, 600));
+    //         this.content_ref.current.classList.remove("disappear");
+    //     }
+    // }
 
     getContent() {
         if (this.state.result == null) {
+            console.log("POST", this.to_post, "to /analysis-text")
+            axios.post("http://localhost:8000/analysis-text", this.to_post)
+                .then((res) => this.setState({ result: res }));
             return (<LoadingScreen lang={this.lang} />);
-        } else if (this.state.result === 'positive' || this.state.result === 'negative') {
-            return (<ResultPage lang={this.lang} result={this.state.result} />);
+        } else if (this.state.result.data.result > 0.5) {
+            return (<ResultPage lang={this.lang} result="positive" />);
+        } else if (this.state.result.data.result <= 0.5) {
+            return (<ResultPage lang={this.lang} result="negative" />);
         }
     }
 
     render() {
-        this.tempChangePage();
         return (
             <div className="result-root">
                 <div>
