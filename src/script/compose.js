@@ -16,6 +16,15 @@ class Compose extends React.Component {
     constructor(props) {
         super(props);
         this.lang = checkLanguage();
+        this.state = { tweet: null };
+    }
+
+    onTodoChange(value) {
+        this.setState({ tweet: value });
+    }
+
+    handleClick() {
+        console.log(this.state.tweet);
     }
 
     render() {
@@ -25,11 +34,11 @@ class Compose extends React.Component {
                     <Menu />
                 </div>
                 <div className="fade-in-onload compose-container">
-                    <form className="compose-form" action="result">
+                    <div className="compose-form">
                         <label className="compose-label" htmlFor="composed-tweet">{translation.compose.label[this.lang]}</label><br />
-                        <textarea className="compose-textarea will-animate" id="composed-tweet" name="composed-tweet" autoFocus={true} /><br />
-                        <button className="compose-submit will-animate" type="submit">{translation.compose.submit[this.lang]}</button>
-                    </form>
+                        <textarea className="compose-textarea will-animate" id="composed-tweet" name="composed-tweet" onChange={e => this.onTodoChange(e.target.value)} autoFocus={true} /><br />
+                        <button className="compose-submit will-animate" onClick={() => this.handleClick()}>{translation.compose.submit[this.lang]}</button>
+                    </div>
                 </div>
             </div>
 
