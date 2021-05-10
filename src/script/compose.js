@@ -29,7 +29,7 @@ class Compose extends React.Component {
 
     render() {
         if (this.state.to_post) {
-            return (<Result to_post={this.state.to_post} />);
+            return (<Result post_type="compose" to_post={this.state.to_post} />);
         } else {
             return (
                 <div className="compose-root">
