@@ -36,8 +36,8 @@ class WelcomeText extends React.Component {
     render() {
         return (
             <div className='welcome-text will-animate'>
-                <div style={{ fontSize: "12vh", marginTop: "20px" }}>{translation.index.welcome.en}</div>
-                <div style={{ fontSize: "8vh" }}>{translation.index.welcome.th}</div>
+                <div className="welcome-en">{translation.index.welcome.en}</div>
+                <div className="welcome-th">{translation.index.welcome.th}</div>
             </div>
         );
     }
@@ -85,8 +85,8 @@ class LanguageSelector extends React.Component {
             <div ref={this.language_select_ref} className='welcome-cover will-animate centre-in-screen' style={{ zIndex: "0", backgroundColor: "#0c0644" }}>
                 <center>
                     <div className='language-text'>
-                        <div style={{ fontSize: "12vh" }}>{translation.index.language_select.title.en}</div>
-                        <div style={{ fontSize: "8vh" }}>{translation.index.language_select.title.th}</div>
+                        <div className="welcome-en">{translation.index.language_select.title.en}</div>
+                        <div className="welcome-th">{translation.index.language_select.title.th}</div>
                     </div>
                     <div>
                         {this.renderButton(translation.index.language_select.choice.th, th_flag, "th")}
@@ -124,6 +124,16 @@ class WelcomeCover extends React.Component {
 
     }
 
+    renderA11yInput() {
+        if ('ontouchstart' in document.documentElement) {
+            ;
+        } else {
+            return (
+                <input className="a11y-any-key" type="text" onKeyDown={() => this.handleClick()} autoFocus={true} />
+            );
+        }
+    }
+
     async handleClick() {
         const welcome = this.welcome_ref.current;
         welcome.classList.add('slide-out')
@@ -141,12 +151,11 @@ class WelcomeCover extends React.Component {
         }
         return (
             <div>
-
                 <div ref={this.welcome_ref} className="welcome-cover will-animate centre-in-screen" style={{ zIndex: "1", backgroundColor: "#04002e" }} onClick={() => this.handleClick()}>
                     <center>
                         <img src={icon} style={{ marginTop: "100px" }} alt="A crying face with a mask onto its left" />
                         <WelcomeText />
-                        <input className="a11y-any-key" type="text" onKeyDown={() => this.handleClick()} autoFocus={true} />
+                        {this.renderA11yInput()}
                     </center>
                 </div>
                 <CoverHappilyAfter />

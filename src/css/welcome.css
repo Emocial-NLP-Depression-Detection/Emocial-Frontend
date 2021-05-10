@@ -17,6 +17,10 @@
     text-decoration: none;
 }
 
+.welcome-en {
+    margin-top: 20px;
+}
+
 .welcome-text:hover {
     color: #c4c4c4;
     transform: translateY(-5px);
@@ -36,18 +40,32 @@
     border-radius: 20px;
     width: 20%;
     min-width: fit-content;
-    font-size: 8vh;
     cursor: pointer;
 }
 
 .language-button img {
-    width: 7.5vh;
     margin-right: 20px;
 }
 
 @media only screen and (orientation: landscape) {
     .a11y-any-key {
         transform: translateY(-100vh)
+    }
+
+    .welcome-en {
+        font-size: 12vh;
+    }
+
+    .welcome-th {
+        font-size: 8vh;
+    }
+
+    .language-button {
+        font-size: 8vh;
+    }
+
+    .language-button img {
+        width: 7.5vh;
     }
     
     .language-button:hover {
@@ -66,5 +84,25 @@
 @media only screen and (orientation: portrait) {
     .a11y-any-key {
         display: none;
+    }
+
+    .welcome-text {
+        padding: 20px;
+    }
+
+    .welcome-en {
+        font-size: 90px;
+    }
+
+    .welcome-th {
+        font-size: 70px;
+    }
+
+    .language-button {
+        font-size: 70px;
+    }
+
+    .language-button img {
+        width: 70px;
     }
 }

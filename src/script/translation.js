@@ -179,6 +179,28 @@ var translation = {
             'en': 'Submit',
         },
     },
+    'result': {
+        'loading': {
+            'th': 'ระบบของเรากำลังวิเคราะห์ข้อความของท่าน กรุณารอสักครู่',
+            'en': 'Our server is analyzing you answer. Sit tight!'
+        },
+        'title': {
+            'th': 'ผลลัพธ์',
+            'en': 'Result',
+        },
+        'positive': {
+            'th': 'ผลลัพธ์การวิเคราะห์ข้อความของท่านโดยรวมปกติ',
+            'en': 'We have not detected any serious issues.'
+        },
+        'negative': {
+            'th': 'การวิเคราะห์เสร็จสิ้น หมอของท่านจะติดต่อท่านภายหลัง',
+            'en': 'Your answer has been processed. Your doctor will get back to you shortly.'
+        },
+        'back': {
+            'th': 'กลับสู่หน้าหลัก',
+            'en': 'Back to Home',
+        }
+    },
     'history': {
         'today': {
             'th': 'วันนี้',
@@ -243,6 +265,14 @@ var translation = {
             }
         },
         'account': {
+            'login': {
+                'th': 'เข้าสู่ระบบ',
+                'en': 'Log in',
+            },
+            'signup': {
+                'th': 'สร้างบัญชี',
+                'en': 'Sign up',
+            },
             'name': {
                 'th': 'ชื่อบัญชี',
                 'en': 'Username',
@@ -285,6 +315,44 @@ var translation = {
             },
         },
     },
+    'account': {
+        'login_title': {
+            'th': 'เข้าสู่ระบบอีโมเชียล',
+            'en': 'Log in to Emocial',
+        },
+        'signup_title': {
+            'th': 'สร้างบัญชี',
+            'en': 'Sign up to Emocial',
+        },
+        'name': {
+            'th': 'ชื่อจริง-นามสกุล',
+            'en': 'Name',
+        },
+        'email': {
+            'th': 'ที่อยู่อีเมล',
+            'en': 'Email address',
+        },
+        'password': {
+            'th': 'รหัสผ่าน',
+            'en': 'Password',
+        },
+        'login_submit': {
+            'th': 'เข้าสู่ระบบ',
+            'en': 'Log in',
+        },
+        'signup_submit': {
+            'th': 'สร้างบัญชี',
+            'en': 'Sign up',
+        },
+        'login_bottom': {
+            'th': 'หากท่านไม่มีบัญชี โปรด',
+            'en': 'Don\'t have an account? ',
+        },
+        'signup_bottom': {
+            'th': 'มีบัญชีอยู่แล้วใช่หรือไม่ ',
+            'en': 'Already have an account? ',
+        },
+    },
     'not_found': {
         'title': {
             'th': 'ไม่มีหน้าที่เรียกหา',
@@ -297,7 +365,7 @@ var translation = {
         'link': {
             'th': 'กลับสู่หน้าหลัก',
             'en': 'Back to Home',
-        }
+        },
     },
     'img_alt': {
         'depression': {
@@ -307,6 +375,10 @@ var translation = {
         'help': {
             'th': 'ผู้หญิงสองคนกำลังคุยกับขณะที่กำลังนั่งอยู่บนโซฟา',
             'en': 'Two women sat on couches talking to each other',
+        },
+        'avatar': {
+            'th': 'รูปผู้ใช้',
+            'en': 'User avatar',
         },
     },
 };

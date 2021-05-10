@@ -15,7 +15,7 @@
 
 .welcome-button {
     margin: 50px 0px 50px 0px;
-    padding: 20px;
+    padding: 20px 50px 20px 50px;
     width: 20%;
     border-radius: 20px;
     min-width: fit-content;
@@ -24,11 +24,6 @@
     background-color: #00b64e;
     color: #ffffff;
     cursor: pointer;
-}
-
-.welcome-button:hover {
-    background-color: #24e075;
-    transform: translateY(-15px);
 }
 
 .welcome-button:active {
@@ -135,6 +130,10 @@
       display: none;
     }
 
+    .mobile-img {
+        width: 100%;
+    }
+
     .depression-text, .help-text {
         padding: 70px;
     }
@@ -153,6 +152,17 @@
     }
 
     #triangles, .about-next {
+        display: none;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    .welcome-button:hover {
+        background-color: #24e075;
+        transform: translateY(-15px);
+    }
+
+    .mobile-img {
         display: none;
     }
 }

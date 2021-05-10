@@ -1,6 +1,6 @@
 // ReactJS import
 import React from 'react';
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 // Style sheet import
 import '../css/global.css'
@@ -14,7 +14,9 @@ import { checkLanguage, translation } from './translation.js';
 
 // Pictures
 import depression_pic from '../photos/depression.png'
+import depression_mobile_pic from '../photos/depression_mobile.png'
 import help_pic from '../photos/help.png'
+import help_mobile_pic from '../photos/help_mobile.png'
 
 var content;
 
@@ -28,14 +30,14 @@ class Home extends React.Component {
     }
 
     async handleClick() {
-        console.log("User requests redirect to /select")
+        console.log("User requests redirect to /test/select")
         const menu = this.menu_ref.current;
         content = this.content_ref.current;
         menu.classList.add('slide-out')
         content.classList.add('disappear')
-        console.log("Redirecting to /select")
+        console.log("Redirecting to /test/select")
         await new Promise(r => setTimeout(r, 600));
-        this.setState({ redirect: "/select" });
+        this.setState({ redirect: "/test/select" });
     }
 
     render() {
@@ -89,6 +91,7 @@ class Home extends React.Component {
                         <div className="depression-img-container">
                             <img className="about-img" src={depression_pic} alt={translation.img_alt.depression[this.lang]} />
                         </div>
+                        <img className="mobile-img" src={depression_mobile_pic} alt={translation.img_alt.depression[this.lang]} />
                     </div>
                     <div id="next" className="help-section">
                         <div className="help-img-container">
@@ -101,7 +104,7 @@ class Home extends React.Component {
                                 ◀ {translation.home.help.link[this.lang]}
                             </a>
                         </div>
-
+                        <img className="mobile-img" src={help_mobile_pic} alt={translation.img_alt.depression[this.lang]} />
                     </div>
                 </div>
             </div >

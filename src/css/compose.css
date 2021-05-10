@@ -8,23 +8,8 @@
     justify-content: center;
 }
 
-.compose-form {
-    margin: 10vh;
-    width: 80%;
-}
-
-.compose-form label {
-    font-size: 4vh;
-}
-
 .compose-textarea {
     resize: none;
-    margin: 2vh 0px 2vh;
-    padding: 2vh;
-    width: calc(100% - 4vh);
-    height: 35vh;
-    font-size: 4vh;
-    border-radius: 2.5vh;
     border: none;
     background-color: #ebebeb;
 }
@@ -35,10 +20,7 @@
 }
 
 .compose-submit {
-    padding: 2vh;
     width: 150px;
-    font-size: 4vh;
-    border-radius: 2.5vh;
     float: right;
     border: none;
     color: #ffffff;
@@ -46,13 +28,67 @@
     cursor: pointer;
 }
 
-.compose-submit:hover {
-    background-color: #24e075;
-    transform: translateX(10px);
-}
-
 .compose-submit:active {
     background-color: #00b64e;
     box-shadow: inset 0px 5px 15px #000000;
     transition: none;
+}
+
+
+@media only screen and (orientation: portrait) {
+    .compose-form {
+        margin: 10vw;
+        width: 75vw;
+    }
+    
+    .compose-form label {
+        font-size: 50px;
+    }
+
+    .compose-submit {
+        font-size: 50px;
+        width: 300px;
+        padding: 20px;
+        border-radius: 30px;
+    }
+
+    .compose-textarea {
+        margin: 30px 0px 30px;
+        padding: 30px;
+        width: calc(100% - 60px);
+        height: 500px;
+        font-size: 50px;
+        border-radius: 2.5vh;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    .compose-form {
+        margin: 10vh;
+        width: 80%;
+    }
+
+    .compose-form label {
+        font-size: 4vh;
+    }
+
+    .compose-submit {
+        padding: 2vh;
+        font-size: 4vh;
+        border-radius: 2.5vh;
+    }
+
+    .compose-submit:hover {
+        background-color: #24e075;
+        transform: translateX(10px);
+    }
+
+    .compose-textarea {
+        margin: 2vh 0px 2vh;
+        padding: 2vh;
+        width: calc(100% - 4vh);
+        height: 35vh;
+        font-size: 4vh;
+        border-radius: 2.5vh;
+    }
 }
