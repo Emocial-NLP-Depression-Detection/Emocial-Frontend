@@ -265,6 +265,14 @@ var translation = {
             }
         },
         'account': {
+            'login': {
+                'th': 'เข้าสู่ระบบ',
+                'en': 'Log in',
+            },
+            'signup': {
+                'th': 'สร้างบัญชี',
+                'en': 'Sign up',
+            },
             'name': {
                 'th': 'ชื่อบัญชี',
                 'en': 'Username',
@@ -305,6 +313,44 @@ var translation = {
                 'th': 'เพิ่มผู้ป่วย',
                 'en': 'Add patients',
             },
+        },
+    },
+    'account': {
+        'login_title': {
+            'th': 'เข้าสู่ระบบอีโมเชียล',
+            'en': 'Log in to Emocial',
+        },
+        'signup_title': {
+            'th': 'สร้างบัญชี',
+            'en': 'Sign up to Emocial',
+        },
+        'name': {
+            'th': 'ชื่อจริง-นามสกุล',
+            'en': 'Name',
+        },
+        'email': {
+            'th': 'ที่อยู่อีเมล',
+            'en': 'Email address',
+        },
+        'password': {
+            'th': 'รหัสผ่าน',
+            'en': 'Password',
+        },
+        'login_submit': {
+            'th': 'เข้าสู่ระบบ',
+            'en': 'Log in',
+        },
+        'signup_submit': {
+            'th': 'สร้างบัญชี',
+            'en': 'Sign up',
+        },
+        'login_bottom': {
+            'th': 'หากท่านไม่มีบัญชี โปรด',
+            'en': 'Don\'t have an account? ',
+        },
+        'signup_bottom': {
+            'th': 'มีบัญชีอยู่แล้วใช่หรือไม่ ',
+            'en': 'Already have an account? ',
         },
     },
     'not_found': {

@@ -1,0 +1,16 @@
+/* Light theme (it's the default, deal with it) */
+.primary-light {
+    background-color: #5271ff;
+}
+
+.secondary-light {
+    background-color: #5ce1e6;
+}
+
+.secondary-light-active {
+    background-color: #ffcc4d;
+}
+
+.submit-light {
+    background-color: #00b64e;
+}

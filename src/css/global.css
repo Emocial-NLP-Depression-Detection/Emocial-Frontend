@@ -12,6 +12,10 @@ html {
     scroll-behavior: smooth;
 }
 
+input {
+    font-family: 'Segoe UI', 'Open Sans', 'Sarabun';
+}
+
 textarea {
     font-family: 'Segoe UI', 'Open Sans', 'Sarabun';
 }

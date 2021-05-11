@@ -1,0 +1,83 @@
+.account-root {
+    background-color: #e5faff;
+    min-height: 100vh;
+}
+
+.account-header {
+    margin: 5vh;
+    font-size: 6vh;
+    text-align: center;
+}
+
+.form-section {
+    display: grid;
+    grid-template-rows: auto min-content;
+    width: 50vh;
+    aspect-ratio: 1/1;
+    margin: 2.5vh;
+    padding: 2.5vh;
+    border-radius: 2.5vh;
+    background-color: #ffffff;
+}
+
+.form-section label {
+    font-size: 3vh;
+}
+
+.form-section input {
+    width: calc(100% - 2.5vh);
+    border-radius: 1vh;
+    font-size: 3vh;
+    margin: 1vh 0px 2vh;
+    padding: 1vh;
+    border: none;
+    background-color: #dddddd;
+}
+
+.form-section input:focus {
+    border-radius: 0px;
+    background-color: #ffffff;
+}
+
+.account-submit-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.account-submit {
+    border-radius: 1vh;
+    font-size: 3vh;
+    margin-top: 2vh;
+    padding: 1vh 3vh 1vh 3vh;
+    border: none;
+    color: #ffffff;
+    background-color: #00b64e;
+    cursor: pointer;
+}
+
+.account-submit:hover {
+    background-color: #24e075;
+    transform: translateY(-5px);
+}
+
+.account-submit:active {
+    background-color: #00b64e;
+    box-shadow: inset 0px 5px 15px #000000;
+    transition: none;
+}
+
+.bottom-text {
+    font-size: 3vh;
+    text-align: center;
+}
+
+.account-link {
+    display: inline-block;
+    color: #5271ff;
+    cursor: pointer;
+}
+
+.account-link:hover {
+    color: #7d95ff;
+    transform: translateY(-3px);
+}

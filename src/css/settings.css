@@ -4,7 +4,7 @@
 
 .settings-grid {
     display: grid;
-    grid-template-columns: 2fr 12fr;
+    grid-template-columns: 30vh auto;
 }
 
 .settings-menu {
@@ -43,6 +43,12 @@
 }
 
 /* Account management */
+.account-mng-header {
+    font-size: 6vh;
+    font-weight: normal;
+    margin-bottom: 3vh;
+}
+
 .account-container {
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -106,17 +112,16 @@
     padding: 1vh;
     border-radius: 1.5vh;
     border: none;
-    background-color: #5ce1e6;
     cursor: pointer;
 }
 
 .choose-type-button:hover {
-    background-color: #64f8fd;
+    opacity: 60%;
     transform: translateY(-10px)
 }
 
 .choose-type-button:active {
-    background-color: #5ce1e6;
+    opacity: 100%;
     box-shadow: inset 0px 5px 15px #000000;
     transition: none;
 }
