@@ -27,7 +27,7 @@ function App() {
             <Route exact path="/test/select" component={Select} />
             <Route exact path="/test/compose" component={Compose} />
             <Route exact path="/test/questionnaire" component={Questionnaire} />
-            <Route exact path="/test/result" component={Result} />
+            <Route path="/test/result" component={Result} />
             <Route path="/test/" component={Select} />
             <Route exact path="/history" component={History} />
             <Route path="/history/" component={HandleDetails} />
