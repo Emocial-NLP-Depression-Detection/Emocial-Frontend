@@ -10,6 +10,9 @@ import '../css/questionnaire.css';
 // Menu bar import
 import { Menu } from './menu.js'
 
+// Result page import
+import { Result } from './result.js'
+
 // Translation keys import
 import { checkLanguage, translation } from './translation.js';
 
