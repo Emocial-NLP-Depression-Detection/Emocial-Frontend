@@ -44,7 +44,7 @@ class Questionnaire extends React.Component {
                                     <label className="question-label" htmlFor="composed-tweet">
                                         {translation.questionnaire.one[this.lang]}
                                     </label><br />
-                                    <textarea className="compose-textarea will-animate" id="question-1" name="question-1" onChange={e => this.setState({ message1: e.target.value })} autoFocus={true} /><br />
+                                    <textarea className="compose-textarea will-animate" id="question-1" name="question-1" onChange={e => this.setState({ q1: e.target.value })} autoFocus={true} /><br />
                                     <Link to="#2" className="question-next compose-submit will-animate">
                                         {translation.questionnaire.next[this.lang]}
                                     </Link>
@@ -56,7 +56,7 @@ class Questionnaire extends React.Component {
                                     <label className="question-label" htmlFor="composed-tweet">
                                         {translation.questionnaire.two[this.lang]}
                                     </label><br />
-                                    <textarea className="compose-textarea will-animate" id="question-2" name="question-2" onChange={e => this.setState({ message2: e.target.value })} /><br />
+                                    <textarea className="compose-textarea will-animate" id="question-2" name="question-2" onChange={e => this.setState({ q2: e.target.value })} /><br />
                                     <button className="compose-submit will-animate" onClick={() => this.handleClick()}>
                                         {translation.questionnaire.submit[this.lang]}
                                     </button>
