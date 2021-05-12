@@ -109,12 +109,13 @@ class Result extends React.Component {
 
     getContent() {
         if (this.state.result == null) {
-            console.log("POST", this.to_post, "to /analysis-text")
             if (this.post_type === "compose") {
+                console.log("POST", this.to_post, "to /analysis-text")
                 axios.post("http://localhost:8000/analysis-text", this.to_post)
                     .then((res) => this.setState({ result: res.data.result }));
             } else if (this.post_type === "questionnaire") {
-                axios.post("http://localhost:8000/analysis-text", this.to_post)
+                console.log("POST", this.to_post, "to /analyse-question")
+                axios.post("http://localhost:8000/analyse-question", this.to_post)
                     .then((res) => this.setState({ result: res.data.mean }));
             }
             return (<LoadingScreen lang={this.lang} />);

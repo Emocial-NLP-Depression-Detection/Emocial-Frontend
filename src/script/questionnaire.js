@@ -24,7 +24,7 @@ class Questionnaire extends React.Component {
     }
 
     handleClick() {
-        this.setState({ to_post: { "q1": this.state.q2, "q2": this.state.q2, "lang": this.lang } })
+        this.setState({ to_post: { "q1": this.state.q1, "q2": this.state.q2, "lang": this.lang } })
     }
 
     render() {
