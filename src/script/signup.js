@@ -21,6 +21,7 @@ class Form extends React.Component {
     constructor(props) {
         super(props);
         this.lang = this.props.lang
+        this.state = { name: null, email: null, password: null, handle: null };
     }
 
     render() {
@@ -28,13 +29,13 @@ class Form extends React.Component {
             <div className="form-section">
                 <div>
                     <label htmlFor="name">{translation.account.name[this.lang]}:</label>
-                    <input className="will-animate" name="name" type="text" autoFocus={true} /><br />
+                    <input className="will-animate" name="name" type="text" onChange={e => this.setState({ name: e.target.value })} autoFocus={true} /><br />
                     <label htmlFor="email">{translation.account.email[this.lang]}:</label>
-                    <input className="will-animate" name="email" type="email" /><br />
+                    <input className="will-animate" name="email" type="email" onChange={e => this.setState({ email: e.target.value })} /><br />
                     <label htmlFor="password">{translation.account.password[this.lang]}:</label>
-                    <input className="will-animate" name="password" type="password" />
+                    <input className="will-animate" name="password" type="password" onChange={e => this.setState({ password: e.target.value })} />
                     <label htmlFor="handle">Twitter handle:</label>
-                    <input className="will-animate" name="handle" type="text" placeholder="@" />
+                    <input className="will-animate" name="handle" type="text" onChange={e => this.setState({ handle: e.target.value })} placeholder="@" />
                 </div>
             </div>
         );
