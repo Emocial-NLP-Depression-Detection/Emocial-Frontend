@@ -45,7 +45,8 @@ class ResultPage extends React.Component {
         super(props);
         this.lang = this.props.lang;
         this.result = this.props.result;
-        this.state = { redirect: null, 'account': null }
+        this.handle = this.props.handle;
+        this.state = { redirect: null, account: null }
     }
 
     async handleClick() {
@@ -59,8 +60,8 @@ class ResultPage extends React.Component {
 
     getAvatar() {
         if (this.state.account === null) {
-            axios.get("http://localhost:8000/gettwitter/@17Ginono")
-                .then((res) => this.setState({ 'account': res.data }));
+            axios.get("http://localhost:8000/gettwitter/" + this.handle)
+                .then((res) => this.setState({ account: res.data }));
             return (avatar);
         } else {
             return (this.state.account.profile);
@@ -105,6 +106,20 @@ class Result extends React.Component {
         this.lang = checkLanguage();
         this.content_ref = React.createRef();
         this.state = { result: null };
+        if (!this.to_post) {
+            this.handle = this.props.match.params.handle;
+        } else {
+            this.handle = null;
+        }
+    }
+
+    setStateResultMean(res) {
+        let result = [];
+        for (let tweet of res) {
+            result.push(tweet.prediction_value);
+        }
+        let mean = (result.reduce(function (a, b) { return a + b; }, 0)) / result.length;
+        this.setState({ result: mean });
     }
 
     getContent() {
@@ -117,12 +132,19 @@ class Result extends React.Component {
                 console.log("POST", this.to_post, "to /analyse-question")
                 axios.post("http://localhost:8000/analyse-question", this.to_post)
                     .then((res) => this.setState({ result: res.data.mean }));
+            } else if (this.state.account_result == null) {
+                let to_post = { "username": this.handle, "lang": this.lang };
+                console.log("POST", to_post, "to /analysis-account");
+                axios.post("http://localhost:8000/analysis-account", to_post)
+                    .then((res) => this.setStateResultMean(res.data));
             }
             return (<LoadingScreen lang={this.lang} />);
         } else if (this.state.result > 0.5) {
-            return (<ResultPage lang={this.lang} result="positive" />);
+            console.log("Depression detected with the score of", this.state.result);
+            return (<ResultPage lang={this.lang} result="negative" handle={this.handle} />);
         } else if (this.state.result <= 0.5) {
-            return (<ResultPage lang={this.lang} result="negative" />);
+            console.log("Depression not detected with the score of", this.state.result);
+            return (<ResultPage lang={this.lang} result="positive" handle={this.handle} />);
         }
     }
 
