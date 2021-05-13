@@ -336,6 +336,10 @@ var translation = {
             'th': 'รหัสผ่าน',
             'en': 'Password',
         },
+        'handle': {
+            'th': 'แฮนเดิลทวิตเตอร์',
+            'en': 'Twitter handle',
+        },
         'login_submit': {
             'th': 'เข้าสู่ระบบ',
             'en': 'Log in',

@@ -17,6 +17,8 @@ import { checkLanguage, translation } from './translation.js';
 import doctor from '../photos/type_doctor.png'
 import patient from '../photos/type_patient.png'
 
+var input_obj;
+
 class Form extends React.Component {
     constructor(props) {
         super(props);
@@ -25,6 +27,7 @@ class Form extends React.Component {
     }
 
     render() {
+        input_obj = this.state;
         return (
             <div className="form-section">
                 <div>
@@ -34,7 +37,7 @@ class Form extends React.Component {
                     <input className="will-animate" name="email" type="email" onChange={e => this.setState({ email: e.target.value })} /><br />
                     <label htmlFor="password">{translation.account.password[this.lang]}:</label>
                     <input className="will-animate" name="password" type="password" onChange={e => this.setState({ password: e.target.value })} />
-                    <label htmlFor="handle">Twitter handle:</label>
+                    <label htmlFor="handle">{translation.account.handle[this.lang]}:</label>
                     <input className="will-animate" name="handle" type="text" onChange={e => this.setState({ handle: e.target.value })} placeholder="@" />
                 </div>
             </div>
@@ -60,6 +63,10 @@ class ChooseType extends React.Component {
         }
     }
 
+    handleClick() {
+        console.log(input_obj);
+    }
+
     render() {
         return (
             <div className="choose-type-grid">
@@ -79,7 +86,7 @@ class ChooseType extends React.Component {
                     </button>
                 </div>
                 <div className="account-submit-container">
-                    <button className="account-submit will-animate">{translation.account.signup_submit[this.lang]}</button>
+                    <button className="account-submit will-animate" onClick={() => this.handleClick()}>{translation.account.signup_submit[this.lang]}</button>
                 </div>
             </div>
 
