@@ -33,6 +33,8 @@ class Form extends React.Component {
                     <input className="will-animate" name="email" type="email" /><br />
                     <label htmlFor="password">{translation.account.password[this.lang]}:</label>
                     <input className="will-animate" name="password" type="password" />
+                    <label htmlFor="handle">Twitter handle:</label>
+                    <input className="will-animate" name="handle" type="text" placeholder="@" />
                 </div>
             </div>
         );
