@@ -1,5 +1,7 @@
 // ReactJS import
 import React from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 // Style sheet import
 import '../css/global.css'
@@ -15,24 +17,47 @@ import { checkLanguage, translation } from './translation.js';
 class Form extends React.Component {
     constructor(props) {
         super(props);
-        this.lang = this.props.lang
-        this.state = { email: null, password: null };
+        this.lang = this.props.lang;
+        this.state = { name: null, password: null };
+    }
+
+    handleClick() {
+        this.to_post = {
+            "username": this.state.name,
+            "password": this.state.password
+        }
+        console.log("POST", this.to_post, "to /login")
+        axios.post("http://localhost:8000/login", this.to_post)
+            .then((res) => this.handleResponse(res));
+        this.setState({ redirect: "/settings" })
+    }
+
+    handleResponse(res) {
+        console.log("Server responded with", res.status, res.statusText);
+        document.cookie = "token=" + res.data.token;
+        console.log("Token stored as", res.data.token);
     }
 
     render() {
-        return (
-            <div className="form-section">
-                <div>
-                    <label htmlFor="email">{translation.account.email[this.lang]}:</label>
-                    <input className="will-animate" name="email" type="email" onChange={e => this.setState({ email: e.target.value })} autoFocus={true} /><br />
-                    <label htmlFor="password">{translation.account.password[this.lang]}:</label>
-                    <input className="will-animate" name="password" type="password" onChange={e => this.setState({ password: e.target.value })} />
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        } else {
+            return (
+                <div className="form-section">
+                    <div>
+                        <label htmlFor="name">{translation.account.name[this.lang]}:</label>
+                        <input className="will-animate" name="name" type="text" onChange={e => this.setState({ name: e.target.value })} autoFocus={true} /><br />
+                        <label htmlFor="password">{translation.account.password[this.lang]}:</label>
+                        <input className="will-animate" name="password" type="password" onChange={e => this.setState({ password: e.target.value })} />
+                    </div>
+                    <div className="account-submit-container">
+                        <button className="account-submit will-animate" onClick={() => this.handleClick()}>
+                            {translation.account.login_submit[this.lang]}
+                        </button>
+                    </div>
                 </div>
-                <div className="account-submit-container">
-                    <button className="account-submit will-animate">{translation.account.login_submit[this.lang]}</button>
-                </div>
-            </div>
-        );
+            );
+        }
     }
 }
 
