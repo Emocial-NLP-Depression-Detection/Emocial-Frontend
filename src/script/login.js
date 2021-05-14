@@ -16,6 +16,7 @@ class Form extends React.Component {
     constructor(props) {
         super(props);
         this.lang = this.props.lang
+        this.state = { email: null, password: null };
     }
 
     render() {
@@ -23,9 +24,9 @@ class Form extends React.Component {
             <div className="form-section">
                 <div>
                     <label htmlFor="email">{translation.account.email[this.lang]}:</label>
-                    <input className="will-animate" name="email" type="email" autoFocus={true} /><br />
+                    <input className="will-animate" name="email" type="email" onChange={e => this.setState({ email: e.target.value })} autoFocus={true} /><br />
                     <label htmlFor="password">{translation.account.password[this.lang]}:</label>
-                    <input className="will-animate" name="password" type="password" />
+                    <input className="will-animate" name="password" type="password" onChange={e => this.setState({ password: e.target.value })} />
                 </div>
                 <div className="account-submit-container">
                     <button className="account-submit will-animate">{translation.account.login_submit[this.lang]}</button>
