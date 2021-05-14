@@ -27,26 +27,51 @@ const menu_ref = React.createRef();
 class ChooseType extends React.Component {
     constructor(props) {
         super(props);
-        this.lang = checkLanguage()
+        this.lang = checkLanguage();
+        this.doctor_ref = React.createRef();
+        this.patient_ref = React.createRef();
+        this.state = { is_doctor: this.props.is_doctor };
+    }
+
+    highlightType(is_doctor, type) {
+        if (type === "doctor" && is_doctor) {
+            return ("secondary-light-active");
+        } else if (type === "patient" && !is_doctor) {
+            return ("secondary-light-active");
+        }
+    }
+
+    chooseType(type) {
+        if (type === "doctor") {
+            this.setState({ is_doctor: true });
+            this.doctor_ref.current.classList.add("secondary-light-active");
+            this.patient_ref.current.classList.remove("secondary-light-active");
+        } else if (type === "patient") {
+            this.setState({ is_doctor: false });
+            this.patient_ref.current.classList.add("secondary-light-active");
+            this.doctor_ref.current.classList.remove("secondary-light-active");
+        }
     }
 
     render() {
         return (
             <div>
-                <button className="choose-type-button secondary-light will-animate">
+                <button ref={this.doctor_ref} onClick={() => this.chooseType("doctor")}
+                    className={"choose-type-button secondary-light will-animate " + this.highlightType(this.state.is_doctor, "doctor")}
+                >
                     <div className="choose-type-img-container">
                         <img className="choose-type-img" src={doctor} alt="Doctor" />
                     </div>
                     <span className="choose-type-text">{translation.settings.account.type.doctor[this.lang]}</span>
                 </button>
-                <button className="choose-type-button secondary-light will-animate">
+                <button ref={this.patient_ref} onClick={() => this.chooseType("patient")}
+                    className={"choose-type-button secondary-light will-animate " + this.highlightType(this.state.is_doctor, "patient")}>
                     <div className="choose-type-img-container">
                         <img className="choose-type-img" src={patient} alt="Nondescript male person" />
                     </div>
                     <span className="choose-type-text">{translation.settings.account.type.patient[this.lang]}</span>
                 </button>
             </div>
-
         );
     }
 }
@@ -64,20 +89,19 @@ class Profile extends React.Component {
     }
 
     render() {
-        console.log(this.profile);
         return (
             <div className="account-container">
                 <img className="account-avatar" src={avatar} alt={translation.img_alt.avatar[this.lang]} />
                 <div className="account-details">
                     <p>{translation.settings.account.name[this.lang]}</p>
-                    <form action="/settings/account">
+                    <div>
                         <input className="account-name will-animate" type="text" name="username" autoComplete="off"
                             value={this.state.name} onChange={e => this.onTodoChange(e.target.value)} />
                         <p>{translation.settings.account.type.title[this.lang]}</p>
-                        <ChooseType />
-                        <button className="account-save will-animate" type="submit">{translation.settings.account.save[this.lang]}</button>
+                        <ChooseType is_doctor={this.profile.status} />
+                        <button className="account-save will-animate">{translation.settings.account.save[this.lang]}</button>
                         <button className="log-out will-animate">{translation.settings.account.log_out[this.lang]}</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         )
