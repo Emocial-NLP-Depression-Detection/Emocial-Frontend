@@ -34,8 +34,8 @@ class Form extends React.Component {
 
     handleResponse(res) {
         console.log("Server responded with", res.status, res.statusText);
-        document.cookie = "token=" + res.data.token;
-        console.log("Token stored as", res.data.token);
+        document.cookie = "accounttoken=" + res.data.token;
+        console.log("Session account token stored as", res.data.token);
     }
 
     render() {

@@ -127,15 +127,22 @@ class AccountManagement extends React.Component {
     constructor(props) {
         super(props);
         this.lang = checkLanguage();
-        this.logged_in = false;
+        this.state = { token: null };
+    }
+
+    getToken() {
+        if (document.cookie.split(';').some((item) => item.includes('accounttoken='))) {
+            this.setState({ token: (document.cookie.match('(^|;)\\s*accounttoken\\s*=\\s*([^;]+)')?.pop() || '') })
+        }
     }
 
     render() {
-        if (this.logged_in === true) {
+        if (this.state.token) {
             return (
                 <Profile name="John Doe" lang={this.lang} />
             );
-        } else if (this.logged_in === false) {
+        } else {
+            this.getToken();
             return (
                 <LoginSignup lang={this.lang} />
             );
