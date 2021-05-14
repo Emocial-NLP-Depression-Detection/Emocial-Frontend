@@ -55,13 +55,8 @@ class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.lang = this.props.lang;
-        this.state = { name: null };
-    }
-
-    getProfileData() {
-        axios.get("http://localhost:8000/get-logined", { withCredentials: true })
-            .then((res) => console.log(res.data));
-        // .then((res) => this.setState({ name: res.data }));
+        this.profile = this.props.profile;
+        this.state = { name: this.profile.username };
     }
 
     onTodoChange(value) {
@@ -69,9 +64,7 @@ class Profile extends React.Component {
     }
 
     render() {
-        if (!this.state.name) {
-            this.getProfileData();
-        }
+        console.log(this.profile);
         return (
             <div className="account-container">
                 <img className="account-avatar" src={avatar} alt={translation.img_alt.avatar[this.lang]} />
@@ -137,31 +130,40 @@ class AccountManagement extends React.Component {
     constructor(props) {
         super(props);
         this.lang = checkLanguage();
-        // this.no_token = null;
-        this.state = { token: null, no_token: null };
+        this.state = { no_token: null, profile: null };
     }
 
-    getToken() {
+    checkToken() {
         console.log(document.cookie);
-        if (document.cookie.split(';').some((item) => item.includes(' token='))) {
-            this.setState({ token: (document.cookie.match('(^|;)\\s* token\\s*=\\s*([^;]+)')?.pop() || '') })
-        } else {
+        if (!(document.cookie.split(';').some((item) => item.includes(' token=')))) {
             console.log("Token not found, user isn't logged in");
             this.setState({ no_token: true });
         }
     }
 
+    getProfileData() {
+        axios.get("http://localhost:8000/get-logined", { withCredentials: true })
+            .then((res) => this.setState({ profile: res.data }));
+    }
+
     render() {
-        if (this.state.token) {
-            return (
-                <Profile name="John Doe" lang={this.lang} />
-            );
+        if (!this.state.no_token) {
+            if (!this.state.profile) {
+                this.getProfileData();
+                return (
+                    <div></div>
+                );
+            } else if (this.state.profile) {
+                return (
+                    <Profile profile={this.state.profile} lang={this.lang} />
+                );
+            }
         } else if (this.state.no_token) {
             return (
                 <LoginSignup lang={this.lang} />
             );
         } else {
-            this.getToken();
+            this.checkToken();
             return (
                 <div></div>
             );
