@@ -98,6 +98,21 @@ class ResultPage extends React.Component {
     }
 }
 
+class DisplayError extends React.Component {
+    constructor(props) {
+        super(props);
+        this.error = this.props.error;
+    }
+
+    render() {
+        return (
+            <div>
+                {this.error}
+            </div>
+        );
+    }
+}
+
 class Result extends React.Component {
     constructor(props) {
         super(props);
@@ -143,7 +158,7 @@ class Result extends React.Component {
             }
             return (<LoadingScreen lang={this.lang} />);
         } else if (this.state.error) {
-            return (<div>{this.state.error}</div>)
+            return (<DisplayError error={this.state.error} />)
         } else if (this.state.result > 0.5) {
             console.log("Depression detected with the score of", this.state.result);
             return (<ResultPage lang={this.lang} result="negative" handle={this.handle} />);
