@@ -123,18 +123,18 @@ class Result extends React.Component {
     }
 
     getContent() {
-        console.log(this.state);
         if (this.state.result == null && this.state.error == null) {
             if (this.post_type === "compose") {
                 console.log("POST", this.to_post, "to /analysis-text")
                 axios.post("http://localhost:8000/analysis-text", this.to_post)
-                    .then((res) => this.setState({ result: res.data.result }));
+                    .then((res) => this.setState({ result: res.data.result }))
+                    .catch((err) => this.setState({ error: String(err) }));
             } else if (this.post_type === "questionnaire") {
                 console.log("POST", this.to_post, "to /analyse-question")
                 axios.post("http://localhost:8000/analyse-question", this.to_post)
-                    .then((res) => this.setState({ result: res.data.mean }));
+                    .then((res) => this.setState({ result: res.data.mean }))
+                    .catch((err) => this.setState({ error: String(err) }));
             } else if (this.state.account_result == null) {
-                console.log("gee whiz");
                 let to_post = { "username": this.handle, "lang": this.lang };
                 console.log("POST", to_post, "to /analysis-account");
                 axios.post("http://localhost:8000/analysis-account", to_post)
