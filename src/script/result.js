@@ -105,7 +105,7 @@ class Result extends React.Component {
         this.to_post = this.props.to_post;
         this.lang = checkLanguage();
         this.content_ref = React.createRef();
-        this.state = { result: null };
+        this.state = { result: null, error: null };
         if (!this.to_post) {
             this.handle = this.props.match.params.handle;
         } else {
@@ -123,7 +123,8 @@ class Result extends React.Component {
     }
 
     getContent() {
-        if (this.state.result == null) {
+        console.log(this.state);
+        if (this.state.result == null && this.state.error == null) {
             if (this.post_type === "compose") {
                 console.log("POST", this.to_post, "to /analysis-text")
                 axios.post("http://localhost:8000/analysis-text", this.to_post)
@@ -133,12 +134,16 @@ class Result extends React.Component {
                 axios.post("http://localhost:8000/analyse-question", this.to_post)
                     .then((res) => this.setState({ result: res.data.mean }));
             } else if (this.state.account_result == null) {
+                console.log("gee whiz");
                 let to_post = { "username": this.handle, "lang": this.lang };
                 console.log("POST", to_post, "to /analysis-account");
                 axios.post("http://localhost:8000/analysis-account", to_post)
-                    .then((res) => this.setStateResultMean(res.data));
+                    .then((res) => this.setStateResultMean(res.data))
+                    .catch((err) => this.setState({ error: String(err) }));
             }
             return (<LoadingScreen lang={this.lang} />);
+        } else if (this.state.error) {
+            return (<div>{this.state.error}</div>)
         } else if (this.state.result > 0.5) {
             console.log("Depression detected with the score of", this.state.result);
             return (<ResultPage lang={this.lang} result="negative" handle={this.handle} />);

@@ -57,8 +57,7 @@ class ChooseType extends React.Component {
         return (
             <div>
                 <button ref={this.doctor_ref} onClick={() => this.chooseType("doctor")}
-                    className={"choose-type-button secondary-light will-animate " + this.highlightType(this.state.is_doctor, "doctor")}
-                >
+                    className={"choose-type-button secondary-light will-animate " + this.highlightType(this.state.is_doctor, "doctor")}>
                     <div className="choose-type-img-container">
                         <img className="choose-type-img" src={doctor} alt="Doctor" />
                     </div>
