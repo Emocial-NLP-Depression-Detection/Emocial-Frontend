@@ -33,6 +33,10 @@
 }
 
 .loading-text {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 4vh;
     text-align: center;
 }
 
@@ -61,11 +65,13 @@
     animation: dash 1.5s ease-in-out infinite;
 }
 
-.loading-text {
+.red-triangle-container {
     display: flex;
-    align-items: center;
-    height: 100%;
-    font-size: 4vh;
+    justify-content: center;
+}
+
+.red-triangle {
+    height: 20vh;
 }
 
 .result-root {

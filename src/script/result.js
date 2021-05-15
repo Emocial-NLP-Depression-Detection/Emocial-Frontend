@@ -4,17 +4,18 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 // Style sheet import
-import '../css/global.css'
+import '../css/global.css';
 import '../css/result.css';
 
 // Menu bar import
-import { Menu } from './menu.js'
+import { Menu } from './menu.js';
 
 // Translation keys import
 import { checkLanguage, translation } from './translation.js';
 
 // Pictures import
-import avatar from '../photos/placeholder_avatar.png'
+import red_triangle from '../photos/res_red_triangle.png';
+import avatar from '../photos/placeholder_avatar.png';
 
 class LoadingScreen extends React.Component {
     constructor(props) {
@@ -106,8 +107,15 @@ class DisplayError extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.error}
+            <div className="loading-container">
+                <div className="loading-grid">
+                    <div className="red-triangle-container">
+                        <img src={red_triangle} className="red-triangle" alt="Red triangle with exclamation mark" />
+                    </div>
+                    <p className="loading-text">
+                        {this.error}
+                    </p>
+                </div>
             </div>
         );
     }
