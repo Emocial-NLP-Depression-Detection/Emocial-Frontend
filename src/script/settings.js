@@ -153,16 +153,15 @@ class AccountManagement extends React.Component {
     constructor(props) {
         super(props);
         this.lang = checkLanguage();
-        this.state = { no_token: null, profile: null };
+        this.state = { profile: null };
     }
 
-    checkToken() {
-        console.log(document.cookie);
+    checkHasToken() {
         if (!(document.cookie.split(';').some((item) => item.includes(' token=')))) {
             console.log("Token not found, user isn't logged in");
-            this.setState({ no_token: true });
+            return false;
         } else {
-            this.setState({ no_token: false });
+            return true;
         }
     }
 
@@ -172,26 +171,21 @@ class AccountManagement extends React.Component {
     }
 
     render() {
-        if (this.state.no_token === false) {
+        if (this.checkHasToken()) {
             if (!this.state.profile) {
                 this.getProfileData();
                 return (
-                    <div></div>
+                    <p>Loading...</p>
                 );
             } else if (this.state.profile) {
                 return (
                     <Profile profile={this.state.profile} lang={this.lang} />
                 );
+            } else {
+                return (
+                    <LoginSignup lang={this.lang} />
+                );
             }
-        } else if (this.state.no_token === true) {
-            return (
-                <LoginSignup lang={this.lang} />
-            );
-        } else if (this.state.no_token == null) {
-            this.checkToken();
-            return (
-                <div></div>
-            );
         }
     }
 }
