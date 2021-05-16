@@ -161,6 +161,8 @@ class AccountManagement extends React.Component {
         if (!(document.cookie.split(';').some((item) => item.includes(' token=')))) {
             console.log("Token not found, user isn't logged in");
             this.setState({ no_token: true });
+        } else {
+            this.setState({ no_token: false });
         }
     }
 
@@ -170,7 +172,7 @@ class AccountManagement extends React.Component {
     }
 
     render() {
-        if (!this.state.no_token) {
+        if (this.state.no_token === false) {
             if (!this.state.profile) {
                 this.getProfileData();
                 return (
@@ -181,11 +183,11 @@ class AccountManagement extends React.Component {
                     <Profile profile={this.state.profile} lang={this.lang} />
                 );
             }
-        } else if (this.state.no_token) {
+        } else if (this.state.no_token === true) {
             return (
                 <LoginSignup lang={this.lang} />
             );
-        } else {
+        } else if (this.state.no_token == null) {
             this.checkToken();
             return (
                 <div></div>
