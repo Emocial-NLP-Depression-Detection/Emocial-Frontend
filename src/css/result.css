@@ -77,7 +77,6 @@
 }
 
 .error-text {
-    font-size: 4vh;
     text-align: center;
     margin-top: 6vh;
 }
@@ -89,7 +88,6 @@
 
 .error-block {
     width: fit-content;
-    font-size: 3.5vh;
     font-family: "PT Mono";
     text-align: center;
     margin-top: 2vh;
@@ -199,6 +197,14 @@
 }
 
 @media only screen and (orientation: landscape) {
+    .error-text {
+        font-size: 4vh;
+    }
+
+    .error-block {
+        font-size: 3.5vh;
+    }
+
     .result-grid {
         display: grid;
         grid-template-columns: 1fr 3fr;

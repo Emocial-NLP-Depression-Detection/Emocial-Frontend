@@ -202,7 +202,7 @@ const translation = {
         },
         'error': {
             'th': 'ขออภัย เกิดข้อผิดพลาดระหว่างการติดต่อระบบ',
-            'en': 'Error encountered during the analysis process. We apologise for your inconvenience.',
+            'en': 'Error encountered during the analysis process.',
         },
     },
     'history': {
