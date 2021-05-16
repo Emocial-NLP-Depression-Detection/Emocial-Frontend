@@ -74,6 +74,13 @@
     height: 20vh;
 }
 
+.error-block {
+    display: block;
+    padding: 2vh;
+    border-radius: 1.5vh;
+    background-color: #d6d6d6;
+}
+
 .result-root {
     background-color: #e5faff;
 }
