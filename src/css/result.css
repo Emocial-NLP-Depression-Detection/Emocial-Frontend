@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 
 @keyframes rotate {
     100% {
@@ -88,7 +88,7 @@
 
 .error-block {
     width: fit-content;
-    font-family: "PT Mono";
+    font-family: "Inconsolata";
     text-align: center;
     margin-top: 2vh;
     padding: 2vh 5vh 2vh 5vh;
