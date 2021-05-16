@@ -114,12 +114,14 @@ class DisplayError extends React.Component {
                         <img src={red_triangle} className="red-triangle" alt="Red triangle with exclamation mark" />
                     </div>
                     <div>
-                        <p className="loading-text">
+                        <p className="error-text">
                             {translation.result.error[this.lang]}
                         </p>
-                        <p className="error-block">
-                            {this.error}
-                        </p>
+                        <div className="error-block-container">
+                            <p className="error-block">
+                                {this.error}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
