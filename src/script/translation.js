@@ -11,7 +11,7 @@ function checkLanguage() {
     }
 }
 
-var translation = {
+const translation = {
     'index': {
         'welcome': {
             'th': 'ยินดีต้อนรับสู่อีโมเชียล',
@@ -199,7 +199,11 @@ var translation = {
         'back': {
             'th': 'กลับสู่หน้าหลัก',
             'en': 'Back to Home',
-        }
+        },
+        'error': {
+            'th': 'ขออภัย เกิดข้อผิดพลาดระหว่างการติดต่อระบบ',
+            'en': 'Error encountered during the analysis process. We apologise for your inconvenience.',
+        },
     },
     'history': {
         'today': {

@@ -103,6 +103,7 @@ class DisplayError extends React.Component {
     constructor(props) {
         super(props);
         this.error = this.props.error;
+        this.lang = this.props.lang;
     }
 
     render() {
@@ -112,9 +113,14 @@ class DisplayError extends React.Component {
                     <div className="red-triangle-container">
                         <img src={red_triangle} className="red-triangle" alt="Red triangle with exclamation mark" />
                     </div>
-                    <p className="loading-text">
-                        {this.error}
-                    </p>
+                    <div>
+                        <p>
+                            {translation.result.error[this.lang]}
+                        </p>
+                        <p className="loading-text">
+                            {this.error}
+                        </p>
+                    </div>
                 </div>
             </div>
         );
@@ -166,7 +172,7 @@ class Result extends React.Component {
             }
             return (<LoadingScreen lang={this.lang} />);
         } else if (this.state.error) {
-            return (<DisplayError error={this.state.error} />)
+            return (<DisplayError error={this.state.error} lang={this.lang} />)
         } else if (this.state.result > 0.5) {
             console.log("Depression detected with the score of", this.state.result);
             return (<ResultPage lang={this.lang} result="negative" handle={this.handle} />);
