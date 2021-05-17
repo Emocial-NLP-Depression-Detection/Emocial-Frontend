@@ -10,6 +10,9 @@ import '../css/settings.css';
 // Menu bar import
 import { Menu } from './menu.js'
 
+// Error page import (experimental)
+import { DisplayError } from './result.js'
+
 // Translation keys import
 import { checkLanguage, translation } from './translation.js';
 
@@ -153,7 +156,7 @@ class AccountManagement extends React.Component {
     constructor(props) {
         super(props);
         this.lang = checkLanguage();
-        this.state = { profile: null };
+        this.state = { profile: null, error: null };
     }
 
     checkHasToken() {
@@ -167,12 +170,18 @@ class AccountManagement extends React.Component {
 
     getProfileData() {
         axios.get("http://localhost:8000/get-logined", { withCredentials: true })
-            .then((res) => this.setState({ profile: res.data }));
+            .then((res) => this.setState({ profile: res.data }))
+            .catch((err) => this.setState({ error: String(err) }));
     }
 
     render() {
+        console.log(this.state);
         if (this.checkHasToken()) {
-            if (!this.state.profile) {
+            if (this.state.error) {
+                return (
+                    <div className="error-container"><DisplayError error={this.state.error} lang={this.lang} /></div>
+                );
+            } else if (!this.state.profile) {
                 this.getProfileData();
                 return (
                     <p>Loading...</p>
@@ -181,11 +190,11 @@ class AccountManagement extends React.Component {
                 return (
                     <Profile profile={this.state.profile} lang={this.lang} />
                 );
-            } else {
-                return (
-                    <LoginSignup lang={this.lang} />
-                );
             }
+        } else {
+            return (
+                <LoginSignup lang={this.lang} />
+            );
         }
     }
 }

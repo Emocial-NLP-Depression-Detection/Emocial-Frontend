@@ -108,20 +108,18 @@ class DisplayError extends React.Component {
 
     render() {
         return (
-            <div className="loading-container">
-                <div className="loading-grid">
-                    <div className="red-triangle-container">
-                        <img src={red_triangle} className="red-triangle" alt="Red triangle with exclamation mark" />
-                    </div>
-                    <div>
-                        <p className="error-text">
-                            {translation.result.error[this.lang]}
+            <div className="loading-grid">
+                <div className="red-triangle-container">
+                    <img src={red_triangle} className="red-triangle" alt="Red triangle with exclamation mark" />
+                </div>
+                <div>
+                    <p className="error-text">
+                        {translation.result.error[this.lang]}
+                    </p>
+                    <div className="error-block-container">
+                        <p className="error-block">
+                            {this.error}
                         </p>
-                        <div className="error-block-container">
-                            <p className="error-block">
-                                {this.error}
-                            </p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -174,7 +172,7 @@ class Result extends React.Component {
             }
             return (<LoadingScreen lang={this.lang} />);
         } else if (this.state.error) {
-            return (<DisplayError error={this.state.error} lang={this.lang} />)
+            return (<div className="loading-container"><DisplayError error={this.state.error} lang={this.lang} /></div>)
         } else if (this.state.result > 0.5) {
             console.log("Depression detected with the score of", this.state.result);
             return (<ResultPage lang={this.lang} result="negative" handle={this.handle} />);
@@ -198,4 +196,4 @@ class Result extends React.Component {
     }
 }
 
-export { Result }
+export { DisplayError, Result }

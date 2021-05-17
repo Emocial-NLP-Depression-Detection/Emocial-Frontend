@@ -29,13 +29,15 @@ class Form extends React.Component {
         console.log("POST", this.to_post, "to /login")
         axios.post("http://localhost:8000/login", this.to_post)
             .then((res) => this.handleResponse(res));
-        this.setState({ redirect: "/settings" })
     }
 
     handleResponse(res) {
         console.log("Server responded with", res.status, res.statusText);
         document.cookie = "token=" + res.data.token;
         console.log("Session account token stored as token=" + res.data.token);
+        this.setState({
+            redirect: "/settings"
+        })
     }
 
     render() {
