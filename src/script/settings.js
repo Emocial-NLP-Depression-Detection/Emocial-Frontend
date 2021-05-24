@@ -26,6 +26,7 @@ import minus from '../photos/wl_minus.png'
 import plus from '../photos/wl_plus.png'
 
 const menu_ref = React.createRef();
+var is_doctor = null;
 
 class ChooseType extends React.Component {
     constructor(props) {
@@ -33,7 +34,7 @@ class ChooseType extends React.Component {
         this.lang = checkLanguage();
         this.doctor_ref = React.createRef();
         this.patient_ref = React.createRef();
-        this.state = { is_doctor: this.props.is_doctor };
+        this.state = { is_doctor: is_doctor };
     }
 
     highlightType(is_doctor, type) {
@@ -83,6 +84,7 @@ class Profile extends React.Component {
         super(props);
         this.lang = this.props.lang;
         this.profile = this.props.profile;
+        this.to_post = null;
         this.state = { name: this.profile.username, redirect: null };
     }
 
@@ -90,7 +92,12 @@ class Profile extends React.Component {
         this.setState({ name: value });
     }
 
-    handleClick() {
+    handleEdit() {
+        ;
+    }
+
+    handleLogOut() {
+        console.log("Logging out. We hope we see you soon!");
         axios.get("http://localhost:8000/logout", { withCredentials: true })
             .then((res) => this.handleResponse(res));
     }
@@ -116,11 +123,11 @@ class Profile extends React.Component {
                             <input className="account-name will-animate" type="text" name="username" autoComplete="off"
                                 value={this.state.name} onChange={e => this.onTodoChange(e.target.value)} />
                             <p>{translation.settings.account.type.title[this.lang]}</p>
-                            <ChooseType is_doctor={this.profile.status} />
-                            <button className="account-save will-animate">
+                            <ChooseType />
+                            <button className="account-save will-animate" onClick={() => this.handleEdit()}>
                                 {translation.settings.account.save[this.lang]}
                             </button>
-                            <button className="log-out will-animate" onClick={() => this.handleClick()}>
+                            <button className="log-out will-animate" onClick={() => this.handleLogOut()}>
                                 {translation.settings.account.log_out[this.lang]}
                             </button>
                         </div>
@@ -191,7 +198,9 @@ class AccountManagement extends React.Component {
 
     getProfileData() {
         axios.get("http://localhost:8000/get-logined", { withCredentials: true })
-            .then((res) => this.setState({ profile: res.data }))
+            .then((res) => {
+                this.setState({ profile: res.data }); is_doctor = this.state.profile.status
+            })
             .catch((err) => this.setState({ error: String(err) }));
     }
 
