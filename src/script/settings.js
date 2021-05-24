@@ -95,8 +95,11 @@ class Profile extends React.Component {
             .then((res) => this.handleResponse(res));
     }
 
-    handleResponse(res) {
+    async handleResponse(res) {
         console.log("Server responded with", res.status, res.statusText);
+        document.getElementById("root").classList.add("disappear");
+        await new Promise(r => setTimeout(r, 500));
+        document.getElementById("root").classList.remove("disappear");
         this.setState({redirect: "/"});
     }
 
