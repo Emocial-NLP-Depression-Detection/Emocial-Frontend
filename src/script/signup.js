@@ -72,17 +72,34 @@ class ChooseType extends React.Component {
 
     handleClick() {
         this.input_obj = input_obj;
-        this.to_post = {
+        this.signup_post = {
             "username": this.input_obj.name,
             "email": this.input_obj.email,
             "password": this.input_obj.password,
             "twitterAcount": this.input_obj.handle,
             "status": this.state.is_doctor
         }
-        console.log("POST", this.to_post, "to /register")
-        axios.post("http://localhost:8000/register", this.to_post)
-            .then((res) => console.log("Server responded with", res.status, res.statusText));
-        this.setState({ redirect: "/settings" })
+        console.log("POST", this.signup_post, "to /register")
+        axios.post("http://localhost:8000/register", this.signup_post)
+            .then((res) => this.handleSignUp(res))
+    }
+
+    handleSignUp(res) {
+        console.log("Server responded with", res.status, res.statusText);
+        this.login_post = {
+            "username": this.input_obj.name,
+            "password": this.input_obj.password
+        }
+        console.log("POST", this.login_post, "to /login")
+        axios.post("http://localhost:8000/login", this.login_post)
+            .then((res) => this.handleLogIn(res));
+    }
+
+    handleLogIn(res) {
+        console.log("Server responded with", res.status, res.statusText);
+        document.cookie = "token=" + res.data.token;
+        console.log("Session account token stored as token=" + res.data.token);
+        this.setState({redirect: "/settings"})
     }
 
     render() {
