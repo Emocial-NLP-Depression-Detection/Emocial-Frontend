@@ -32,16 +32,16 @@ class Form extends React.Component {
         input_obj = this.state;
         return (
             <div className="form-section">
-                <div>
+                <form>
                     <label htmlFor="name">{translation.account.name[this.lang]}:</label>
-                    <input className="will-animate" name="name" type="text" onChange={e => this.setState({ name: e.target.value })} autoFocus={true} /><br />
+                    <input className="will-animate" name="name" type="text" autoComplete="username" onChange={e => this.setState({ name: e.target.value })} autoFocus={true} /><br />
                     <label htmlFor="email">{translation.account.email[this.lang]}:</label>
-                    <input className="will-animate" name="email" type="email" onChange={e => this.setState({ email: e.target.value })} /><br />
+                    <input className="will-animate" name="email" type="email" autoComplete="email" onChange={e => this.setState({ email: e.target.value })} /><br />
                     <label htmlFor="password">{translation.account.password[this.lang]}:</label>
-                    <input className="will-animate" name="password" type="password" onChange={e => this.setState({ password: e.target.value })} />
+                    <input className="will-animate" name="password" type="password" autoComplete="new-password" onChange={e => this.setState({ password: e.target.value })} />
                     <label htmlFor="handle">{translation.account.handle[this.lang]}:</label>
                     <input className="will-animate" name="handle" type="text" onChange={e => this.setState({ handle: e.target.value })} placeholder="@" />
-                </div>
+                </form>
             </div>
         );
     }

@@ -44,12 +44,12 @@ class Form extends React.Component {
         } else {
             return (
                 <div className="form-section">
-                    <div>
+                    <form>
                         <label htmlFor="name">{translation.account.name[this.lang]}:</label>
-                        <input className="will-animate" name="name" type="text" onChange={e => this.setState({ name: e.target.value })} autoFocus={true} /><br />
+                        <input className="will-animate" name="name" type="text" autoComplete="username" onChange={e => this.setState({ name: e.target.value })} autoFocus={true} /><br />
                         <label htmlFor="password">{translation.account.password[this.lang]}:</label>
-                        <input className="will-animate" name="password" type="password" onChange={e => this.setState({ password: e.target.value })} />
-                    </div>
+                        <input className="will-animate" name="password" type="password" autoComplete="current-password" onChange={e => this.setState({ password: e.target.value })} />
+                    </form>
                     <div className="account-submit-container">
                         <button className="account-submit will-animate" onClick={() => this.handleClick()}>
                             {translation.account.login_submit[this.lang]}
