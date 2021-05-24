@@ -83,30 +83,48 @@ class Profile extends React.Component {
         super(props);
         this.lang = this.props.lang;
         this.profile = this.props.profile;
-        this.state = { name: this.profile.username };
+        this.state = { name: this.profile.username, redirect: null };
     }
 
     onTodoChange(value) {
         this.setState({ name: value });
     }
 
+    handleClick() {
+        axios.get("http://localhost:8000/logout", { withCredentials: true })
+            .then((res) => this.handleResponse(res));
+    }
+
+    handleResponse(res) {
+        console.log("Server responded with", res.status, res.statusText);
+        this.setState({redirect: "/"});
+    }
+
     render() {
-        return (
-            <div className="account-container">
-                <img className="account-avatar" src={avatar} alt={translation.img_alt.avatar[this.lang]} />
-                <div className="account-details">
-                    <p>{translation.settings.account.name[this.lang]}</p>
-                    <div>
-                        <input className="account-name will-animate" type="text" name="username" autoComplete="off"
-                            value={this.state.name} onChange={e => this.onTodoChange(e.target.value)} />
-                        <p>{translation.settings.account.type.title[this.lang]}</p>
-                        <ChooseType is_doctor={this.profile.status} />
-                        <button className="account-save will-animate">{translation.settings.account.save[this.lang]}</button>
-                        <button className="log-out will-animate">{translation.settings.account.log_out[this.lang]}</button>
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        } else {
+            return (
+                <div className="account-container">
+                    <img className="account-avatar" src={avatar} alt={translation.img_alt.avatar[this.lang]} />
+                    <div className="account-details">
+                        <p>{translation.settings.account.name[this.lang]}</p>
+                        <div>
+                            <input className="account-name will-animate" type="text" name="username" autoComplete="off"
+                                value={this.state.name} onChange={e => this.onTodoChange(e.target.value)} />
+                            <p>{translation.settings.account.type.title[this.lang]}</p>
+                            <ChooseType is_doctor={this.profile.status} />
+                            <button className="account-save will-animate">
+                                {translation.settings.account.save[this.lang]}
+                            </button>
+                            <button className="log-out will-animate" onClick={() => this.handleClick()}>
+                                {translation.settings.account.log_out[this.lang]}
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 

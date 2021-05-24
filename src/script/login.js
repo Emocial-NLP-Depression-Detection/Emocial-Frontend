@@ -35,9 +35,7 @@ class Form extends React.Component {
         console.log("Server responded with", res.status, res.statusText);
         document.cookie = "token=" + res.data.token;
         console.log("Session account token stored as token=" + res.data.token);
-        this.setState({
-            redirect: "/settings"
-        })
+        this.setState({ redirect: "/settings" })
     }
 
     render() {
