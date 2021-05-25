@@ -23,3 +23,13 @@
     margin-top: 2vh;
     font-size: 4vh;
 }
+
+.loading-button {
+    border-radius: 1vh;
+    font-size: 3vh;
+    margin-top: 2vh;
+    padding: 1vh 3vh 1vh 3vh;
+    border: none;
+    background-color: #e6e6e6;
+    cursor: not-allowed;
+}

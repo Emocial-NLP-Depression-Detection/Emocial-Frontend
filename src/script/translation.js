@@ -360,6 +360,10 @@ const translation = {
             'th': 'มีบัญชีอยู่แล้วใช่หรือไม่ ',
             'en': 'Already have an account? ',
         },
+        'loading': {
+            'th': 'รอสักครู่',
+            'en': 'Loading',
+        },
     },
     'not_found': {
         'title': {

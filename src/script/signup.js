@@ -55,7 +55,7 @@ class ChooseType extends React.Component {
         this.to_post = null;
         this.doctor_ref = React.createRef();
         this.patient_ref = React.createRef();
-        this.state = { is_doctor: false, redirect: null };
+        this.state = { is_doctor: false, loading: false, error: null, redirect: null };
     }
 
     chooseType(type) {
@@ -80,8 +80,10 @@ class ChooseType extends React.Component {
             "status": this.state.is_doctor
         }
         console.log("POST", this.signup_post, "to /register")
+        this.setState({loading: true});
         axios.post("http://localhost:8000/register", this.signup_post)
             .then((res) => this.handleSignUp(res))
+            .catch((err) => this.setState({error: String(err)}));
     }
 
     handleSignUp(res) {
@@ -95,11 +97,32 @@ class ChooseType extends React.Component {
             .then((res) => this.handleLogIn(res));
     }
 
-    handleLogIn(res) {
+    async handleLogIn(res) {
         console.log("Server responded with", res.status, res.statusText);
         document.cookie = "token=" + res.data.token;
         console.log("Session account token stored as token=" + res.data.token);
+        document.getElementById("root").classList.add("disappear");
+        await new Promise(r => setTimeout(r, 500));
+        document.getElementById("root").classList.remove("disappear");
         this.setState({redirect: "/settings"})
+    }
+
+    renderButton() {
+        if (this.state.loading) {
+            return (
+                <div className="account-submit-container">
+                    <button className="loading-button will-animate">{translation.account.loading[this.lang]}</button>
+                </div>
+            );
+        } else {
+            return (
+                <div className="account-submit-container">
+                    <button className="account-submit will-animate" onClick={() => this.handleClick()}>
+                        {translation.account.signup_submit[this.lang]}
+                    </button>
+                </div>
+            );
+        }
     }
 
     render() {
@@ -123,9 +146,7 @@ class ChooseType extends React.Component {
                             <span className="choose-type-text">{translation.settings.account.type.patient[this.lang]}</span>
                         </button>
                     </div>
-                    <div className="account-submit-container">
-                        <button className="account-submit will-animate" onClick={() => this.handleClick()}>{translation.account.signup_submit[this.lang]}</button>
-                    </div>
+                    {this.renderButton()}
                 </div>
             );
         }

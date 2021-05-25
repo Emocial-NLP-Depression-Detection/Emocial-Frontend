@@ -51,7 +51,7 @@ class Form extends React.Component {
             return <Redirect to={this.state.redirect} />
         } else if (this.state.error) {
             return (
-                <div className="error-container">
+                <div className="form-error">
                     <DisplayError error={this.state.error} lang={this.lang} />
                 </div>
             );
