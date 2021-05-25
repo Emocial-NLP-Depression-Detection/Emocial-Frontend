@@ -11,6 +11,9 @@ import '../css/login.css';
 // Menu bar import
 import { Menu } from './menu.js'
 
+// Error page import
+import { DisplayError } from './result.js'
+
 // Translation keys import
 import { checkLanguage, translation } from './translation.js';
 
@@ -18,7 +21,7 @@ class Form extends React.Component {
     constructor(props) {
         super(props);
         this.lang = this.props.lang;
-        this.state = { name: null, password: null };
+        this.state = { name: null, password: null, error: null };
     }
 
     handleClick() {
@@ -28,7 +31,8 @@ class Form extends React.Component {
         }
         console.log("POST", this.to_post, "to /login")
         axios.post("http://localhost:8000/login", this.to_post)
-            .then((res) => this.handleResponse(res));
+            .then((res) => this.handleResponse(res))
+            .catch((err) => this.setState({error: String(err)}));
     }
 
     handleResponse(res) {
@@ -41,6 +45,12 @@ class Form extends React.Component {
     render() {
         if (this.state.redirect) {
             return <Redirect to={this.state.redirect} />
+        } else if (this.state.error) {
+            return (
+                <div className="form-section">
+                    <DisplayError error={this.state.error} lang={this.lang} />
+                </div>
+            );
         } else {
             return (
                 <div className="form-section">

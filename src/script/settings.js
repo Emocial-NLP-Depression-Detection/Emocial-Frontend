@@ -10,7 +10,7 @@ import '../css/settings.css';
 // Menu bar import
 import { Menu } from './menu.js'
 
-// Error page import (experimental)
+// Error page import
 import { DisplayError } from './result.js'
 
 // Translation keys import
@@ -205,7 +205,6 @@ class AccountManagement extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         if (this.checkHasToken()) {
             if (this.state.error) {
                 return (
