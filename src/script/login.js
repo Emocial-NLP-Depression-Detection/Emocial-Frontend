@@ -36,10 +36,13 @@ class Form extends React.Component {
             .catch((err) => this.setState({error: String(err)}));
     }
 
-    handleResponse(res) {
+    async handleResponse(res) {
         console.log("Server responded with", res.status, res.statusText);
         document.cookie = "token=" + res.data.token;
         console.log("Session account token stored as token=" + res.data.token);
+        document.getElementById("root").classList.add("disappear");
+        await new Promise(r => setTimeout(r, 500));
+        document.getElementById("root").classList.remove("disappear");
         this.setState({ redirect: "/settings" })
     }
 
@@ -58,7 +61,7 @@ class Form extends React.Component {
                     <div className="spinner-container">
                         <div className="spinner">
                             <svg className="circular" viewBox="25 25 50 50">
-                                    <circle className="path" cx="50" cy="50" r="20" fill="none" strokeWidth="2" strokeMiterlimit="10" />
+                                <circle className="path" cx="50" cy="50" r="20" fill="none" strokeWidth="2" strokeMiterlimit="10" />
                             </svg>
                         </div>
                     </div>
