@@ -20,6 +20,15 @@
     background-color: #ffffff;
 }
 
+.error-container {
+    width: 45vh;
+    height: 50vh;
+    margin: 2.5vh;
+    padding: 5vh;
+    border-radius: 2.5vh;
+    background-color: #ffffff;
+}
+
 .form-section label {
     font-size: 3vh;
 }

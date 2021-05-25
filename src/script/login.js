@@ -21,7 +21,7 @@ class Form extends React.Component {
     constructor(props) {
         super(props);
         this.lang = this.props.lang;
-        this.state = { name: null, password: null, error: null };
+        this.state = { name: null, password: null, loading: false, error: null, redirect: null };
     }
 
     handleClick() {
@@ -30,6 +30,7 @@ class Form extends React.Component {
             "password": this.state.password
         }
         console.log("POST", this.to_post, "to /login")
+        this.setState({loading: true});
         axios.post("http://localhost:8000/login", this.to_post)
             .then((res) => this.handleResponse(res))
             .catch((err) => this.setState({error: String(err)}));
@@ -47,8 +48,20 @@ class Form extends React.Component {
             return <Redirect to={this.state.redirect} />
         } else if (this.state.error) {
             return (
-                <div className="form-section">
+                <div className="error-container">
                     <DisplayError error={this.state.error} lang={this.lang} />
+                </div>
+            );
+        } else if (this.state.loading) {
+            return (
+                <div className="error-container">
+                    <div className="spinner-container">
+                        <div className="spinner">
+                            <svg className="circular" viewBox="25 25 50 50">
+                                    <circle className="path" cx="50" cy="50" r="20" fill="none" strokeWidth="2" strokeMiterlimit="10" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             );
         } else {

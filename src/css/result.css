@@ -1,26 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 
-@keyframes rotate {
-    100% {
-      transform: rotate(360deg);
-    }
-}
-  
-@keyframes dash {
-    0% {
-        stroke-dasharray: 1, 200;
-        stroke-dashoffset: 0;
-    }
-    50% {
-        stroke-dasharray: 89, 200;
-        stroke-dashoffset: -35px;
-    }
-    100% {
-        stroke-dasharray: 89, 200;
-        stroke-dashoffset: -124px;
-    }
-}
-
 .loading-container {
     display: flex;
     align-items: center;
@@ -46,25 +25,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-}
-
-.spinner {
-    position: relative;
-    width: 20vh;
-}
-
-.circular {
-    animation: rotate 2s linear infinite;
-    height: 100%;
-    width: 100%;
-}
-
-.path {
-    stroke: #5271ff;
-    stroke-width: 3px;
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-    animation: dash 1.5s ease-in-out infinite;
 }
 
 .red-triangle-container {
